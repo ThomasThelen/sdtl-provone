@@ -1,0 +1,1 @@
+compute newVar = 0.

@@ -1,0 +1,37 @@
+{
+  "id": "program-1",
+  "sourceFileName": "",
+  "sourceLanguage": "spss",
+  "scriptMD5": "518001a968c359366bf7ceb12bf209ea",
+  "scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
+  "sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
+  "sourceFileSize": 19,
+  "lineCount": 1,
+  "commandCount": 1,
+  "parser": "spss-to-sdtl",
+  "parserVersion": "0.9 Development",
+  "modelVersion": "0.9 Development",
+  "modelCreatedTime": "2020-04-14T18:38:10+00:00",
+  "commands": [
+    {
+      "$type": "Compute",
+      "command": "compute",
+      "sourceInformation": {
+        "lineNumberStart": 1,
+        "lineNumberEnd": 1,
+        "sourceStartIndex": 1,
+        "sourceStopIndex": 19,
+        "originalSourceText": "compute newVar = 0."
+      },
+      "variable": {
+        "$type": "VariableSymbolExpression",
+        "variableName": "newVar"
+      },
+      "expression": {
+        "$type": "NumericConstantExpression",
+        "value": "0",
+        "numericType": "int"
+      }
+    }
+  ]
+}

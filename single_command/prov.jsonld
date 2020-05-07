@@ -1,0 +1,91 @@
+{
+   "@context":[
+      {
+          "prov":"http://www.w3.org/ns/prov#"
+      },
+      {
+          "provone":"http://purl.dataone.org/provone/2015/01/15/ontology#"
+      },
+      {
+          "sdtl": "SDTL namespace URL"
+      }
+   ],
+   "@graph":[
+      {
+          "@id":"#script_execution",
+          "@type":"provone:Execution",
+          "prov:qualifiedAssociation": "associated_plan"
+      },
+      
+      {
+          "@id": "#associated_plan",
+          "@type": "Association",
+          "provone:hadPlan": "create_var.sps"
+      },
+      
+      {
+          "@id": "#create_var.sps",
+          "@type": "provone:Program",
+          "provone:hasSubProgram": "#create_variable_command",
+          
+          "stdl:id": "create_var.sps",
+          "stdl:sourceFileName": "",
+          "stdl:sourceLanguage": "spss",
+          "stdl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
+          "stdl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
+          "stdl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
+          "stdl:sourceFileSize": 19,
+          "stdl:lineCount": 1,
+          "stdl:commandCount": 1,
+          "stdl:parser": "spss-to-sdtl",
+          "stdl:parserVersion": "0.9 Development",
+          "stdl:modelVersion": "0.9 Development",
+          "stdl:modelCreatedTime": "2020-04-14T18:38:10+00:00"
+      },
+      
+      {
+          "@id": "#create_variable_command",
+          "@type": "provone:Program",
+          "provone:hasOutPort": "#create_variable_port",
+
+          "commands": [
+            {
+              "$type": "Compute",
+              "command": "compute",
+              "sourceInformation": {
+                "lineNumberStart": 1,
+                "lineNumberEnd": 1,
+                "sourceStartIndex": 1,
+                "sourceStopIndex": 19,
+                "originalSourceText": "compute newVar = 0."
+              },
+
+              "variable": {
+                "$type": "VariableSymbolExpression",
+                "variableName": "newVar"
+              },
+              "expression": {
+                "$type": "NumericConstantExpression",
+                "value": "0",
+                "numericType": "int"
+              }
+            }
+          ]
+      },
+
+      {
+          "@id": "#create_variable_port",
+          "@type": "provone:Port",
+          "stdl:variable": {
+            "stdl:$type": "VariableSymbolExpression",
+            "sdtl:variableName": "newVar"
+          },
+          "sdtl:expression": {
+            "sdtl:$type":"NumericConstantExpression",
+            "sdtl:value": "0",
+            "sdtl:numericType": "int"
+          }
+      }
+      
+   ]
+}
