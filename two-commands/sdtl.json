@@ -1,17 +1,17 @@
 {
-  "id": "program-1",
+  "id": "program-6",
   "sourceFileName": "",
   "sourceLanguage": "spss",
-  "scriptMD5": "518001a968c359366bf7ceb12bf209ea",
-  "scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
-  "sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
-  "sourceFileSize": 19,
-  "lineCount": 1,
-  "commandCount": 1,
+  "scriptMD5": "631de6aaf22bd758017ed29b3f6cff25",
+  "scriptSHA1": "7a1b5d90cf49860bf51cdbbb2e3820c4395a52e1",
+  "sourceFileLastUpdate": "2020-05-07T18:46:17+00:00",
+  "sourceFileSize": 51,
+  "lineCount": 2,
+  "commandCount": 2,
   "parser": "spss-to-sdtl",
   "parserVersion": "0.9 Development",
   "modelVersion": "0.9 Development",
-  "modelCreatedTime": "2020-04-14T18:38:10+00:00",
+  "modelCreatedTime": "2020-05-07T18:46:17+00:00",
   "commands": [
     {
       "$type": "Compute",
@@ -20,16 +20,36 @@
         "lineNumberStart": 1,
         "lineNumberEnd": 1,
         "sourceStartIndex": 1,
-        "sourceStopIndex": 19,
-        "originalSourceText": "compute newVar = 0."
+        "sourceStopIndex": 24,
+        "originalSourceText": "compute median_age = 35."
       },
       "variable": {
         "$type": "VariableSymbolExpression",
-        "variableName": "newVar"
+        "variableName": "median_age"
       },
       "expression": {
         "$type": "NumericConstantExpression",
-        "value": "0",
+        "value": "35",
+        "numericType": "int"
+      }
+    },
+    {
+      "$type": "Compute",
+      "command": "compute",
+      "sourceInformation": {
+        "lineNumberStart": 2,
+        "lineNumberEnd": 2,
+        "sourceStartIndex": 26,
+        "sourceStopIndex": 50,
+        "originalSourceText": "compute average_age = 24."
+      },
+      "variable": {
+        "$type": "VariableSymbolExpression",
+        "variableName": "average_age"
+      },
+      "expression": {
+        "$type": "NumericConstantExpression",
+        "value": "24",
         "numericType": "int"
       }
     }
