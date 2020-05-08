@@ -1,0 +1,115 @@
+{
+  "id": "program-9",
+  "sourceFileName": "",
+  "sourceLanguage": "spss",
+  "scriptMD5": "ba3620ac607c1c8376fcd1bb079cca7d",
+  "scriptSHA1": "7911912d6b37809019c0e9bf0151035e560dda93",
+  "sourceFileLastUpdate": "2020-05-07T20:25:44+00:00",
+  "sourceFileSize": 96,
+  "lineCount": 3,
+  "commandCount": 3,
+  "parser": "spss-to-sdtl",
+  "parserVersion": "0.9 Development",
+  "modelVersion": "0.9 Development",
+  "modelCreatedTime": "2020-05-07T20:25:44+00:00",
+  "commands": [
+    {
+      "$type": "Compute",
+      "command": "compute",
+      "sourceInformation": {
+        "lineNumberStart": 1,
+        "lineNumberEnd": 1,
+        "sourceStartIndex": 1,
+        "sourceStopIndex": 23,
+        "originalSourceText": "compute first_age = 35."
+      },
+      "variable": {
+        "$type": "VariableSymbolExpression",
+        "variableName": "first_age"
+      },
+      "expression": {
+        "$type": "NumericConstantExpression",
+        "value": "35",
+        "numericType": "int"
+      }
+    },
+    {
+      "$type": "Compute",
+      "command": "compute",
+      "sourceInformation": {
+        "lineNumberStart": 2,
+        "lineNumberEnd": 2,
+        "sourceStartIndex": 25,
+        "sourceStopIndex": 46,
+        "originalSourceText": "compute second_age=30."
+      },
+      "variable": {
+        "$type": "VariableSymbolExpression",
+        "variableName": "second_age"
+      },
+      "expression": {
+        "$type": "NumericConstantExpression",
+        "value": "30",
+        "numericType": "int"
+      }
+    },
+    {
+      "$type": "Compute",
+      "command": "compute",
+      "sourceInformation": {
+        "lineNumberStart": 3,
+        "lineNumberEnd": 3,
+        "sourceStartIndex": 48,
+        "sourceStopIndex": 94,
+        "originalSourceText": "compute average_age = (first_age+second_age)/2."
+      },
+      "variable": {
+        "$type": "VariableSymbolExpression",
+        "variableName": "average_age"
+      },
+      "expression": {
+        "$type": "FunctionCallExpression",
+        "function": "division",
+        "isSdtlName": true,
+        "arguments": [
+          {
+            "$type": "FunctionArgument",
+            "argumentValue": {
+              "$type": "GroupedExpression",
+              "function": "parentheses",
+              "expression": {
+                "$type": "FunctionCallExpression",
+                "function": "addition",
+                "isSdtlName": true,
+                "arguments": [
+                  {
+                    "$type": "FunctionArgument",
+                    "argumentValue": {
+                      "$type": "VariableSymbolExpression",
+                      "variableName": "first_age"
+                    }
+                  },
+                  {
+                    "$type": "FunctionArgument",
+                    "argumentValue": {
+                      "$type": "VariableSymbolExpression",
+                      "variableName": "second_age"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "$type": "FunctionArgument",
+            "argumentValue": {
+              "$type": "NumericConstantExpression",
+              "value": "2",
+              "numericType": "int"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

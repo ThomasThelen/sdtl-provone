@@ -7,7 +7,7 @@
           "provone":"http://purl.dataone.org/provone/2015/01/15/ontology#"
       },
       {
-          "sdtl": "http://SDTLnamespaceURL"
+          "sdtl": "SDTL namespace URL"
       }
    ],
    "@graph":[
@@ -26,10 +26,7 @@
       {
           "@id": "#create_var.sps",
           "@type": "provone:Program",
-          "provone:hasSubProgram": [
-            {"@id": "#create_variable_command"},
-            {"@id": "#create_second_variable_command"}
-          ],
+          "provone:hasSubProgram": "#create_variable_command",
           
           "sdtl:id": "program-6",
           "sdtl:sourceFileName": "",
@@ -43,7 +40,7 @@
           "sdtl:parser": "spss-to-sdtl",
           "sdtl:parserVersion": "0.9 Development",
           "sdtl:modelVersion": "0.9 Development",
-          "sdtl:modelCreatedTime": "2020-05-07T18:46:17+00:00"
+          "sdtl:modelCreatedTime": "2020-05-07T18:46:17+00:00",
       },
       
       {
@@ -69,6 +66,7 @@
             "sdtl:value": "35",
             "sdtl:numericType": "int"
           }
+        }
       },
 
       {

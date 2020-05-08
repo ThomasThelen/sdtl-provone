@@ -26,10 +26,7 @@
       {
           "@id": "#create_var.sps",
           "@type": "provone:Program",
-          "provone:hasSubProgram": [
-            {"@id": "#create_variable_command"},
-            {"@id": "#create_second_variable_command"}
-          ],
+          "provone:hasSubProgram": "#create_variable_command",
           
           "sdtl:id": "program-6",
           "sdtl:sourceFileName": "",
@@ -74,6 +71,7 @@
       {
           "@id": "#create_variable_port",
           "@type": "provone:Port",
+          "provone:connectsTo": "shared_port_channel",
           "stdl:variable": {
             "stdl:$type": "VariableSymbolExpression",
             "sdtl:variableName": "newVar"
@@ -111,8 +109,9 @@
     },
 
       {
-        "@id": "create_second_variable_port",
+        "@id": "#create_second_variable_port",
         "@type": "provone:Port",
+        "provone:connectsTo": "shared_port_channel",
         
         "sdtl:variable": {
           "sdtl:$type": "VariableSymbolExpression",
@@ -123,6 +122,11 @@
           "sdtl:value": "24",
           "sdtl:numericType": "int"
         }
+      },
+
+      {
+        "@id": "#shared_port_channel",
+        "@type": "provone:Channel"
       }
       
    ]

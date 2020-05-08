@@ -7,7 +7,7 @@
           "provone":"http://purl.dataone.org/provone/2015/01/15/ontology#"
       },
       {
-          "sdtl": "SDTL namespace URL"
+          "sdtl": "http://SDTLnamespaceURL"
       }
    ],
    "@graph":[
