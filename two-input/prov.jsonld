@@ -7,7 +7,7 @@
           "provone":"http://purl.dataone.org/provone/2015/01/15/ontology#"
       },
       {
-          "sdtl": "SDTL namespace URL"
+          "sdtl": "http://SDTLnamespaceURL"
       }
    ],
    "@graph":[
@@ -24,27 +24,27 @@
       },
       
       {
-          "@id": "#create_var.sps",
+          "@id": "#compute_average.sps",
           "@type": "provone:Program",
           "provone:hasSubProgram": "#create_variable_command",
           
-          "sdtl:id": "program-6",
+          "sdtl:id": "program-11",
           "sdtl:sourceFileName": "",
           "sdtl:sourceLanguage": "spss",
-          "sdtl:scriptMD5": "631de6aaf22bd758017ed29b3f6cff25",
-          "sdtl:scriptSHA1": "7a1b5d90cf49860bf51cdbbb2e3820c4395a52e1",
-          "sdtl:sourceFileLastUpdate": "2020-05-07T18:46:17+00:00",
-          "sdtl:sourceFileSize": 51,
-          "sdtl:lineCount": 2,
-          "sdtl:commandCount": 2,
+          "sdtl:scriptMD5": "657586f6d2d4b1c9e042ea6bd61c01aa",
+          "sdtl:scriptSHA1": "df94705f6bfe63ca6c6454c234e9a47c9842ea26",
+          "sdtl:sourceFileLastUpdate": "2020-05-09T00:35:26+00:00",
+          "sdtl:sourceFileSize": 94,
+          "sdtl:lineCount": 3,
+          "sdtl:commandCount": 3,
           "sdtl:parser": "spss-to-sdtl",
           "sdtl:parserVersion": "0.9 Development",
           "sdtl:modelVersion": "0.9 Development",
-          "sdtl:modelCreatedTime": "2020-05-07T18:46:17+00:00",
+          "sdtl:modelCreatedTime": "2020-05-09T00:35:26+00:00"
       },
       
       {
-          "@id": "#create_variable_command",
+          "@id": "#create_first_age_command",
           "@type": "provone:Program",
           "provone:hasOutPort": "#create_variable_port",
 
@@ -54,64 +54,64 @@
             "sdtl:lineNumberStart": 1,
             "sdtl:lineNumberEnd": 1,
             "sdtl:sourceStartIndex": 1,
-            "sdtl:sourceStopIndex": 24,
-            "sdtl:originalSourceText": "compute median_age = 35."
+            "sdtl:sourceStopIndex": 23,
+            "sdtl:originalSourceText": "compute first_age = 35."
           },
           "sdtl:variable": {
             "sdtl:$type": "VariableSymbolExpression",
-            "sdtl:variableName": "median_age"
+            "sdtl:variableName": "first_age"
           },
           "sdtl:expression": {
             "sdtl:$type": "NumericConstantExpression",
             "sdtl:value": "35",
             "sdtl:numericType": "int"
           }
-        }
       },
 
       {
-          "@id": "#create_variable_port",
+          "@id": "#first_age_output_port",
           "@type": "provone:Port",
-          "stdl:variable": {
-            "stdl:$type": "VariableSymbolExpression",
-            "sdtl:variableName": "newVar"
+          "provone:connectsTo": {"@id": "#first_age_input_output_channel"},
+          "sdtl:variable": {
+            "sdtl:$type": "VariableSymbolExpression",
+            "sdtl:variableName": "first_age"
           },
           "sdtl:expression": {
-            "sdtl:$type":"NumericConstantExpression",
-            "sdtl:value": "0",
+            "sdtl:$type": "NumericConstantExpression",
+            "sdtl:value": "35",
             "sdtl:numericType": "int"
           }
       },
 
       {
-        "@id": "#create_second_variable_command",
+        "@id": "#create_second_age_command",
         "@type": "provone:Program",
-        "provone:hasOutPort": "#create_variable_port",
+        "provone:hasOutPort": "#second_age_output_port",
 
         "sdtl:$type": "Compute",
         "sdtl:command": "compute",
         "sdtl:sourceInformation": {
-        "sdtl:lineNumberStart": 2,
-        "sdtl:lineNumberEnd": 2,
-        "sdtl:sourceStartIndex": 26,
-        "sdtl:sourceStopIndex": 50,
-        "sdtl:originalSourceText": "compute average_age = 24."
+          "sdtl:lineNumberStart": 2,
+          "sdtl:lineNumberEnd": 2,
+          "sdtl:sourceStartIndex": 25,
+          "sdtl:sourceStopIndex": 46,
+          "sdtl:originalSourceText": "compute second_age=30."
+        },
+        "sdtl:variable": {
+          "sdtl:$type": "VariableSymbolExpression",
+          "sdtl:variableName": "second_age"
+        },
+        "sdtl:expression": {
+          "sdtl:$type": "NumericConstantExpression",
+          "sdtl:value": "30",
+          "sdtl:numericType": "int"
+        }
       },
-      "sdtl:variable": {
-        "sdtl:$type": "VariableSymbolExpression",
-        "sdtl:variableName": "average_age"
-      },
-      "sdtl:expression": {
-        "sdtl:$type": "NumericConstantExpression",
-        "sdtl:value": "24",
-        "sdtl:numericType": "int"
-      }
-    },
 
       {
-        "@id": "create_second_variable_port",
+        "@id": "#second_age_output_port",
         "@type": "provone:Port",
-        
+        "provone:hasOutPort": {"@id": "#second_age_input_output_channel"},
         "sdtl:variable": {
           "sdtl:$type": "VariableSymbolExpression",
           "sdtl:variableName": "average_age"
@@ -121,7 +121,135 @@
           "sdtl:value": "24",
           "sdtl:numericType": "int"
         }
-      }
+      },
+
+      {
+        "@id": "#compute_average_command",
+        "@type": "provone:Program",
+        "provone:hasOutPort": {"@id": "#average_age_output_port"},
+        "provone:hasInPort": [
+          {"@id": "first_age_input_port"},
+          {"@id": "second_age_input_port"}
+        ],
+        "sdtl:$type": "Compute",
+        "sdtl:command": "compute",
+        "sdtl:sourceInformation": {
+          "sdtl:lineNumberStart": 3,
+          "sdtl:lineNumberEnd": 3,
+          "sdtl:sourceStartIndex": 48,
+          "sdtl:sourceStopIndex": 92,
+          "sdtl:originalSourceText": "compute average_age = first_age+second_age/2."
+        },
+        "sdtl:variable": {
+          "sdtl:$type": "VariableSymbolExpression",
+          "sdtl:variableName": "average_age"
+        },
+        "sdtl:expression": {
+          "sdtl:$type": "FunctionCallExpression",
+          "sdtl:function": "addition",
+          "sdtl:isSdtlName": true,
+          "sdtl:arguments": [
+            {
+              "sdtl:$type": "FunctionArgument",
+              "sdtl:argumentValue": {
+                "sdtl:$type": "VariableSymbolExpression",
+                "sdtl:variableName": "first_age"
+              }
+            },
+            {
+              "sdtl:$type": "FunctionArgument",
+              "sdtl:argumentValue": {
+                "sdtl:$type": "FunctionCallExpression",
+                "sdtl:function": "division",
+                "sdtl:isSdtlName": true,
+                "sdtl:arguments": [
+                  {
+                    "sdtl:$type": "FunctionArgument",
+                    "sdtl:argumentValue": {
+                      "sdtl:$type": "VariableSymbolExpression",
+                      "sdtl:variableName": "second_age"
+                    }
+                  },
+                  {
+                    "sdtl:$type": "FunctionArgument",
+                    "sdtl:argumentValue": {
+                      "sdtl:$type": "NumericConstantExpression",
+                      "sdtl:value": "2",
+                      "sdtl:numericType": "int"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+
+
+      {
+        "@id": "first_age_input_port",
+        "@type": "provone:Port",
+        "provone:connectsTo": {"@id": "#first_age_input_output_channel"}
+      },
+
+      {
+        "@id": "second_age_input_port",
+        "@type": "provone:Port",
+        "provone:connectsTo": {"@id": "#second_age_input_output_channel"}
+      },
       
+      {
+        "@id": "#first_age_input_output_channel",
+        "@type": "provone:Channel"
+      },
+
+      {
+        "@id": "#second_age_input_output_channel",
+        "@type": "provone:Channel"
+      },
+
+      {
+        "@id": "#average_age_output_port",
+        "@type": "provone:Port",
+        "sdtl:expression": {
+          "sdtl:$type": "FunctionCallExpression",
+          "sdtl:function": "addition",
+          "sdtl:isSdtlName": true,
+          "sdtl:arguments": [
+            {
+              "sdtl:$type": "FunctionArgument",
+              "sdtl:argumentValue": {
+                "sdtl:$type": "VariableSymbolExpression",
+                "sdtl:variableName": "first_age"
+              }
+            },
+            {
+              "sdtl:$type": "FunctionArgument",
+              "sdtl:argumentValue": {
+                "sdtl:$type": "FunctionCallExpression",
+                "sdtl:function": "division",
+                "sdtl:isSdtlName": true,
+                "sdtl:arguments": [
+                  {
+                    "sdtl:$type": "FunctionArgument",
+                    "sdtl:argumentValue": {
+                      "sdtl:$type": "VariableSymbolExpression",
+                      "sdtl:variableName": "second_age"
+                    }
+                  },
+                  {
+                    "sdtl:$type": "FunctionArgument",
+                    "sdtl:argumentValue": {
+                      "sdtl:$type": "NumericConstantExpression",
+                      "sdtl:value": "2",
+                      "sdtl:numericType": "int"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+      }
+    }
    ]
 }
