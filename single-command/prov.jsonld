@@ -28,7 +28,6 @@
           "@type": "provone:Program",
           "provone:hasSubProgram": "#create_variable_command",
           
-          "stdl:id": "create_var.sps",
           "stdl:sourceFileName": "",
           "stdl:sourceLanguage": "spss",
           "stdl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
@@ -36,11 +35,7 @@
           "stdl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
           "stdl:sourceFileSize": 19,
           "stdl:lineCount": 1,
-          "stdl:commandCount": 1,
-          "stdl:parser": "spss-to-sdtl",
-          "stdl:parserVersion": "0.9 Development",
-          "stdl:modelVersion": "0.9 Development",
-          "stdl:modelCreatedTime": "2020-04-14T18:38:10+00:00"
+          "stdl:commandCount": 1
       },
       
       {

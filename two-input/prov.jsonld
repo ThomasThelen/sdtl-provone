@@ -28,7 +28,6 @@
           "@type": "provone:Program",
           "provone:hasSubProgram": "#create_variable_command",
           
-          "sdtl:id": "program-11",
           "sdtl:sourceFileName": "",
           "sdtl:sourceLanguage": "spss",
           "sdtl:scriptMD5": "657586f6d2d4b1c9e042ea6bd61c01aa",
@@ -37,10 +36,6 @@
           "sdtl:sourceFileSize": 94,
           "sdtl:lineCount": 3,
           "sdtl:commandCount": 3,
-          "sdtl:parser": "spss-to-sdtl",
-          "sdtl:parserVersion": "0.9 Development",
-          "sdtl:modelVersion": "0.9 Development",
-          "sdtl:modelCreatedTime": "2020-05-09T00:35:26+00:00"
       },
       
       {

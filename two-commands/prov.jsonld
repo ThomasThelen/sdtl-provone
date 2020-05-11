@@ -30,8 +30,6 @@
             {"@id": "#create_variable_command"},
             {"@id": "#create_second_variable_command"}
           ],
-          
-          "sdtl:id": "program-6",
           "sdtl:sourceFileName": "",
           "sdtl:sourceLanguage": "spss",
           "sdtl:scriptMD5": "631de6aaf22bd758017ed29b3f6cff25",
@@ -39,11 +37,7 @@
           "sdtl:sourceFileLastUpdate": "2020-05-07T18:46:17+00:00",
           "sdtl:sourceFileSize": 51,
           "sdtl:lineCount": 2,
-          "sdtl:commandCount": 2,
-          "sdtl:parser": "spss-to-sdtl",
-          "sdtl:parserVersion": "0.9 Development",
-          "sdtl:modelVersion": "0.9 Development",
-          "sdtl:modelCreatedTime": "2020-05-07T18:46:17+00:00"
+          "sdtl:commandCount": 2
       },
       
       {

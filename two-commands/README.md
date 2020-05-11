@@ -1,10 +1,12 @@
 # Two Commands Example
 
 This is an example of an SPSS program that creates two variables that are independent of each other.
+
+### Visual Representation
 ![](./images/prov.svg)
 
 ### Prov Model Notes
-The main difference between this example and the single command example is that the main `provone:Program` has two `provone:Program`s directly underneath it, connected via `provone:hasSubProgram`.
+The main difference between this example and the single command example is that the main `provone:Program` has two `provone:Program` objects directly underneath it, connected via `provone:hasSubProgram`.
 
 ```
 {

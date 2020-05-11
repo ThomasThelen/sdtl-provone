@@ -1,9 +1,9 @@
 # Single Command Example
 
-This is an example of a SPSS program that has a single line/command. The script in question is [create_var.sps](./create_var.sps). You can find the JSON-LD representation in [prov.jsonld](./prov.jsonld).
+This is an example of an SPSS program that has a single line/command. The script in question is [create_var.sps](./create_var.sps). You can find the JSON-LD representation in [prov.jsonld](./prov.jsonld).
 
 
-
+### Visual Representation
 ![](./images/prov.svg)
 
 ### Prov Model Notes
