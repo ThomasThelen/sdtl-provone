@@ -293,12 +293,15 @@ In this example, the `provone:Entity` objects are linked to the `provone:Program
 #### Connecting With a Channel
 Having multiple ports connecting to a `provone:Channel` is valid, and may be done here. By doing so, we're able to make a claim about the relationship between the data (`provone:port`) and a `provone:program` with and the `provone:Entity`.
 
+![](./images/entity-channel.svg)
 
 ### Executions of Commands
 Just how in the previous section we talked about executions of scripts, we can do the same with commands. This gives a more granular view as to which commands were relevant in the creation or usage of a `provone:Entity`.
 
+In this diagram, the execution of the script is included. The thought is that files can be created and destroyed without having an effect on the script level. In this case there wouldn't be a record of these on the script level.
 
 ![](./images/executions-base.svg)
 
 
+This diagram is the same as the one above but lacks the top level script information. I kept the basic `prov` links to the `provone:Entity` objects from the top level `provone:Execution`.
 ![](./images/executions-base-2.svg)
