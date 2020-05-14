@@ -78,9 +78,9 @@ The rest of the terms,
 
 are arguably useful for someone that's interested in the origins of _something_ and are kept for this reason.
 
+The top level script forms the first node in the provenance representation. As seen below, new nodes that represent SDTL commands will be added to this.
 
-### Example
-An example can be found in each of the example directories. In `single-command/`, the embedding of the sdtl alongside ProvONE is fairly explicit.
+![](./images/prov.svg)
 
 ```json
       {
@@ -88,20 +88,18 @@ An example can be found in each of the example directories. In `single-command/`
           "@type": "provone:Program",
           "provone:hasSubProgram": "#create_variable_command",
           
-          "stdl:sourceFileName": "",
-          "stdl:sourceLanguage": "spss",
-          "stdl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
-          "stdl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
-          "stdl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
-          "stdl:sourceFileSize": 19,
-          "stdl:lineCount": 1,
-          "stdl:commandCount": 1
+          "sdtl:sourceFileName": "",
+          "sdtl:sourceLanguage": "spss",
+          "sdtl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
+          "sdtl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
+          "sdtl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
+          "sdtl:sourceFileSize": 19,
+          "sdtl:lineCount": 1,
+          "sdtl:commandCount": 1
       }
 ```
 
-The top level script forms the first node in the provenance representation. As seen below, new nodes that represent SDTL commands will be added to this.
 
-![](./images/prov.svg)
 
 
 
@@ -155,7 +153,7 @@ A `provone:Program` with SDTL `command` level metadata looks like
 }
 ```
 
-It contains information about where in the script the command is (useful since provenance does not always preserve order), what type of command (in this case `stdl:compute`), and information about the variables used.
+It contains information about where in the script the command is (useful since provenance does not always preserve order), what type of command (in this case `sdtl:compute`), and information about the variables used.
 
 ## Ports
 Ports are objects that represent inputs and outputs to programs. When new variables are created, an associated port is created to represent this. Likewise, when a command uses data, a port is used to represent this usage.

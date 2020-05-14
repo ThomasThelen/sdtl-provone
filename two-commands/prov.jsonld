@@ -68,8 +68,8 @@
       {
           "@id": "#create_variable_port",
           "@type": "provone:Port",
-          "stdl:variable": {
-            "stdl:$type": "VariableSymbolExpression",
+          "sdtl:variable": {
+            "sdtl:$type": "VariableSymbolExpression",
             "sdtl:variableName": "newVar"
           },
           "sdtl:expression": {

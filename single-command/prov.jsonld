@@ -28,14 +28,14 @@
           "@type": "provone:Program",
           "provone:hasSubProgram": "#create_variable_command",
           
-          "stdl:sourceFileName": "",
-          "stdl:sourceLanguage": "spss",
-          "stdl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
-          "stdl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
-          "stdl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
-          "stdl:sourceFileSize": 19,
-          "stdl:lineCount": 1,
-          "stdl:commandCount": 1
+          "sdtl:sourceFileName": "",
+          "sdtl:sourceLanguage": "spss",
+          "sdtl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
+          "sdtl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
+          "sdtl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
+          "sdtl:sourceFileSize": 19,
+          "sdtl:lineCount": 1,
+          "sdtl:commandCount": 1
       },
       
       {
@@ -43,26 +43,26 @@
           "@type": "provone:Program",
           "provone:hasOutPort": "#create_variable_port",
 
-          "commands": [
+          "sdtl:commands": [
             {
-              "$type": "Compute",
-              "command": "compute",
-              "sourceInformation": {
-                "lineNumberStart": 1,
-                "lineNumberEnd": 1,
-                "sourceStartIndex": 1,
-                "sourceStopIndex": 19,
-                "originalSourceText": "compute newVar = 0."
+              "sdtl:$type": "Compute",
+              "sdtl:command": "compute",
+              "sdtl:sourceInformation": {
+                "sdtl:lineNumberStart": 1,
+                "sdtl:lineNumberEnd": 1,
+                "sdtl:sourceStartIndex": 1,
+                "sdtl:sourceStopIndex": 19,
+                "sdtl:originalSourceText": "compute newVar = 0."
               },
 
-              "variable": {
-                "$type": "VariableSymbolExpression",
-                "variableName": "newVar"
+              "sdtl:variable": {
+                "sdtl:$type": "VariableSymbolExpression",
+                "sdtl:variableName": "newVar"
               },
-              "expression": {
-                "$type": "NumericConstantExpression",
-                "value": "0",
-                "numericType": "int"
+              "sdtl:expression": {
+                "sdtl:$type": "NumericConstantExpression",
+                "sdtl:value": "0",
+                "sdtl:numericType": "int"
               }
             }
           ]
@@ -71,8 +71,8 @@
       {
           "@id": "#create_variable_port",
           "@type": "provone:Port",
-          "stdl:variable": {
-            "stdl:$type": "VariableSymbolExpression",
+          "sdtl:variable": {
+            "sdtl:$type": "VariableSymbolExpression",
             "sdtl:variableName": "newVar"
           },
           "sdtl:expression": {
