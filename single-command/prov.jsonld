@@ -42,7 +42,6 @@
           "@id": "#create_variable_command",
           "@type": "provone:Program",
           "provone:hasOutPort": "#create_variable_port",
-
           "sdtl:commands": [
             {
               "sdtl:$type": "Compute",
@@ -80,6 +79,33 @@
             "sdtl:value": "0",
             "sdtl:numericType": "int"
           }
+      },
+
+
+      {
+        "@id": "#create_variable_command_exection",
+        "@type": "provone:Execution",
+        "prov:qualifiedAssociation": "#create_variable_command",
+        "prov:qualifiedGeneration": "#create_variable_command_exection"
+      },
+
+      {
+        "@id": "#create_variable_associated_plan",
+        "@type": "provone:Association",
+        "prov:hadPlan": "#create_variable_command"
+      },
+
+      {
+        "@id": "#generated_variable",
+        "@type": "prov:Entity",
+        "prov:wasGeneratedBy": "#create_variable_command_exection"
+      },
+
+      {
+        "@id": "#create_variable_command_generation",
+        "@type": "prov:qualifiedGeneration",
+        "prov:hasOutPort": "#create_variable_port",
+        "prov:hadEntity": "generated_variable"
       }
       
    ]
