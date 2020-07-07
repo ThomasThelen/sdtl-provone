@@ -79,6 +79,34 @@
           }
       },
 
+
+
+      {
+        "@id": "#create_first_variable_execution",
+        "@type": "provone:Execution",
+        "prov:qualifiedAssociation": "#create_first_variable_association",
+        "prov:qualifiedGeneration": "#create_added_age_command_generation"
+      },
+
+      {
+        "@id": "#create_first_variable_generation",
+        "@type": "provone:Association",
+        "prov:hadPlan": "#create_variable_command"
+      },
+
+      {
+        "@id": "#create_first_variable_entity",
+        "@type": "prov:Entity",
+        "prov:wasGeneratedBy": "#create_first_variable_execution"
+      },
+
+      {
+        "@id": "#create_first_variable_generation",
+        "@type": "provone:qualifiedGeneration",
+        "prov:hadEntity": "#create_first_variable_entity",
+        "prov:hasOutPort": "#create_variable_port"
+      },
+
       {
         "@id": "#create_second_variable_command",
         "@type": "provone:Program",
@@ -117,7 +145,33 @@
           "sdtl:value": "24",
           "sdtl:numericType": "int"
         }
+      },
+
+      {
+        "@id": "#create_second_variable_execution",
+        "@type": "provone:Execution",
+        "prov:qualifiedAssociation": "#create_second_variable_association",
+        "prov:qualifiedGeneration": "#create_second_variable_generation"
+      },
+
+      {
+        "@id": "#create_second_variable_association",
+        "@type": "provone:Association",
+        "prov:hadPlan": "#create_second_variable_command"
+      },
+
+      {
+        "@id": "#create_second_variable_entity",
+        "@type": "prov:Entity",
+        "prov:wasGeneratedBy": "#create_second_variable_execution"
+      },
+
+      {
+        "@id": "#create_second_variable_generation",
+        "@type": "provone:qualifiedGeneration",
+        "prov:hadEntity": "#create_second_variable_entity",
+        "prov:hasOutPort": "#create_second_variable_port"
       }
-      
+
    ]
 }
