@@ -26,7 +26,7 @@
       {
           "@id": "#create_var.sps",
           "@type": "provone:Program",
-          "provone:hasSubProgram": ["#create_variable_command", "#create_second_variable_command"],
+          "provone:hasSubProgram": ["#create_first_age_command", "#create_added_age_command"],
           
           "sdtl:sourceFileName": "",
           "sdtl:sourceLanguage": "spss",
@@ -37,11 +37,11 @@
           "sdtl:lineCount": 2,
           "sdtl:commandCount": 2
       },
-      
+
       {
-          "@id": "#create_variable_command",
+          "@id": "#create_first_age_command",
           "@type": "provone:Program",
-          "provone:hasOutPort": "#create_variable_port",
+          "provone:hasOutPort": "#create_first_age_port",
 
           "sdtl:$type": "Compute",
           "sdtl:command": "compute",
@@ -64,9 +64,9 @@
       },
 
       {
-          "@id": "#create_variable_port",
+          "@id": "#create_first_age_port",
           "@type": "provone:Port",
-          "provone:connectsTo": "shared_port_channel",
+          "provone:connectsTo": "#shared_port_channel",
           "sdtl:variable": {
             "sdtl:$type": "VariableSymbolExpression",
             "sdtl:variableName": "newVar"
@@ -78,11 +78,38 @@
           }
       },
 
-      {
-        "@id": "#create_second_variable_command",
-        "@type": "provone:Program",
-        "provone:hasOutPort": "#create_second_variable_port",
 
+      {
+        "@id": "#create_age_command_execution",
+        "@type": "provone:Execution",
+        "prov:qualifiedAssociation": "#create_age_command_plan",
+        "prov:qualifiedGeneration": "#create_age_command_generation"
+      },
+
+      {
+        "@id": "#create_age_command_plan",
+        "@type": "provone:Association",
+        "prov:hadPlan": "#create_first_age_command"
+      },
+
+      {
+        "@id": "#age_output_variable",
+        "@type": "prov:Entity",
+        "prov:wasGeneratedBy": "#create_age_command_execution"
+      },
+
+      {
+        "@id": "#create_age_command_generation",
+        "@type": "prov:qualifiedGeneration",
+        "prov:hasOutPort": "#create_first_age_port",
+        "prov:hadEntity": "age_output_variable"
+      },
+
+      {
+        "@id": "#create_added_age_command",
+        "@type": "provone:Program",
+        "provone:hasOutPort": "#added_age_output_port",
+        "provone:hasInPort": "#age_input_port",
         "sdtl:$type": "Compute",
         "sdtl:command": "compute",
         "sdtl:sourceInformation": {
@@ -104,9 +131,8 @@
     },
 
       {
-        "@id": "#create_second_variable_port",
+        "@id": "#added_age_output_port",
         "@type": "provone:Port",
-        "provone:connectsTo": "shared_port_channel",
         
         "sdtl:variable": {
           "sdtl:$type": "VariableSymbolExpression",
@@ -119,10 +145,53 @@
         }
       },
 
+
+
+      {
+        "@id": "#create_added_age_command_execution",
+        "@type": "provone:Execution",
+        "prov:used": "#age_output_variable",
+        "prov:qualifiedAssociation": "#create_added_age_command_command_association",
+        "prov:qualifiedGeneration": "#create_added_age_command_generation",
+        "prov:qualifiedUsage": "#create_aded_age_command_usage"
+      },
+
+      {
+        "@id": "#create_added_age_command_command_association",
+        "@type": "provone:Association",
+        "prov:hadPlan": "#create_added_age_command"
+      },
+
+      {
+        "@id": "#added_age_output_variable",
+        "@type": "prov:Entity",
+        "prov:wasGeneratedBy": "#create_added_age_command_execution"
+      },
+
+      {
+        "@id": "#create_added_age_command_generation",
+        "@type": "provone:qualifiedGeneration",
+        "prov:hadEntity": "#added_age_output_variable",
+        "prov:hasOutPort": "#added_age_output_port"
+      },
+
+      {
+        "@id": "#create_added_age_command_usage",
+        "@type": "provone:qualifiedUsage",
+        "provone:hasInPort": "#age_input_port"
+
+      },
+
+      {
+        "@id": "#age_input_port",
+        "@type": "provone:Port",
+        "provone:connectsTo": "#shared_port_channel"
+      },
+
       {
         "@id": "#shared_port_channel",
         "@type": "provone:Channel"
       }
-      
+
    ]
 }

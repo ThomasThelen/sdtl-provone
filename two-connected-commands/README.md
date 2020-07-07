@@ -1,6 +1,10 @@
 # Two Connected Commands Example
 
-This is an example of an SPSS program that creates two variables and then takes the average of them. It's one of the simplest examples showing how the output of one command can be linked to the input of another.
+This is an example of an SPSS program that
+ 1. Creates a variable
+ 2. Creates a second variable, using the first
+  
+ This is designed to show a simple case where the output of one command is used as the input to another.
 
 ### Visual Representation
 
