@@ -7,20 +7,20 @@
           "provone":"http://purl.dataone.org/provone/2015/01/15/ontology#"
       },
       {
-          "sdtl": "http://SDTLnamespaceURL"
+          "sdtl": "http://SDTLnamespaceURL/#"
       }
    ],
    "@graph":[
       {
           "@id":"#script_execution",
           "@type":"provone:Execution",
-          "prov:qualifiedAssociation": "associated_plan"
+          "prov:qualifiedAssociation": "#associated_plan"
       },
       
       {
           "@id": "#associated_plan",
-          "@type": "Association",
-          "provone:hadPlan": "create_var.sps"
+          "@type": "prov:Association",
+          "provone:hadPlan": "#create_var.sps"
       },
       
       {
@@ -43,7 +43,7 @@
           "@type": "provone:Program",
           "provone:hasOutPort": "#create_first_age_port",
 
-          "sdtl:$type": "Compute",
+          "sdtl:type": "Compute",
           "sdtl:command": "compute",
           "sdtl:sourceInformation": {
             "sdtl:lineNumberStart": 1,
@@ -53,11 +53,11 @@
             "sdtl:originalSourceText": "compute median_age = 35."
           },
           "sdtl:variable": {
-            "sdtl:$type": "VariableSymbolExpression",
+            "sdtl:type": "VariableSymbolExpression",
             "sdtl:variableName": "median_age"
           },
           "sdtl:expression": {
-            "sdtl:$type": "NumericConstantExpression",
+            "sdtl:type": "NumericConstantExpression",
             "sdtl:value": "35",
             "sdtl:numericType": "int"
           }
@@ -68,12 +68,12 @@
           "@type": "provone:Port",
           "provone:connectsTo": "#shared_port_channel",
           "sdtl:variable": {
-            "sdtl:$type": "VariableSymbolExpression",
+            "sdtl:type": "VariableSymbolExpression",
             "sdtl:variableName": "newVar"
           },
           "sdtl:expression": {
-            "sdtl:$type":"NumericConstantExpression",
-            "sdtl:value": "0",
+            "sdtl:type":"NumericConstantExpression",
+            "sdtl:value": "35",
             "sdtl:numericType": "int"
           }
       },
@@ -88,7 +88,7 @@
 
       {
         "@id": "#create_age_command_plan",
-        "@type": "provone:Association",
+        "@type": "prov:Association",
         "prov:hadPlan": "#create_first_age_command"
       },
 
@@ -102,7 +102,7 @@
         "@id": "#create_age_command_generation",
         "@type": "prov:qualifiedGeneration",
         "prov:hasOutPort": "#create_first_age_port",
-        "prov:hadEntity": "age_output_variable"
+        "prov:hadEntity": "#age_output_variable"
       },
 
       {
@@ -110,55 +110,86 @@
         "@type": "provone:Program",
         "provone:hasOutPort": "#added_age_output_port",
         "provone:hasInPort": "#age_input_port",
-        "sdtl:$type": "Compute",
+        "sdtl:type": "Compute",
         "sdtl:command": "compute",
         "sdtl:sourceInformation": {
-        "sdtl:lineNumberStart": 2,
-        "sdtl:lineNumberEnd": 2,
-        "sdtl:sourceStartIndex": 26,
-        "sdtl:sourceStopIndex": 50,
-        "sdtl:originalSourceText": "compute average_age = 24."
-      },
+          "sdtl:lineNumberStart": 2,
+          "sdtl:lineNumberEnd": 2,
+          "sdtl:sourceStartIndex": 26,
+          "sdtl:sourceStopIndex": 50,
+          "sdtl:originalSourceText": "compute new_age = median_age+10."
+        },
       "sdtl:variable": {
-        "sdtl:$type": "VariableSymbolExpression",
-        "sdtl:variableName": "average_age"
+        "@id": "new_age_var",
+        "sdtl:type": "VariableSymbolExpression",
+        "sdtl:variableName": "new_age"
       },
       "sdtl:expression": {
-        "sdtl:$type": "NumericConstantExpression",
-        "sdtl:value": "24",
-        "sdtl:numericType": "int"
+        "sdtl:type": "FunctionCallExpression",
+        "sdtl:function": "addition",
+        "sdtl:isSdtlName": true,
+        "sdtl:arguments": [
+          {
+            "sdtl:type": "FunctionArgument",
+            "sdtl:argumentValue": {
+              "sdtl:type": "VariableSymbolExpression",
+              "sdtl:variableName": "median_age"
+            }
+          },
+          {
+            "sdtl:type": "FunctionArgument",
+            "sdtl:argumentValue": {
+              "sdtl:type": "NumericConstantExpression",
+              "sdtl:value": "10",
+              "sdtl:numericType": "int"
+            }
+          }
+        ]
       }
     },
-
-      {
-        "@id": "#added_age_output_port",
-        "@type": "provone:Port",
-        
-        "sdtl:variable": {
-          "sdtl:$type": "VariableSymbolExpression",
-          "sdtl:variableName": "average_age"
-        },
+     {
+       "@id": "#added_age_output_port",
+       "@type": "provone:Port",
+       "sdtl:variable": {
+         "sdtl:type": "VariableSymbolExpression",
+         "sdtl:variableName": "new_age"
+       },
        "sdtl:expression": {
-          "sdtl:$type": "NumericConstantExpression",
-          "sdtl:value": "24",
-          "sdtl:numericType": "int"
-        }
-      },
-
-
+        "sdtl:type": "FunctionCallExpression",
+        "sdtl:function": "addition",
+        "sdtl:isSdtlName": true,
+        "sdtl:arguments": [
+          {
+            "sdtl:type": "FunctionArgument",
+            "sdtl:argumentValue": {
+              "sdtl:type": "VariableSymbolExpression",
+              "sdtl:variableName": "median_age"
+            }
+          },
+          {
+            "sdtl:type": "FunctionArgument",
+            "sdtl:argumentValue": {
+              "sdtl:type": "NumericConstantExpression",
+              "sdtl:value": "10",
+              "sdtl:numericType": "int"
+            }
+          }
+        ]
+      }
+     },
 
       {
         "@id": "#create_added_age_command_execution",
         "@type": "provone:Execution",
         "prov:used": "#age_output_variable",
-        "prov:qualifiedAssociation": "#create_added_age_command_command_association",
+        "prov:qualifiedAssociation": "#create_added_age_command_association",
         "prov:qualifiedGeneration": "#create_added_age_command_generation",
         "prov:qualifiedUsage": "#create_aded_age_command_usage"
       },
 
       {
-        "@id": "#create_added_age_command_command_association",
-        "@type": "provone:Association",
+        "@id": "#create_added_age_command_association",
+        "@type": "prov:Association",
         "prov:hadPlan": "#create_added_age_command"
       },
 
@@ -179,7 +210,6 @@
         "@id": "#create_added_age_command_usage",
         "@type": "provone:qualifiedUsage",
         "provone:hasInPort": "#age_input_port"
-
       },
 
       {
@@ -192,6 +222,5 @@
         "@id": "#shared_port_channel",
         "@type": "provone:Channel"
       }
-
    ]
 }

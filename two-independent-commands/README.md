@@ -1,4 +1,4 @@
-# Two Commands Example
+# Two Independent Commands Example
 
 This is an example of an SPSS program that creates two variables that are independent of each other.
 

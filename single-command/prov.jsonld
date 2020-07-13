@@ -14,13 +14,13 @@
       {
           "@id":"#script_execution",
           "@type":"provone:Execution",
-          "prov:qualifiedAssociation": "associated_plan"
+          "prov:qualifiedAssociation": "#associated_plan"
       },
       
       {
           "@id": "#associated_plan",
           "@type": "Association",
-          "provone:hadPlan": "create_var.sps"
+          "provone:hadPlan": "#create_var.sps"
       },
       
       {
@@ -44,7 +44,7 @@
           "provone:hasOutPort": "#create_variable_port",
           "sdtl:commands": [
             {
-              "sdtl:$type": "Compute",
+              "sdtl:type": "Compute",
               "sdtl:command": "compute",
               "sdtl:sourceInformation": {
                 "sdtl:lineNumberStart": 1,
@@ -55,7 +55,7 @@
               },
 
               "sdtl:variable": {
-                "sdtl:$type": "VariableSymbolExpression",
+                "sdtl:type": "VariableSymbolExpression",
                 "sdtl:variableName": "newVar"
               },
               "sdtl:expression": {
@@ -71,11 +71,11 @@
           "@id": "#create_variable_port",
           "@type": "provone:Port",
           "sdtl:variable": {
-            "sdtl:$type": "VariableSymbolExpression",
+            "sdtl:type": "VariableSymbolExpression",
             "sdtl:variableName": "newVar"
           },
           "sdtl:expression": {
-            "sdtl:$type":"NumericConstantExpression",
+            "sdtl:type":"NumericConstantExpression",
             "sdtl:value": "0",
             "sdtl:numericType": "int"
           }
@@ -105,7 +105,7 @@
         "@id": "#create_variable_command_generation",
         "@type": "prov:qualifiedGeneration",
         "prov:hasOutPort": "#create_variable_port",
-        "prov:hadEntity": "generated_variable"
+        "prov:hadEntity": "#generated_variable"
       }
       
    ]
