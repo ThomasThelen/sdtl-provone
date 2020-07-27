@@ -145,6 +145,7 @@ For each used variable:
 2. Connect the `prov:Usage` to the `provone:Port` with
    `provone:hadInPort`
    
+### Emdedding SDTL
 
 
 ## Script Level Metadata
@@ -206,18 +207,19 @@ The rest of the terms,
 
 
 ### Embedding
- 
+This metadata should be placed in the script-level `provone:Execution`
+and `provone:Program` objects.
  
  ![](./images/prov.svg)
 
 ```json
       {
-          "@id": "#create_var_program.sps",
+          "@id": "#my_script.R",
           "@type": "provone:Program",
           "provone:hasSubProgram": "#create_variable_command",
           
           "sdtl:sourceFileName": "",
-          "sdtl:sourceLanguage": "spss",
+          "sdtl:sourceLanguage": "r",
           "sdtl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
           "sdtl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
           "sdtl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
@@ -228,16 +230,12 @@ The rest of the terms,
 ```
 
 
+## Embedding Commands
+Command level metadata is modeled inside  `provone:Program` and
+`provone:Execution` objects.
 
-
-
-## Describing Commands
-In ProvONE, command level metadata is modeled using `provone:Program`.
-objects.
-
-We can define these as "being inside" the top level `provone:program` by relating them with `provone:hasSubProgram`.
-
-An example of a program with three commands inside would, from a provenance perspective, look like
+An example of a software program with three commands inside would, from
+a prospective perspective, look like
 
 ```
 {
@@ -247,15 +245,26 @@ An example of a program with three commands inside would, from a provenance pers
     {"@id": "#command_1"},
     {"@id": "#command_2"},
     {"@id": "#command_3"},
-  ]
+  ],
+  
+  "sdtl:sourceFileName": "",
+  "sdtl:sourceLanguage": "r",
+  "sdtl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
+  "sdtl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
+  "sdtl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
+  "sdtl:sourceFileSize": 19,
+  "sdtl:lineCount": 1,
+  "sdtl:commandCount": 1
 }
 ```
 
-Note that `#my_script.R` is the same level provone:Program as the one described in the File Level Metadata section and would usually contain the script-level SDTL.
+Note that `#my_script.R` is the same level `provone:Program` as the one
+described in the File Level Metadata section and contains the
+script-level SDTL.
 
 ![](./images/commands.svg)
 
-A `provone:Program` with SDTL `command` level metadata looks like
+A `provone:Program` with SDTL command level metadata looks like
 ```
 {
   "@id": "#command_1",
@@ -263,6 +272,7 @@ A `provone:Program` with SDTL `command` level metadata looks like
   "$type": "Compute",
   "command": "compute",
   "sourceInformation": {
+    "@id": "sourceInformation_command_1",
     "lineNumberStart": 1,
     "lineNumberEnd": 1,
     "sourceStartIndex": 1,
@@ -271,7 +281,7 @@ A `provone:Program` with SDTL `command` level metadata looks like
   },
 
   "variable": {
-    "$type": "VariableSymbolExpression",
+    "@type": "VariableSymbolExpression",
     "variableName": "newVar"
   },
   "expression": {
@@ -284,8 +294,16 @@ A `provone:Program` with SDTL `command` level metadata looks like
 
 It contains information about where in the script the command is (useful since provenance does not always preserve order), what type of command (in this case `sdtl:compute`), and information about the variables used.
 
-## Ports
-Ports are objects that represent inputs and outputs to programs. When new variables are created, an associated port is created to represent this. Likewise, when a command uses data, a port is used to represent this usage.
+Note that I've specified an ID for child objects. In this case, I've
+chosen <key_parentKey> as the convention. This was done to avoid blank
+nodes (hard to reproduce queries).
+
+## Embedding Variable Information
+
+Ports are the prospective objects that represent inputs and outputs to
+programs. When new variables are created, an associated port is created
+to represent this. Likewise, when a command uses data, a port is used to
+represent this usage.
 
 A basic provone:Port has the format
 ```
@@ -297,19 +315,22 @@ A basic provone:Port has the format
 
 ![](./images/ports.svg)
 
-The C2Metadata STL parser provides information about output from commands in the `variable` and `expression` properties.
+The C2Metadata SDTL parser provides information about output from
+commands in the `variable` and `expression` properties.
 
-
+A port object containing this information looks like
 ```
 {
   "@id": "#command_1_outport",
   "@type": "provone:Port"
   "variable": {
-    "$type": "VariableSymbolExpression",
+    "@id": "#variable_command_1_outport",
+    "@type": "VariableSymbolExpression",
     "variableName": "newVar"
   },
   "expression": {
-    "$type": "NumericConstantExpression",
+    "@id": "#expression_command_1_outport,
+    "@type": "NumericConstantExpression",
     "value": "0",
     "numericType": "int"
     }
@@ -317,66 +338,24 @@ The C2Metadata STL parser provides information about output from commands in the
 ```
 
 
-
-### Connecting Programs to Ports
-Programs need to be linked to related its related provone:Port(s). This can be done two ways:
-
-1. Using provone:hasOutPort to show output
-2. Using provone:hasInPort to show usage
-
-An example of a provone:Program that produces the provone:Port above:
-```
-{
-  "@id": "#command_1",
-  "@type": "provone:Program",
-  "provone:hasOutPort": {"@id": "command_1_outport"}
-}
-```
-
-A `provone:Program` can also have multiple inports and outports. Not that the `provone:hasInPort` is using (as the naming implies) the outPort of something else.
+For retrospective provenance, `prov:Entity` objects hold the variable
+information. 
 
 ```
 {
-  "@id": "#complex_command",
-  "@type": "provone:Program",
-  "provone:hasInPort": [
-    {"@id": "command_n1_outport"},
-    {"@id": "command_n2_outport"},
-    {"@id": "command_n31_outport"}
-  ],
-  "provone:hasOutPort": {"@id": "complex_outport"}
-}
-```
-Note that this is the same image from the section above. It's included here to review after reading this section
-
-![](./images/ports.svg)
-
-### Connecting Ports to Ports
-Ports can be connected to show that the output of one or many commands is used as the input in another command. `provone:Channel` objects are used to connect the ports to each other. The `provone:Channel` itself doesn't contain much metadata, and there isn't any SDTL embedded in it.
-
-The provone:Channel doesn't contain any SDTL, and the connections are from the related `provone:Port` objects.
-```
-{
-  "@id": "#channel_port1_port2",
-  "@type": "provone:Channel"
-}
-```
-
-The first port would show a connection with
-```
-{
-  "@id": "#port_1",
-  "@type": "provone:Port",
-  "provone:connectsTo": "channel_port1_port2"
-}
-```
-
-The second as
-```
-{
-  "@id": "#port_2",
-  "@type": "provone:Port",
-  "provone:connectsTo": "channel_port1_port2"
+  "@id": "#execution_1_output_entity",
+  "@type": "prov:Entity"
+  "variable": {
+    "@id": "#variable_execution_1_output_entity",
+    "@type": "VariableSymbolExpression",
+    "variableName": "newVar"
+  },
+  "expression": {
+    "@id": "#expression_execution_1_output_entity",
+    "@type": "NumericConstantExpression",
+    "value": "0",
+    "numericType": "int"
+    }
 }
 ```
 
@@ -447,3 +426,71 @@ In this diagram, the execution of the script is included. The thought is that fi
 
 This diagram is the same as the one above but lacks the top level script information about the Entity. This _should_ give the same amount of information as the previous example: The origin of each `provone:Entity` can be traced back to the execution of `plot.py`. I say that this is _implicit_ because it's not an explicit relation on the plot.py execution but is possible to figure out.
 ![](./images/executions-base-2.svg)
+
+
+
+## Misc
+
+
+
+### Connecting Programs to Ports
+Programs need to be linked to related its related provone:Port(s). This can be done two ways:
+
+1. Using provone:hasOutPort to show output
+2. Using provone:hasInPort to show usage
+
+An example of a provone:Program that produces the provone:Port above:
+```
+{
+  "@id": "#command_1",
+  "@type": "provone:Program",
+  "provone:hasOutPort": {"@id": "command_1_outport"}
+}
+```
+
+A `provone:Program` can also have multiple inports and outports. Not that the `provone:hasInPort` is using (as the naming implies) the outPort of something else.
+
+```
+{
+  "@id": "#complex_command",
+  "@type": "provone:Program",
+  "provone:hasInPort": [
+    {"@id": "command_n1_outport"},
+    {"@id": "command_n2_outport"},
+    {"@id": "command_n31_outport"}
+  ],
+  "provone:hasOutPort": {"@id": "complex_outport"}
+}
+```
+Note that this is the same image from the section above. It's included here to review after reading this section
+
+![](./images/ports.svg)
+
+### Connecting Ports to Ports
+Ports can be connected to show that the output of one or many commands is used as the input in another command. `provone:Channel` objects are used to connect the ports to each other. The `provone:Channel` itself doesn't contain much metadata, and there isn't any SDTL embedded in it.
+
+The provone:Channel doesn't contain any SDTL, and the connections are from the related `provone:Port` objects.
+```
+{
+  "@id": "#channel_port1_port2",
+  "@type": "provone:Channel"
+}
+```
+
+The first port would show a connection with
+```
+{
+  "@id": "#port_1",
+  "@type": "provone:Port",
+  "provone:connectsTo": "channel_port1_port2"
+}
+```
+
+The second as
+```
+{
+  "@id": "#port_2",
+  "@type": "provone:Port",
+  "provone:connectsTo": "channel_port1_port2"
+}
+```
