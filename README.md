@@ -1,29 +1,149 @@
 # sdtl-provone
-This repository holds a number of different examples and descriptions of SDTL embedded in ProvONE.
+
 
 ## Repository Structure
 
-`single-command/`: Creates a single variable.
+`examples/`: Directory holding examples of a ProvONE data model paired
+with SDTL 
 
-`two-commands/`: Creates two variables.
-
-`two-connected-commands/`: Creates a variable which is then used by a second variable.
-
-`three-connected-commands/`: Creates a variable which is used by a second variable. The second variable is used by a third variable.
-
-`two-input/`: Creates two variables and then a third variable that uses uses both of them.
-
-`workflow/`: Shows how multiple files can be part of a provone:Workflow
+`images/`: Images found in this README
 
 ## Overview
-The general idea is to embed SDTL from C2Metadata into a ProvONE representation. This is done by first using `provone:Program`, `provone:Port`, `provone:Channel`, and possible `provone:Workflow` objects to represent commands within script files and the relations between them.
 
-Next, the relevant SDTL is inserted into the appropriate provone objects.
+The broad goal is to take SDTL metadata and create an RDF data model
+that describes the inner-workings of the script that the SDTL describes.
+The ProvONE data model has a sufficient vocabulary to represent the
+creation and flow of information in the script. SDTL can then be
+embedded in the provone/prov objects to give a much more rich data
+model.
 
 
+## Mapping
+
+Creating provenance from the SDTL happens in three steps:
+1. Creating the retrospective model
+2. Creating the introspective model
+3. Connecting the retrospective and introspective models
+
+I've separated out the instructions for connecting provenance because it
+requires the existence of both prospective and retrospective provenance.
+
+### Constructing the Retrospective Provenance
+The retrospective provenance is concerned with the following RDF 
+objects:
+1. provone:Execution
+2. prov:Entity
+3. prov:Generation
+4. prov:Usage
+5. prov:Association
 
 
-## Describing Script Level Metadata
+The execution of a script is represented with a `provone:Execution`. The
+`provone:Execution` _can_ have inputs and outputs however, the top level
+`provone:Execution` in this case doesn't. The execution of each command
+in the script is also represented by the `provone:Execution`. Also note
+that there isn't an object that holds the top level
+script-representations, as opposed to the `prov:Workflow` that
+prospective provenance has.
+
+Unless noted, referencing `provone:Execution` refers to the _command_
+level `provone:Execution`.
+ 
+For each script file:
+1. Create a `provone:Execution` to represent the execution of the
+   script. This is referred to as the script-level execution.
+
+
+For each SDTL Command, 
+1. Create a new `provone:Execution` 
+2. Connect it to the script-level `provone:Execution` with
+   `provone:wasPartOf`
+3. Create a new `prov:Association` and connect the `provone:Execution`
+   to it with `prov:qualifiedAssociation`
+   
+For each created variable: 
+1. Create a `prov:Entity`
+2. Connect the `prov:Entity` to the `provone:Execution` with
+   `prov:wasGeneratedBy`
+3. Create a `prov:Generation`
+4. Connect the `prov:Execution` to the `prov:Generation` with
+   `prov:qualifiedGeneration`
+5. Connect the `prov:Generation` to the `prov:Entity` with
+   `prov:hadEntity`
+
+
+For each used variable:
+1. Create or use an existing `prov:Entity` that represents the used
+   variable
+2. Connect the `provone:Execution` to the entity with `prov:Used`
+3. Create a prov:Usage and connect the `prov:Execution` to it with
+   `prov:qualifiedUsage
+ 
+ 
+The relationship between SDTL command executions and the parent
+execution representing the script's execution.
+![](./images/parent-execution.svg)
+
+
+### Constructing the Prospective Provenance
+The prospective provenance is concerned with the following objects:
+1. provone:Program
+2. provone:Port
+3. provone:Workflow
+
+For each script,
+1. Create a `provone:Program` that represents the collection of
+   `provone:Program` objects within
+2. Create a `provone:Workflow` object if one doesn't already exist
+3. Connect the `provone:Workflow` to the new `provone:program` with
+   `provone:hasSubProgram`
+ 
+For each command,
+1. Create a `provone:Program`
+2. Connect the top level `provone:Program` to it with
+   `provone:hasSubProgram`
+
+If the `provone:Program` creates a variable:
+1. Create a `provone:Port`
+2. Connect the `provone:Program` to it with `provone:hasOutPort`
+
+If the `provone:Program` uses a variable Note that the variable being
+used _should_ be connected to a channel
+1. Create a `provone:Port`
+2. Connect it to the target `provone:Channel` with `provone:connectsTo`
+3. Connect the `provone:Program` to it with `provone:hasInPort` 
+
+
+### Connecting Retrospective & Prospective
+The retrospective and prospective models are connected by the following
+objects:
+1. prov:Association
+2. prov:Generation
+3. prov: Association
+4. provone:Port
+5. provone:Program
+6. provone:Channel
+ 
+ The first three objects are retrospective while the
+   last two are prospective. The two areas are connected by the inputs
+   and outputs (the channel and prov:Entity).
+
+For each created variable:
+1. A `prov:Entity` and `provone:Port` should already exist representing
+   the new variable
+2. A `prov:Generation` should already exist
+3. Connect the `prov:Generation` to the `provone:Port`
+
+For each used variable:
+1. Connect the `provone:Execution` to the used `prov:Entity` with
+   `prov:Used`
+2. Create a new `provone:Port` that represents the input.
+3. If the output port from the `provone:Program` that created the
+   variable being used is present
+3. Create a provone: `provone:Program`
+
+
+## Script Level Metadata
 C2Metadata provides output about the script passed to its parser. A sample of this looks like
 ```
   "id": "program-1",
@@ -41,10 +161,15 @@ C2Metadata provides output about the script passed to its parser. A sample of th
   "modelCreatedTime": "2020-04-14T18:38:10+00:00",
 ```
 
+This metadata is most closely associated with the top level
+`provone:Program` and `provone:Exection`.
+
+
 ### Discarded Terms
 Some of these (listed below) don't belong in the a provenance trace.
 
-  `id`: This corresponds to the parser run ID
+  `id`: This corresponds to the parser run ID. The provone:Execution or
+  provone:Program will already have a unique ID.
 
   `parser`: Which C2Metadata parser the output is from
 
@@ -54,7 +179,6 @@ Some of these (listed below) don't belong in the a provenance trace.
 
   `modelCreatedTime`
 
-One _could_ create a new provone:Execution that represents the running of the parser. This metadata most likely belongs there however, it's not in scope.
 
 
 ### Terms Kept
@@ -76,11 +200,11 @@ The rest of the terms,
   
   `commandCount`: The number of SDTL commands inside
 
-are arguably useful for someone that's interested in the origins of _something_ and are kept for this reason.
 
-The top level script forms the first node in the provenance representation. As seen below, new nodes that represent SDTL commands will be added to this.
-
-![](./images/prov.svg)
+### Embedding
+ 
+ 
+ ![](./images/prov.svg)
 
 ```json
       {
@@ -104,7 +228,8 @@ The top level script forms the first node in the provenance representation. As s
 
 
 ## Describing Commands
-Commands are the next pieces of interesting output from the SDTL parser. These are the SDTL objects that describe the actual line of source code. In ProvONE, it's modeled using `provone:Program` objects. 
+In ProvONE, command level metadata is modeled using `provone:Program`.
+objects.
 
 We can define these as "being inside" the top level `provone:program` by relating them with `provone:hasSubProgram`.
 
