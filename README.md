@@ -77,11 +77,13 @@ For each used variable:
    variable
 2. Connect the `provone:Execution` to the entity with `prov:Used`
 3. Create a prov:Usage and connect the `prov:Execution` to it with
-   `prov:qualifiedUsage
- 
+   `prov:qualifiedUsage`
+
+
  
 The relationship between SDTL command executions and the parent
 execution representing the script's execution.
+
 ![](./images/parent-execution.svg)
 
 
@@ -92,9 +94,10 @@ The prospective provenance is concerned with the following objects:
 3. provone:Workflow
 
 For each script,
-1. Create a `provone:Program` that represents the collection of
-   `provone:Program` objects within
-2. Create a `provone:Workflow` object if one doesn't already exist
+1. Create a top level `provone:Program` that represents the script-level
+   program
+2. Create a `provone:Workflow` object if one doesn't already exist. This
+   represents a collection of scripts
 3. Connect the `provone:Workflow` to the new `provone:program` with
    `provone:hasSubProgram`
  
@@ -107,40 +110,41 @@ If the `provone:Program` creates a variable:
 1. Create a `provone:Port`
 2. Connect the `provone:Program` to it with `provone:hasOutPort`
 
-If the `provone:Program` uses a variable Note that the variable being
-used _should_ be connected to a channel
+If the `provone:Program` uses a variable: 
+
+Note that there should be a corresponding `provone:Program` that created
+the variable being used. That `provone:Program` _should_ have a
+`provone:Port` connected to a `provone:Channel`
+
 1. Create a `provone:Port`
 2. Connect it to the target `provone:Channel` with `provone:connectsTo`
-3. Connect the `provone:Program` to it with `provone:hasInPort` 
+3. Connect the `provone:Program` to the `provone:Port` with
+   `provone:hasInPort`
 
 
 ### Connecting Retrospective & Prospective
-The retrospective and prospective models are connected by the following
+The retrospective and prospective models are connected at the following
 objects:
-1. prov:Association
-2. prov:Generation
-3. prov: Association
-4. provone:Port
-5. provone:Program
-6. provone:Channel
+1. `provone:Program` <-> `prov:Association`
+2. `prov:Port` <-> `prov:Generation` & `prov:Usage`
  
- The first three objects are retrospective while the
-   last two are prospective. The two areas are connected by the inputs
-   and outputs (the channel and prov:Entity).
+For each `provone:Execution`/`provone:Program`:
+1. Connect the `prov:Association` to the `provone:Program` with
+   `prov:hadPlan`
 
 For each created variable:
 1. A `prov:Entity` and `provone:Port` should already exist representing
    the new variable
 2. A `prov:Generation` should already exist
-3. Connect the `prov:Generation` to the `provone:Port`
+3. Connect the `prov:Generation` to the `provone:Port` with
+   `provone:hadOutPort`
 
 For each used variable:
 1. Connect the `provone:Execution` to the used `prov:Entity` with
    `prov:Used`
-2. Create a new `provone:Port` that represents the input.
-3. If the output port from the `provone:Program` that created the
-   variable being used is present
-3. Create a provone: `provone:Program`
+2. Connect the `prov:Usage` to the `provone:Port` with
+   `provone:hadInPort`
+   
 
 
 ## Script Level Metadata
