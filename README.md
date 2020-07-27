@@ -360,7 +360,8 @@ information.
 ```
 
 
-![](./images/channel.svg)
+
+## Misc
 
 ## Describing Workflows
 As seen in the previous sections, ProvONE allows the grouping of `provone:Program` by with `provone:hasSubProgram`. We previously used it to describe the relationship between the individual commands in the script and the script itself.
@@ -375,62 +376,6 @@ The following diagram describes the following workflow
 1. Execute `format_analysis.R` that uses the output of step 2 to create another output.
 
 ![](./images/workflow.svg)
-
-
-#### Describing the Script File as a provone:Workflow
-The main concern with turning the parent script files into `provone:Worfklow` objects is that it might break compatibility. For example, can we associate a `provone:Execution`?
-
-If there's no issue, it might be more correct to say,
-
-![](./images/workflow-programs.svg)
-
-
-## Adding Executions
-The discussion so far has been about abstract inputs and outputs; we haven't actually talked about any actual files on the filesystem and how they relate to the abstract `provone:Port` objects.The goal is to state which `provone:Port` objects were used in the creation or usage of a `provone:Entity`.
-
-Consider a script, plot.py that reads data from a file and produces a plot. For simplicity, we're not concerned with the actual commands inside plot.py. The following is a full provenance trace that connects the output of the `provone:Program` to concrete objects (shown in red)
-
-![](https://github.com/ThomasThelen/provone-examples/raw/master/single-read-write/images/generation-ports.svg)
-
-
-The provenance objects in red describe concrete files that were touched during the execution (yellow) of the `provone:program` plot.py. Note that this is at the _script_ level.
-
-### Link at the Script Level
-The first idea is to do something _very_ similar to the diagram above. If we add two commands to the script to first load the data and then output an image, it looks like.
-
-
-![](./images/entity-base.svg)
-In this example, the `provone:Entity` objects are linked to the `provone:Program`'s ports. Although this is accurate, and completely truthful-we can still say more about the lineage of data. 
-
-
-#### Connecting With a Channel
-Having multiple ports connecting to a `provone:Channel` is valid, and may be done here. By doing so, we're able to make a claim about the relationship between the data (`provone:port`) and a `provone:program` with and the `provone:Entity`.
-
-![](./images/entity-channel.svg)
-
-#### Inaccuracies
-The diagram in this section is similar to the others, but there's a twist: a third command is present that doesn't have any effect on the image. Let's pretend that the third command says
-```COMPUTE a=1+1```. By the logic in the sections above, this command is related to the image file when in reality it's not.
-
-![](./images/entity-problem.svg)
-
-One solution is to the Channel concept and not connect the unrelated port to it. Another solution is to model the execution of commands, which gives far more control over what is meant by output and input.
-
-### Executions of Commands
-Just how in the previous section we talked about executions of scripts, we can do the same with commands. This gives a more granular view as to which commands were relevant in the creation or usage of a `provone:Entity`.
-
-In this diagram, the execution of the script is included. The thought is that files can be created and destroyed without having an effect on the script level. In this case there wouldn't be a record of these on the script level.
-
-![](./images/executions-base.svg)
-
-
-This diagram is the same as the one above but lacks the top level script information about the Entity. This _should_ give the same amount of information as the previous example: The origin of each `provone:Entity` can be traced back to the execution of `plot.py`. I say that this is _implicit_ because it's not an explicit relation on the plot.py execution but is possible to figure out.
-![](./images/executions-base-2.svg)
-
-
-
-## Misc
-
 
 
 ### Connecting Programs to Ports
@@ -494,3 +439,6 @@ The second as
   "provone:connectsTo": "channel_port1_port2"
 }
 ```
+
+
+![](./images/channel.svg)
