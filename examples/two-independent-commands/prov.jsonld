@@ -1,120 +1,115 @@
 {
-   "@context":[
-      {
-          "prov":"http://www.w3.org/ns/prov#"
+  "@context": [
+    {
+      "prov": "http://www.w3.org/ns/prov#"
+    },
+    {
+      "provone": "http://purl.dataone.org/provone/2015/01/15/ontology#"
+    },
+    {
+      "sdtl": "http://SDTLnamespaceURL/#"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "#script_workflow",
+      "@type": "provone:Workflow",
+      "provone:hasSubProgram": [
+        {
+          "@id": "#create_var.sps"
+        }
+      ]
+    },
+    {
+      "@id": "#create_var.sps",
+      "@type": "provone:Program",
+      "provone:hasSubProgram": [
+        {
+          "@id": "#create_variable_command"
+        },
+        {
+          "@id": "#create_second_variable_command"
+        }
+      ],
+      "sdtl:sourceFileName": "",
+      "sdtl:sourceLanguage": "spss",
+      "sdtl:scriptMD5": "631de6aaf22bd758017ed29b3f6cff25",
+      "sdtl:scriptSHA1": "7a1b5d90cf49860bf51cdbbb2e3820c4395a52e1",
+      "sdtl:sourceFileLastUpdate": "2020-05-07T18:46:17+00:00",
+      "sdtl:sourceFileSize": 51,
+      "sdtl:lineCount": 2,
+      "sdtl:commandCount": 2
+    },
+    {
+      "@id": "#create_variable_command",
+      "@type": "provone:Program",
+      "provone:hasOutPort": "#create_variable_port",
+      "sdtl:type": "Compute",
+      "sdtl:command": "compute",
+      "sdtl:sourceInformation": {
+        "sdtl:lineNumberStart": 1,
+        "sdtl:lineNumberEnd": 1,
+        "sdtl:sourceStartIndex": 1,
+        "sdtl:sourceStopIndex": 24,
+        "sdtl:originalSourceText": "compute median_age = 35."
       },
-      {
-          "provone":"http://purl.dataone.org/provone/2015/01/15/ontology#"
+      "sdtl:variable": {
+        "sdtl:type": "VariableSymbolExpression",
+        "sdtl:variableName": "median_age"
       },
-      {
-          "sdtl": "http://SDTLnamespaceURL/#"
+      "sdtl:expression": {
+        "sdtl:type": "NumericConstantExpression",
+        "sdtl:value": "35",
+        "sdtl:numericType": "int"
       }
-   ],
-   "@graph":[
-      {
-          "@id":"#script_execution",
-          "@type":"provone:Execution",
-          "prov:qualifiedAssociation": "#associated_plan"
+    },
+    {
+      "@id": "#create_variable_port",
+      "@type": "provone:Port",
+      "sdtl:variable": {
+        "sdtl:type": "VariableSymbolExpression",
+        "sdtl:variableName": "newVar"
       },
-      
-      {
-          "@id": "#associated_plan",
-          "@type": "Association",
-          "provone:hadPlan": "#create_var.sps"
-      },
-      
-      {
-          "@id": "#create_var.sps",
-          "@type": "provone:Program",
-          "provone:hasSubProgram": [
-            {"@id": "#create_variable_command"},
-            {"@id": "#create_second_variable_command"}
-          ],
-          "sdtl:sourceFileName": "",
-          "sdtl:sourceLanguage": "spss",
-          "sdtl:scriptMD5": "631de6aaf22bd758017ed29b3f6cff25",
-          "sdtl:scriptSHA1": "7a1b5d90cf49860bf51cdbbb2e3820c4395a52e1",
-          "sdtl:sourceFileLastUpdate": "2020-05-07T18:46:17+00:00",
-          "sdtl:sourceFileSize": 51,
-          "sdtl:lineCount": 2,
-          "sdtl:commandCount": 2
-      },
-      
-      {
-          "@id": "#create_variable_command",
-          "@type": "provone:Program",
-          "provone:hasOutPort": "#create_variable_port",
-
-          "sdtl:type": "Compute",
-          "sdtl:command": "compute",
-          "sdtl:sourceInformation": {
-            "sdtl:lineNumberStart": 1,
-            "sdtl:lineNumberEnd": 1,
-            "sdtl:sourceStartIndex": 1,
-            "sdtl:sourceStopIndex": 24,
-            "sdtl:originalSourceText": "compute median_age = 35."
-          },
-          "sdtl:variable": {
-            "sdtl:type": "VariableSymbolExpression",
-            "sdtl:variableName": "median_age"
-          },
-          "sdtl:expression": {
-            "sdtl:type": "NumericConstantExpression",
-            "sdtl:value": "35",
-            "sdtl:numericType": "int"
-          }
-      },
-
-      {
-          "@id": "#create_variable_port",
-          "@type": "provone:Port",
-          "sdtl:variable": {
-            "sdtl:type": "VariableSymbolExpression",
-            "sdtl:variableName": "newVar"
-          },
-          "sdtl:expression": {
-            "sdtl:$type":"NumericConstantExpression",
-            "sdtl:value": "0",
-            "sdtl:numericType": "int"
-          }
-      },
-
-
-
-      {
-        "@id": "#create_first_variable_execution",
-        "@type": "provone:Execution",
-        "prov:qualifiedAssociation": "#create_first_variable_association",
-        "prov:qualifiedGeneration": "#create_first_variable_generation"
-      },
-
-      {
-        "@id": "#create_first_variable_association",
-        "@type": "provone:Association",
-        "prov:hadPlan": "#create_variable_command"
-      },
-
-      {
-        "@id": "#create_first_variable_entity",
-        "@type": "prov:Entity",
-        "prov:wasGeneratedBy": "#create_first_variable_execution"
-      },
-
-      {
-        "@id": "#create_first_variable_generation",
-        "@type": "provone:qualifiedGeneration",
-        "prov:hadEntity": "#create_first_variable_entity",
-        "prov:hasOutPort": "#create_variable_port"
-      },
-
-      {
-        "@id": "#create_second_variable_command",
-        "@type": "provone:Program",
-        "provone:hasOutPort": "#create_second_variable_port",
-
-        "sdtl:type": "Compute",
-        "sdtl:command": "compute",
-        "sdtl:sourceInformation": {
+      "sdtl:expression": {
+        "sdtl:$type": "NumericConstantExpression",
+        "sdtl:value": "0",
+        "sdtl:numericType": "int"
+      }
+    },
+    {
+      "@id": "#script_execution",
+      "@type": "provone:Execution"
+    },
+    {
+      "@id": "#create_first_variable_execution",
+      "@type": "provone:Execution",
+      "prov:qualifiedAssociation": "#create_first_variable_association",
+      "prov:qualifiedGeneration": "#create_first_variable_generation",
+      "prov:wasPartOf": "#script_execution"
+    },
+    {
+      "@id": "#create_first_variable_association",
+      "@type": "provone:Association",
+      "prov:hadPlan": "#create_variable_command"
+    },
+    {
+      "@id": "#create_first_variable_entity",
+      "@type": "prov:Entity",
+      "prov:wasGeneratedBy": "#create_first_variable_execution"
+    },
+    {
+      "@id": "#create_first_variable_generation",
+      "@type": "provone:qualifiedGeneration",
+      "prov:hadEntity": "#create_first_variable_entity",
+      "prov:hasOutPort": "#create_variable_port"
+    },
+    {
+      "@id": "#create_second_variable_command",
+      "@type": "provone:Program",
+      "provone:hasOutPort": "#create_second_variable_port",
+      "sdtl:type": "Compute",
+      "sdtl:command": "compute",
+      "sdtl:sourceInformation": {
         "sdtl:lineNumberStart": 2,
         "sdtl:lineNumberEnd": 2,
         "sdtl:sourceStartIndex": 26,
@@ -131,47 +126,41 @@
         "sdtl:numericType": "int"
       }
     },
-
-      {
-        "@id": "#create_second_variable_port",
-        "@type": "provone:Port",
-        
-        "sdtl:variable": {
-          "sdtl:type": "VariableSymbolExpression",
-          "sdtl:variableName": "average_age"
-        },
-       "sdtl:expression": {
-          "sdtl:type": "NumericConstantExpression",
-          "sdtl:value": "24",
-          "sdtl:numericType": "int"
-        }
+    {
+      "@id": "#create_second_variable_port",
+      "@type": "provone:Port",
+      "sdtl:variable": {
+        "sdtl:type": "VariableSymbolExpression",
+        "sdtl:variableName": "average_age"
       },
-
-      {
-        "@id": "#create_second_variable_execution",
-        "@type": "provone:Execution",
-        "prov:qualifiedAssociation": "#create_second_variable_association",
-        "prov:qualifiedGeneration": "#create_second_variable_generation"
-      },
-
-      {
-        "@id": "#create_second_variable_association",
-        "@type": "provone:Association",
-        "prov:hadPlan": "#create_second_variable_command"
-      },
-
-      {
-        "@id": "#create_second_variable_entity",
-        "@type": "prov:Entity",
-        "prov:wasGeneratedBy": "#create_second_variable_execution"
-      },
-
-      {
-        "@id": "#create_second_variable_generation",
-        "@type": "provone:qualifiedGeneration",
-        "prov:hadEntity": "#create_second_variable_entity",
-        "prov:hasOutPort": "#create_second_variable_port"
+      "sdtl:expression": {
+        "sdtl:type": "NumericConstantExpression",
+        "sdtl:value": "24",
+        "sdtl:numericType": "int"
       }
-
-   ]
+    },
+    {
+      "@id": "#create_second_variable_execution",
+      "@type": "provone:Execution",
+      "prov:qualifiedAssociation": "#create_second_variable_association",
+      "prov:qualifiedGeneration": "#create_second_variable_generation",
+      "prov:wasPartOf": "#script_execution"
+    },
+    {
+      "@id": "#create_second_variable_association",
+      "@type": "provone:Association",
+      "prov:hadPlan": "#create_second_variable_command"
+    },
+    {
+      "@id": "#create_second_variable_entity",
+      "@type": "prov:Entity",
+      "prov:wasGeneratedBy": "#create_second_variable_execution"
+    },
+    {
+      "@id": "#create_second_variable_generation",
+      "@type": "provone:qualifiedGeneration",
+      "prov:hadEntity": "#create_second_variable_entity",
+      "prov:hasOutPort": "#create_second_variable_port"
+    }
+  ]
 }

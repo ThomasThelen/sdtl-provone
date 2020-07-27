@@ -20,6 +20,9 @@ model.
 
 ## Mapping
 
+### Notes on notation
+
+
 Creating provenance from the SDTL happens in three steps:
 1. Creating the retrospective model
 2. Creating the introspective model

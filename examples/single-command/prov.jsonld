@@ -1,112 +1,116 @@
 {
-   "@context":[
-      {
-          "prov":"http://www.w3.org/ns/prov#"
-      },
-      {
-          "provone":"http://purl.dataone.org/provone/2015/01/15/ontology#"
-      },
-      {
-          "sdtl": "http://SDTLnamespaceURL"
-      }
-   ],
-   "@graph":[
-      {
-          "@id":"#script_execution",
-          "@type":"provone:Execution",
-          "prov:qualifiedAssociation": "#associated_plan"
-      },
-      
-      {
-          "@id": "#associated_plan",
-          "@type": "Association",
-          "provone:hadPlan": "#create_var.sps"
-      },
-      
-      {
-          "@id": "#create_var.sps",
-          "@type": "provone:Program",
-          "provone:hasSubProgram": "#create_variable_command",
-          
-          "sdtl:sourceFileName": "",
-          "sdtl:sourceLanguage": "spss",
-          "sdtl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
-          "sdtl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
-          "sdtl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
-          "sdtl:sourceFileSize": 19,
-          "sdtl:lineCount": 1,
-          "sdtl:commandCount": 1
-      },
-      
-      {
-          "@id": "#create_variable_command",
-          "@type": "provone:Program",
-          "provone:hasOutPort": "#create_variable_port",
-          "sdtl:commands": [
-            {
-              "sdtl:type": "Compute",
-              "sdtl:command": "compute",
-              "sdtl:sourceInformation": {
-                "sdtl:lineNumberStart": 1,
-                "sdtl:lineNumberEnd": 1,
-                "sdtl:sourceStartIndex": 1,
-                "sdtl:sourceStopIndex": 19,
-                "sdtl:originalSourceText": "compute newVar = 0."
-              },
-
-              "sdtl:variable": {
-                "sdtl:type": "VariableSymbolExpression",
-                "sdtl:variableName": "newVar"
-              },
-              "sdtl:expression": {
-                "sdtl:$type": "NumericConstantExpression",
-                "sdtl:value": "0",
-                "sdtl:numericType": "int"
-              }
-            }
-          ]
-      },
-
-      {
-          "@id": "#create_variable_port",
-          "@type": "provone:Port",
+  "@context": [
+    {
+      "prov": "http://www.w3.org/ns/prov#"
+    },
+    {
+      "provone": "http://purl.dataone.org/provone/2015/01/15/ontology#"
+    },
+    {
+      "sdtl": "http://SDTLnamespaceURL/#"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "#script_execution",
+      "@type": "provone:Execution"
+    },
+    {
+      "@id": "#first_command_execution",
+      "@type": "provone:Execution",
+      "prov:qualifiedAssociation": "#associated_plan",
+      "prov:wasPartOf": "#script_execution"
+    },
+    {
+      "@id": "#associated_plan",
+      "@type": "Association",
+      "provone:hadPlan": "#create_var.sps"
+    },
+    {
+      "@id": "#create_var.sps",
+      "@type": "provone:Program",
+      "provone:hasSubProgram": "#create_variable_command",
+      "sdtl:sourceFileName": "",
+      "sdtl:sourceLanguage": "spss",
+      "sdtl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
+      "sdtl:scriptSHA1": "3dead21a7b31e1409d2ab364cbf4f734366186ad",
+      "sdtl:sourceFileLastUpdate": "2020-04-14T18:38:10+00:00",
+      "sdtl:sourceFileSize": 19,
+      "sdtl:lineCount": 1,
+      "sdtl:commandCount": 1
+    },
+    {
+      "@type": "provone:Workflow",
+      "@id": "#script_workflow",
+      "provone:hasSubProgram": "#create_variable_command"
+    },
+    {
+      "@id": "#create_variable_command",
+      "@type": "provone:Program",
+      "provone:hasOutPort": "#create_variable_port",
+      "sdtl:commands": [
+        {
+          "@id": "#commands_create_variable_command",
+          "sdtl:type": "Compute",
+          "sdtl:command": "compute",
+          "sdtl:sourceInformation": {
+            "@id": "#sourceInformation_commands_create_variable_command",
+            "sdtl:lineNumberStart": 1,
+            "sdtl:lineNumberEnd": 1,
+            "sdtl:sourceStartIndex": 1,
+            "sdtl:sourceStopIndex": 19,
+            "sdtl:originalSourceText": "compute newVar = 0."
+          },
           "sdtl:variable": {
+            "@id": "#variable_commands_create_variable_command",
             "sdtl:type": "VariableSymbolExpression",
             "sdtl:variableName": "newVar"
           },
           "sdtl:expression": {
-            "sdtl:type":"NumericConstantExpression",
+            "@id": "#expression_commands_create_variable_command",
+            "sdtl:$type": "NumericConstantExpression",
             "sdtl:value": "0",
             "sdtl:numericType": "int"
           }
+        }
+      ]
+    },
+    {
+      "@id": "#create_variable_port",
+      "@type": "provone:Port",
+      "sdtl:variable": {
+        "@id": "#variable_create_variable_port",
+        "sdtl:type": "VariableSymbolExpression",
+        "sdtl:variableName": "newVar"
       },
-
-
-      {
-        "@id": "#create_variable_command_exection",
-        "@type": "provone:Execution",
-        "prov:qualifiedAssociation": "#create_variable_command",
-        "prov:qualifiedGeneration": "#create_variable_command_exection"
-      },
-
-      {
-        "@id": "#create_variable_associated_plan",
-        "@type": "provone:Association",
-        "prov:hadPlan": "#create_variable_command"
-      },
-
-      {
-        "@id": "#generated_variable",
-        "@type": "prov:Entity",
-        "prov:wasGeneratedBy": "#create_variable_command_exection"
-      },
-
-      {
-        "@id": "#create_variable_command_generation",
-        "@type": "prov:qualifiedGeneration",
-        "prov:hasOutPort": "#create_variable_port",
-        "prov:hadEntity": "#generated_variable"
+      "sdtl:expression": {
+        "@id": "#expression_create_variable_port",
+        "sdtl:type": "NumericConstantExpression",
+        "sdtl:value": "0",
+        "sdtl:numericType": "int"
       }
-      
-   ]
+    },
+    {
+      "@id": "#create_variable_command_exection",
+      "@type": "provone:Execution",
+      "prov:qualifiedAssociation": "#create_variable_command",
+      "prov:qualifiedGeneration": "#create_variable_command_exection"
+    },
+    {
+      "@id": "#create_variable_associated_plan",
+      "@type": "provone:Association",
+      "prov:hadPlan": "#create_variable_command"
+    },
+    {
+      "@id": "#generated_variable",
+      "@type": "prov:Entity",
+      "prov:wasGeneratedBy": "#create_variable_command_exection"
+    },
+    {
+      "@id": "#create_variable_command_generation",
+      "@type": "prov:qualifiedGeneration",
+      "prov:hasOutPort": "#create_variable_port",
+      "prov:hadEntity": "#generated_variable"
+    }
+  ]
 }
