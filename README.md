@@ -20,87 +20,135 @@ model.
 
 ## Mapping
 The creation of the RDF model and embedding of SDTL properties can be
-automated. This section is concerned with how that mapping happens.
+automated. This section is concerned with the specifics of how that
+mapping should happen.
 
 ### Notation
-When generating the model, the naming convention ideally doesn't change.
-The following section outlines a naming convention for identifiers and
-labels.
+When generating the model, the naming convention ideally doesn't change
+between generations (ie not random identifiers) . The following section
+outlines a naming convention for identifiers and labels.
 
 #### Assigning Identifiers
 
 The naming convention for identifiers was taken from the `Patterned
-URIs` section in 
+URIs` section in
 [Linked Data Patterns](https://patterns.dataincubator.org/book/).
 
-`#plurized_type/current_type_count`. where `current_type_count` is the
-object's count.
+Because there are many different classes between prov, ProvONE, and SDTL
+it's impractical to create a mapping to plurized forms.
+
+The general form of the identifier is...
+
+`#lowercase_type/current_type_count`. where `current_type_count` is the
+count of the particular object.
 
 Example:
 
-    If a document has three provone:Program objects, the RDF model should have three identifiers that resemble
-    1. #programs/1
-    2. #programs/2
-    3. #programs/3
+    If a document has three provone:Program objects and one provone:Port, the RDF model should have three identifiers that resemble
+    1. #program/1
+    2. #program/2
+    3. #program/3
+    4. #port/1
     
 Note that there aren't any nested URIs and they are referenced from the
-top level (not `#programs/1/ports/2`); instead, accessing the second
-port should be `#ports/2`.
+top level (not `#program/1/port/1`); instead, accessing the second port
+should be `#port/1`.
 
-##### Major Plurized Classes
-This section lays out the what the plural version of the popular prov,
-ProvONE, and SDTL objects should be. If an object isn't listed here, use
-a sensible plurized name.
+##### Example Mappings
 
-Note that the plural versions are lower cased.
 
 ###### Prospective
-1. provone:Workflow -> workflows
-2. provone:Program -> programs
-3. provone: Port -> ports
-4. provone:Channel -> channels
+1. provone:Workflow -> workflow
+2. provone:Program -> program
+3. provone: Port -> port
+4. provone:Channel -> channel
 
 ###### Retrospective
 1. provone:Execution
-2. prov:Entity -> entities
+2. prov:Entity -> entity
 3. provone:Data -> data
-4. prov:Usage -> usages
-5. provone:Document -> documents
-6. provone:Visualization -> visualizations
-7. prov:Generation -> generations
-8. prov:Association -> associations
-9. provone:Collection -> collections 
+4. prov:Usage -> usage
+5. provone:Document -> document
+6. provone:Visualization -> visualization
+7. prov:Generation -> generation
+8. prov:Association -> association
+9. provone:Collection -> collection 
 
 
 ###### SDTL
-1. sdtl:variable -> variables
-2. sdtl:VariableSymbolExpression -> variablesymbolexpressions
-3. sdtl:commands -> commands
+SDTL has many more classes than Prov & ProvONE; so follow the general
+case of lower-caps and counting the number of instances the class has.
 
+1. allTextVariablesExpression -> alltextvariablesexpression
+2. functionArgument -> functionargument
+3. command -> command
 
 
 #### Labels
 Every object _should_ have an `rdfs:label`. This label should give some
-sort of description of the object. This is used/read by someone querying
-the data model and is important for readability.
+sort of description of the object's identifier. This is used/read by
+someone querying the data model and is important for readability.
 
-Because the resources are programmatically generated, the labels will be
-generated from an algorithm. The challenge is encoding enough
-information in the label in an automated way such that it's easier to
-understand than the identifier.
+Because the RDF objects are programmatically generated, the labels will
+have to be generated algorithmically. This leaves the challenge of
+encoding enough information in the label in an automated way such that
+it's easier to understand and more user friendly than the identifier.
+
+The ProvONE ontology has an `rdfs:label` defined for each class however,
+it's not in the context of this application (doesn't provide anything
+new/of use). 
+
+To provide context around this application (describing commands _and_
+script level workflows), the following formats are given.
+
+##### Objects and Their Labels
+Note that these labels are _not_ unique across objects.
+
+The general form for a label is similar to the identifier,
+
+`#type current_type_count`
+
+The main difference is the replacement of `/` with a space. The
+requirement that the type names are lower-cased is relaxed.
+
+###### Examples
+
+**Workflow** 
+
+`rdfs:label`: `Workflow current_type_count`
+
+**Program**:
+ 
+`rdfs:label`: `Program current_type_count`
+ 
+**fileName**
+
+`rdfs:label`: `fileName current_type_count`
+
+##### SDTL
+
+SDTL already has descriptions for major SDTL objects in the schema.
+These can be used to generate the label for each SDTL object.
+
+    Example:
+    {
+        "@id": "#filename/1,
+        "@type": "sdtl:fileName",
+        "rdfs:label": "fileName 1",
+    }
 
 
-
-
-
+  
    
-Example: 
+   
+   
+   Example:
 
 ```
 {
     "@id": "#workflows/1",
     "@type": "provone:Workflow",
-    "rdfs:label": "",
+    "rdfs:label": "Workflow 1",
     "provone:hasSubProgram": [
         { "@id": "#programs/1" },
         { "@id": "#programs/2" }
@@ -109,18 +157,21 @@ Example:
 
 {
 "@id": "#executions/1",
-"@type": "provone:Execution" 
+"@type": "provone:Execution",
+"rdfs:type": "Execution 1"
 }
 
 {
     "@id": "#programs/1",
     "@type": "provone:Program",
+    "rdfs:label" "Program 1",
     "provone:wasPartOf: "#executions/1"
 }
 
 {
     "@id": "#programs/2",
     "@type": "provone:Program",
+    "rdfs:label" "Program 1",
     "provone:wasPartOf: "#executions/1"
 }
 
