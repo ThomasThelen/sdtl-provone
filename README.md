@@ -19,14 +19,119 @@ model.
 
 
 ## Mapping
+The creation of the RDF model and embedding of SDTL properties can be
+automated. This section is concerned with how that mapping happens.
 
-### Notes on notation
+### Notation
+When generating the model, the naming convention ideally doesn't change.
+The following section outlines a naming convention for identifiers and
+labels.
+
+#### Assigning Identifiers
+
+The naming convention for identifiers was taken from the `Patterned
+URIs` section in 
+[Linked Data Patterns](https://patterns.dataincubator.org/book/).
+
+`#plurized_type/current_type_count`. where `current_type_count` is the
+object's count.
+
+Example:
+
+    If a document has three provone:Program objects, the RDF model should have three identifiers that resemble
+    1. #programs/1
+    2. #programs/2
+    3. #programs/3
+    
+Note that there aren't any nested URIs and they are referenced from the
+top level (not `#programs/1/ports/2`); instead, accessing the second
+port should be `#ports/2`.
+
+##### Major Plurized Classes
+This section lays out the what the plural version of the popular prov,
+ProvONE, and SDTL objects should be. If an object isn't listed here, use
+a sensible plurized name.
+
+Note that the plural versions are lower cased.
+
+###### Prospective
+1. provone:Workflow -> workflows
+2. provone:Program -> programs
+3. provone: Port -> ports
+4. provone:Channel -> channels
+
+###### Retrospective
+1. provone:Execution
+2. prov:Entity -> entities
+3. provone:Data -> data
+4. prov:Usage -> usages
+5. provone:Document -> documents
+6. provone:Visualization -> visualizations
+7. prov:Generation -> generations
+8. prov:Association -> associations
+9. provone:Collection -> collections 
 
 
-Creating provenance from the SDTL happens in three steps:
-1. Creating the retrospective model
-2. Creating the introspective model
-3. Connecting the retrospective and introspective models
+###### SDTL
+1. sdtl:variable -> variables
+2. sdtl:VariableSymbolExpression -> variablesymbolexpressions
+3. sdtl:commands -> commands
+
+
+
+#### Labels
+Every object _should_ have an `rdfs:label`. This label should give some
+sort of description of the object. This is used/read by someone querying
+the data model and is important for readability.
+
+Because the resources are programmatically generated, the labels will be
+generated from an algorithm. The challenge is encoding enough
+information in the label in an automated way such that it's easier to
+understand than the identifier.
+
+
+
+
+
+   
+Example: 
+
+```
+{
+    "@id": "#workflows/1",
+    "@type": "provone:Workflow",
+    "rdfs:label": "",
+    "provone:hasSubProgram": [
+        { "@id": "#programs/1" },
+        { "@id": "#programs/2" }
+    ]
+},
+
+{
+"@id": "#executions/1",
+"@type": "provone:Execution" 
+}
+
+{
+    "@id": "#programs/1",
+    "@type": "provone:Program",
+    "provone:wasPartOf: "#executions/1"
+}
+
+{
+    "@id": "#programs/2",
+    "@type": "provone:Program",
+    "provone:wasPartOf: "#executions/1"
+}
+
+```
+
+### Constructing the provenance model
+ 
+Creating the provenance model from the SDTL happens in three steps:
+1. Create the retrospective model
+2. Create the introspective model
+3. Connect the retrospective and introspective models
 
 I've separated out the instructions for connecting provenance because it
 requires the existence of both prospective and retrospective provenance.
@@ -219,7 +324,7 @@ and `provone:Program` objects.
       {
           "@id": "#my_script.R",
           "@type": "provone:Program",
-          "provone:hasSubProgram": "#create_variable_command",
+          "provone:hasSubProgram": {"@id": "#create_variable_command"},
           
           "sdtl:sourceFileName": "",
           "sdtl:sourceLanguage": "r",
@@ -392,7 +497,7 @@ An example of a provone:Program that produces the provone:Port above:
 {
   "@id": "#command_1",
   "@type": "provone:Program",
-  "provone:hasOutPort": {"@id": "command_1_outport"}
+  "provone:hasOutPort": {"@id": "#command_1_outport"}
 }
 ```
 
@@ -403,11 +508,11 @@ A `provone:Program` can also have multiple inports and outports. Not that the `p
   "@id": "#complex_command",
   "@type": "provone:Program",
   "provone:hasInPort": [
-    {"@id": "command_n1_outport"},
-    {"@id": "command_n2_outport"},
-    {"@id": "command_n31_outport"}
+    {"@id": "#command_n1_outport"},
+    {"@id": "#command_n2_outport"},
+    {"@id": "#command_n31_outport"}
   ],
-  "provone:hasOutPort": {"@id": "complex_outport"}
+  "provone:hasOutPort": {"@id": "#complex_outport"}
 }
 ```
 Note that this is the same image from the section above. It's included here to review after reading this section
@@ -430,7 +535,7 @@ The first port would show a connection with
 {
   "@id": "#port_1",
   "@type": "provone:Port",
-  "provone:connectsTo": "channel_port1_port2"
+  "provone:connectsTo": { "@id": "#channel_port1_port2" }
 }
 ```
 
@@ -439,7 +544,7 @@ The second as
 {
   "@id": "#port_2",
   "@type": "provone:Port",
-  "provone:connectsTo": "channel_port1_port2"
+  "provone:connectsTo": { "@id": "#channel_port1_port2" }
 }
 ```
 
