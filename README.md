@@ -13,7 +13,7 @@ with SDTL
 The broad goal is to take SDTL metadata and create an RDF data model
 that describes the inner-workings of the script that the SDTL describes.
 The ProvONE data model has a sufficient vocabulary to represent the
-creation and flow of information in the script. SDTL can then be
+creation and flow of information in the script; SDTL can then be
 embedded in the provone/prov objects to give a much more rich data
 model.
 
@@ -24,9 +24,9 @@ automated. This section is concerned with the specifics of how that
 mapping should happen.
 
 ### Notation
-When generating the model, the naming convention ideally doesn't change
-between generations (ie not random identifiers) . The following section
-outlines a naming convention for identifiers and labels.
+When generating the model, the identifers should look similar between
+generations (ie not random identifiers). The following section outlines
+a naming convention for identifiers and labels.
 
 #### Assigning Identifiers
 
@@ -51,10 +51,8 @@ Example:
     4. #port/1
     
 Note that there aren't any nested URIs and they are referenced from the
-top level (not `#program/1/port/1`); instead, accessing the second port
+top level (not `#program/1/port/1`); instead, accessing the first port
 should be `#port/1`.
-
-##### Example Mappings
 
 
 ###### Prospective
@@ -64,7 +62,7 @@ should be `#port/1`.
 4. provone:Channel -> channel
 
 ###### Retrospective
-1. provone:Execution
+1. provone:Execution -> execution
 2. prov:Entity -> entity
 3. provone:Data -> data
 4. prov:Usage -> usage
@@ -95,14 +93,9 @@ encoding enough information in the label in an automated way such that
 it's easier to understand and more user friendly than the identifier.
 
 The ProvONE ontology has an `rdfs:label` defined for each class however,
-it's not in the context of this application (doesn't provide anything
-new/of use). 
+it's not in the context of this application.
 
-To provide context around this application (describing commands _and_
-script level workflows), the following formats are given.
-
-##### Objects and Their Labels
-Note that these labels are _not_ unique across objects.
+Note that labels are _not_ unique across objects.
 
 The general form for a label is similar to the identifier,
 
@@ -110,6 +103,15 @@ The general form for a label is similar to the identifier,
 
 The main difference is the replacement of `/` with a space. The
 requirement that the type names are lower-cased is relaxed.
+
+It would be nice to give names that have more context based on som
+heuristics.
+
+For example, if there's a `provone:Program` that represents a script (ie
+is not the predicate of a `provone:hasSubProgram`) a descriptive label
+could be
+
+`rdfs:label`: Top level script {script-name}
 
 ###### Examples
 
@@ -136,13 +138,6 @@ These can be used to generate the label for each SDTL object.
         "@type": "sdtl:fileName",
         "rdfs:label": "fileName 1",
     }
-
-
-  
-   
-   
-   
-   Example:
 
 ```
 {
@@ -181,8 +176,8 @@ These can be used to generate the label for each SDTL object.
  
 Creating the provenance model from the SDTL happens in three steps:
 1. Create the retrospective model
-2. Create the introspective model
-3. Connect the retrospective and introspective models
+2. Create the prospective model
+3. Connect the retrospective and prospective models
 
 I've separated out the instructions for connecting provenance because it
 requires the existence of both prospective and retrospective provenance.
