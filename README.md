@@ -172,17 +172,16 @@ These can be used to generate the label for each SDTL object.
 
 ```
 
+
+
 ### Constructing the provenance model
  
 Creating the provenance model from the SDTL happens in three steps:
 1. Create the retrospective model
 2. Create the prospective model
-3. Connect the retrospective and prospective models
+3. Connect the retrospective and prospective models together
 
-I've separated out the instructions for connecting provenance because it
-requires the existence of both prospective and retrospective provenance.
-
-### Constructing the Retrospective Provenance
+#### Constructing the Retrospective Provenance
 The retrospective provenance is concerned with the following RDF 
 objects:
 1. provone:Execution
@@ -205,8 +204,9 @@ level `provone:Execution`.
  
 For each script file:
 1. Create a `provone:Execution` to represent the execution of the
-   script. This is referred to as the script-level execution.
-
+   script. This is referred to as the script-level execution. 
+   
+##### Alogrithm
 
 For each SDTL Command, 
 1. Create a new `provone:Execution` 
@@ -241,12 +241,14 @@ execution representing the script's execution.
 ![](./images/parent-execution.svg)
 
 
-### Constructing the Prospective Provenance
+#### Constructing the Prospective Provenance
 The prospective provenance is concerned with the following objects:
 1. provone:Program
 2. provone:Port
 3. provone:Workflow
 
+##### Algorithm
+ 
 For each script,
 1. Create a top level `provone:Program` that represents the script-level
    program
@@ -276,12 +278,15 @@ the variable being used. That `provone:Program` _should_ have a
    `provone:hasInPort`
 
 
-### Connecting Retrospective & Prospective
+
+#### Connecting Retrospective & Prospective
 The retrospective and prospective models are connected at the following
 objects:
 1. `provone:Program` <-> `prov:Association`
 2. `prov:Port` <-> `prov:Generation` & `prov:Usage`
  
+##### Algorithm
+
 For each `provone:Execution`/`provone:Program`:
 1. Connect the `prov:Association` to the `provone:Program` with
    `prov:hadPlan`
@@ -299,10 +304,10 @@ For each used variable:
 2. Connect the `prov:Usage` to the `provone:Port` with
    `provone:hadInPort`
    
-### Emdedding SDTL
+#### Emdedding SDTL
 
 
-## Script Level Metadata
+##### Script Level Metadata
 C2Metadata provides output about the script passed to its parser. A sample of this looks like
 ```
   "id": "program-1",
@@ -324,23 +329,16 @@ This metadata is most closely associated with the top level
 `provone:Program` and `provone:Exection`.
 
 
-### Discarded Terms
+###### Discarded Terms
 Some of these (listed below) don't belong in the a provenance trace.
 
   `id`: This corresponds to the parser run ID. The provone:Execution or
   provone:Program will already have a unique ID.
 
-  `parser`: Which C2Metadata parser the output is from
-
-  `parserVersion`: The parser version
-
-  `modelVersion`
-
+  The others include `parser`, `parserVersion`, `modelVersion`,
   `modelCreatedTime`
 
-
-
-### Terms Kept
+###### Kept Terms
 The rest of the terms,
 
   `sourceFileName`: Name of the file (Kept because @id does _not_ need to be the filename)
@@ -360,7 +358,7 @@ The rest of the terms,
   `commandCount`: The number of SDTL commands inside
 
 
-### Embedding
+###### Embedding
 This metadata should be placed in the script-level `provone:Execution`
 and `provone:Program` objects.
  
@@ -368,9 +366,10 @@ and `provone:Program` objects.
 
 ```json
       {
-          "@id": "#my_script.R",
+          "@id": "#program/1",
           "@type": "provone:Program",
-          "provone:hasSubProgram": {"@id": "#create_variable_command"},
+          "provone:hasSubProgram": {"@id": "#program/2"},
+          "rdfs:label": "Program 1",
           
           "sdtl:sourceFileName": "",
           "sdtl:sourceLanguage": "r",
@@ -384,7 +383,7 @@ and `provone:Program` objects.
 ```
 
 
-## Embedding Commands
+##### Embedding Commands
 Command level metadata is modeled inside  `provone:Program` and
 `provone:Execution` objects.
 
@@ -393,12 +392,12 @@ a prospective perspective, look like
 
 ```
 {
-  "@id": "#my_script.R",
+  "@id": "#program/1",
   "@type": "provone:Program",
   "provone:hasSubProgram": [
-    {"@id": "#command_1"},
-    {"@id": "#command_2"},
-    {"@id": "#command_3"},
+    {"@id": "#program/2"},
+    {"@id": "#program/3"},
+    {"@id": "#program/4"},
   ],
   
   "sdtl:sourceFileName": "",
@@ -421,12 +420,12 @@ script-level SDTL.
 A `provone:Program` with SDTL command level metadata looks like
 ```
 {
-  "@id": "#command_1",
+  "@id": "#program/1",
   "@type": "provone:Program",
   "$type": "Compute",
   "command": "compute",
   "sourceInformation": {
-    "@id": "sourceInformation_command_1",
+    "@id": "#sourceinformation/1",
     "lineNumberStart": 1,
     "lineNumberEnd": 1,
     "sourceStartIndex": 1,
@@ -452,7 +451,7 @@ Note that I've specified an ID for child objects. In this case, I've
 chosen <key_parentKey> as the convention. This was done to avoid blank
 nodes (hard to reproduce queries).
 
-## Embedding Variable Information
+##### Embedding Variable Information
 
 Ports are the prospective objects that represent inputs and outputs to
 programs. When new variables are created, an associated port is created
@@ -462,7 +461,7 @@ represent this usage.
 A basic provone:Port has the format
 ```
 {
-  "@id": "#command_1_outport",
+  "@id": "#port/1",
   "@type": "provone:Port"
 }
 ```
@@ -513,23 +512,35 @@ information.
 }
 ```
 
+##### Algorithm
+
+For each
+
+**Top Level SDTL Record** 
+
+1. Discard the `id`, `parser`, `parserVersion`, `modelVersion`, and
+`modelCreatedTime` fields
+2. Plce the rest of the SDTL in the corresponding, script-level
+   `provone:Program`
+
+**Element in the 'command' Array**
+
+1. Place the entire command SDTL object inside the corresponding
+   `provone:Program` object.
+2. If the command has an `sdtl:expression` or `sdtl:variable`, include
+   it in the corresponding `provone:port` if one exists.
+
+For each SDTL object
+1. Prepend `sdtl:` to the name (namespace SDTL)
+
+For each `$type` record
+1. Remove `$`
+2. Prepend `sdtl:` (as with all other SDTL objects)
 
 
-## Misc
 
-## Describing Workflows
-As seen in the previous sections, ProvONE allows the grouping of `provone:Program` by with `provone:hasSubProgram`. We previously used it to describe the relationship between the individual commands in the script and the script itself.
 
-In this section, multiple scripts are grouped together by using a specialization of `provone:Program`: the `provone:Workflow`. From the ProvONE specification,
-> A Workflow ◊ is a distinguished Program, which indicates that is meant to represent a computational experiment in its entirety
 
-The following diagram describes the following workflow
-
-1. Execute `clean_data.R` that reads a file in and produces output
-1. Execute `analyzed_clean_data.R` that uses the output from step 1 to produce an output.
-1. Execute `format_analysis.R` that uses the output of step 2 to create another output.
-
-![](./images/workflow.svg)
 
 
 ### Connecting Programs to Ports
@@ -564,6 +575,23 @@ A `provone:Program` can also have multiple inports and outports. Not that the `p
 Note that this is the same image from the section above. It's included here to review after reading this section
 
 ![](./images/ports.svg)
+
+
+# Misc
+
+## Describing Workflows
+As seen in the previous sections, ProvONE allows the grouping of `provone:Program` by with `provone:hasSubProgram`. We previously used it to describe the relationship between the individual commands in the script and the script itself.
+
+In this section, multiple scripts are grouped together by using a specialization of `provone:Program`: the `provone:Workflow`. From the ProvONE specification,
+
+The following diagram describes the workflow:
+
+1. Execute `clean_data.R` that reads a file in and produces output
+1. Execute `analyzed_clean_data.R` that uses the output from step 1 to produce an output.
+1. Execute `format_analysis.R` that uses the output of step 2 to create another output.
+
+![](./images/workflow.svg)
+
 
 ### Connecting Ports to Ports
 Ports can be connected to show that the output of one or many commands is used as the input in another command. `provone:Channel` objects are used to connect the ports to each other. The `provone:Channel` itself doesn't contain much metadata, and there isn't any SDTL embedded in it.
