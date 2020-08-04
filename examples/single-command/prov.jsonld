@@ -11,25 +11,20 @@
     }
   ],
   "@graph": [
+
     {
-      "@id": "#script_execution",
-      "@type": "provone:Execution"
+      "@id": "#workflow/1",
+      "@type": "provone:Workflow",
+      "rdfs:label": "Workflow 1",
+      "rdfs:comment": "Holds a collection of script-level provone:Program objects",
+      "provone:hasSubProgram": { "@id": "#program/1" }
     },
     {
-      "@id": "#first_command_execution",
-      "@type": "provone:Execution",
-      "prov:qualifiedAssociation": "#associated_plan",
-      "prov:wasPartOf": "#script_execution"
-    },
-    {
-      "@id": "#associated_plan",
-      "@type": "Association",
-      "provone:hadPlan": "#create_var.sps"
-    },
-    {
-      "@id": "#create_var.sps",
+      "@id": "#program/1",
       "@type": "provone:Program",
-      "provone:hasSubProgram": "#create_variable_command",
+      "rdfs:label": "Program 1",
+      "rdfs:comment": "A representation of a script, create_var.sps",
+      "provone:hasSubProgram": { "@id": "#program/2" },
       "sdtl:sourceFileName": "",
       "sdtl:sourceLanguage": "spss",
       "sdtl:scriptMD5": "518001a968c359366bf7ceb12bf209ea",
@@ -40,21 +35,22 @@
       "sdtl:commandCount": 1
     },
     {
-      "@type": "provone:Workflow",
-      "@id": "#script_workflow",
-      "provone:hasSubProgram": "#create_variable_command"
-    },
-    {
-      "@id": "#create_variable_command",
+      "@id": "#program/2",
       "@type": "provone:Program",
-      "provone:hasOutPort": "#create_variable_port",
+      "rdfs:label": "Program 2",
+      "rdfs:comment": "A single command; represents the first line in the script",
+      "provone:hasOutPort": { "@id": "#port/1" },
       "sdtl:commands": [
         {
-          "@id": "#commands_create_variable_command",
+          "@id": "#Compute/1",
+          "rdfs:label": "Compute 1",
           "sdtl:type": "Compute",
           "sdtl:command": "compute",
+          "rdfs:comment": "Discriminator specifies the data type name; Represents what the computation of the line does",
           "sdtl:sourceInformation": {
-            "@id": "#sourceInformation_commands_create_variable_command",
+            "@id": "#sourceinformation/1",
+            "rdfs:label": "sourceInformation 1",
+            "rdfs:comment": "Represents information about the line of source code",
             "sdtl:lineNumberStart": 1,
             "sdtl:lineNumberEnd": 1,
             "sdtl:sourceStartIndex": 1,
@@ -62,55 +58,99 @@
             "sdtl:originalSourceText": "compute newVar = 0."
           },
           "sdtl:variable": {
-            "@id": "#variable_commands_create_variable_command",
+            "@id": "#variable/1",
+            "rdfs:label": "variable 1",
+            "rdfs:comment": "The variable that is computed",
             "sdtl:type": "VariableSymbolExpression",
             "sdtl:variableName": "newVar"
           },
           "sdtl:expression": {
-            "@id": "#expression_commands_create_variable_command",
-            "sdtl:$type": "NumericConstantExpression",
+            "@id": "#expression/1",
+            "rdfs:label": "expression 1",
+            "sdtl:type": "NumericConstantExpression",
             "sdtl:value": "0",
-            "sdtl:numericType": "int"
+            "sdtl:numericType": "int",
+            "rdfs:comment": "The expression used to compute the value of the variable(s)"
           }
         }
       ]
     },
+
     {
-      "@id": "#create_variable_port",
+      "@id": "#port/1",
       "@type": "provone:Port",
+      "rdfs:label": "Port 1",
+      "rdfs:comment": "Represents a variable; the variable that was created",
       "sdtl:variable": {
-        "@id": "#variable_create_variable_port",
+        "@id": "#variable/2",
+        "rdfs:label": "variable 2",
         "sdtl:type": "VariableSymbolExpression",
-        "sdtl:variableName": "newVar"
+        "sdtl:variableName": "newVar",
+        "rdfs:comment": "The variable that is computed"
       },
       "sdtl:expression": {
-        "@id": "#expression_create_variable_port",
+        "@id": "#expression/2",
+        "rdfs:label": "expression 2",
         "sdtl:type": "NumericConstantExpression",
         "sdtl:value": "0",
-        "sdtl:numericType": "int"
+        "sdtl:numericType": "int",
+        "rdfs:comment": "The expression used to compute the value of the variable(s)"
       }
     },
+
     {
-      "@id": "#create_variable_command_exection",
+      "@id": "#association/2",
+      "@type": "Association",
+      "rdfs:label": "Association 2",
+      "provone:hadPlan": "#program/2",
+      "rdfs:comment": "The associated plan linking the provone:Execution and provone:Program"
+    },
+
+    {
+      "@id": "#execution/1",
       "@type": "provone:Execution",
-      "prov:qualifiedAssociation": "#create_variable_command",
-      "prov:qualifiedGeneration": "#create_variable_command_exection"
+      "rdfs:label": "Execution 1",
+      "rdfs:comment": "The top level execution that represents the execution of a provone:Workflow"
+    },
+
+    {
+      "@id": "#execution/2",
+      "@type": "provone:Execution",
+      "rdfs:label": "Execution 2",
+      "prov:wasPartOf": { "@id": "execution/1" },
+      "rdfs:comment": "The execution of a script"
     },
     {
-      "@id": "#create_variable_associated_plan",
-      "@type": "provone:Association",
-      "prov:hadPlan": "#create_variable_command"
+      "@id": "#execution/3",
+      "@type": "provone:Execution",
+      "rdfs:label": "Execution 3",
+      "prov:qualifiedAssociation": { "@id": "#association/2" },
+      "prov:qualifiedGeneration": { "@id": "#generation/1" },
+      "prov:wasPartOf": { "@id": "#execution/2" },
+      "rdfs:comment": "Represents the execution of a line of code"
     },
+
     {
-      "@id": "#generated_variable",
-      "@type": "prov:Entity",
-      "prov:wasGeneratedBy": "#create_variable_command_exection"
-    },
-    {
-      "@id": "#create_variable_command_generation",
+      "@id": "#generation/1",
       "@type": "prov:qualifiedGeneration",
-      "prov:hasOutPort": "#create_variable_port",
-      "prov:hadEntity": "#generated_variable"
+      "rdfs:label": "Generation 1",
+      "rdfs:comment": "The generation of the first variable",
+      "prov:hasOutPort": { "@id": "#port/1" },
+      "prov:hadEntity": { "@id" : "#entity/1" }
+    },
+    {
+      "@id": "#entity/1",
+      "@type": "prov:Entity",
+      "rdfs:label": "Entity 1",
+      "rdfs:comment": "Represents the object that was created",
+      "prov:wasGeneratedBy": {"@id": "#execution/3" }
+    },
+    {
+      "@id": "#association/1",
+      "@type": "Association",
+      "rdfs:label": "Association 1",
+      "provone:hadPlan": { "@id": "#Workflow/1" },
+      "rdfs:comment": "The associated plan linking a provone:Execution and provone:Workflow"
     }
   ]
 }
