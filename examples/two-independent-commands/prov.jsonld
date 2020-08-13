@@ -12,23 +12,27 @@
   ],
   "@graph": [
     {
-      "@id": "#script_workflow",
+      "@id": "#workflow/1",
       "@type": "provone:Workflow",
+      "rdfs:label": "Top level Workflow",
+      "rdfs:comment": "The workflow holding the scripts",
       "provone:hasSubProgram": [
         {
-          "@id": "#create_var.sps"
+          "@id": "#program/1"
         }
       ]
     },
     {
-      "@id": "#create_var.sps",
+      "@id": "#program/1",
+      "rdfs:label": "create_var.sps",
+      "rdfs:comment": "The program containing the source code",
       "@type": "provone:Program",
       "provone:hasSubProgram": [
         {
-          "@id": "#create_variable_command"
+          "@id": "#program/1"
         },
         {
-          "@id": "#create_second_variable_command"
+          "@id": "#program/2"
         }
       ],
       "sdtl:sourceFileName": "",
@@ -41,12 +45,17 @@
       "sdtl:commandCount": 2
     },
     {
-      "@id": "#create_variable_command",
+      "@id": "#program/1",
       "@type": "provone:Program",
-      "provone:hasOutPort": "#create_variable_port",
+      "rdfs:label": "First source command",
+      "rdfs:comment": "First command that creates a variable",
+      "provone:hasOutPort": "#port/1",
       "sdtl:type": "Compute",
       "sdtl:command": "compute",
       "sdtl:sourceInformation": {
+        "@id": "sourceinformation/1",
+        "rdfs:label": "SourceInformation 1",
+        "rdfs:comment": "Source code information",
         "sdtl:lineNumberStart": 1,
         "sdtl:lineNumberEnd": 1,
         "sdtl:sourceStartIndex": 1,
@@ -54,62 +63,86 @@
         "sdtl:originalSourceText": "compute median_age = 35."
       },
       "sdtl:variable": {
+        "@id": "variable/1",
         "sdtl:type": "VariableSymbolExpression",
         "sdtl:variableName": "median_age"
       },
       "sdtl:expression": {
+        "@id": "expression/1",
         "sdtl:type": "NumericConstantExpression",
         "sdtl:value": "35",
         "sdtl:numericType": "int"
       }
     },
     {
-      "@id": "#create_variable_port",
+      "@id": "#port/1",
       "@type": "provone:Port",
       "sdtl:variable": {
+        "@id": "variable/1",
         "sdtl:type": "VariableSymbolExpression",
-        "sdtl:variableName": "newVar"
+        "sdtl:variableName": "median_age"
       },
       "sdtl:expression": {
+        "@id": "expression/1",
         "sdtl:$type": "NumericConstantExpression",
-        "sdtl:value": "0",
+        "sdtl:value": "35",
         "sdtl:numericType": "int"
       }
     },
+
     {
-      "@id": "#script_execution",
-      "@type": "provone:Execution"
-    },
-    {
-      "@id": "#create_first_variable_execution",
+      "@id": "#execution/1",
       "@type": "provone:Execution",
-      "prov:qualifiedAssociation": "#create_first_variable_association",
-      "prov:qualifiedGeneration": "#create_first_variable_generation",
-      "prov:wasPartOf": "#script_execution"
+      "rdfs:label": "Execution 1",
+      "rdfs:comment": "The top level execution representing the execution of a workflow"
     },
     {
-      "@id": "#create_first_variable_association",
+      "@id": "#execution/2",
+      "@type": "provone:Execution",
+      "rdfs:label": "Execution 2",
+      "rdfs:comment": "The execution of the script"
+    },
+    {
+      "@id": "#execution/3",
+      "@type": "provone:Execution",
+      "rdfs:label": "Execution 3",
+      "rdfs:comment": "Execution of the first command",
+      "prov:qualifiedAssociation": {"@id": "#association/1" },
+      "prov:qualifiedGeneration": { "@id": "#qualifiedgeneration/1" },
+      "prov:wasPartOf": { "@id": "#execution/2" }
+    },
+    {
+      "@id": "#association/1",
       "@type": "provone:Association",
-      "prov:hadPlan": "#create_variable_command"
+      "rdfs:label": "Association 1",
+      "rdfs:comment": "Association connecting an execution to a line of source code",
+      "prov:hadPlan": { "@id" : "#program/1" }
     },
     {
       "@id": "#create_first_variable_entity",
       "@type": "prov:Entity",
-      "prov:wasGeneratedBy": "#create_first_variable_execution"
+      "prov:wasGeneratedBy": { "@id": "#execution/3" }
     },
     {
-      "@id": "#create_first_variable_generation",
+      "@id": "#qualifiedgeneration/1",
       "@type": "provone:qualifiedGeneration",
-      "prov:hadEntity": "#create_first_variable_entity",
-      "prov:hasOutPort": "#create_variable_port"
+      "rdfs:label": "qualifiedGeneration 1",
+      "rdfs:comment": "The generation connecting the entity from the first line of code to its.",
+      "prov:hadEntity": { "@id": "#create_first_variable_entity" },
+      "prov:hasOutPort": { "@id": "#port/1"}
     },
     {
-      "@id": "#create_second_variable_command",
+      "@id": "#program/2",
       "@type": "provone:Program",
-      "provone:hasOutPort": "#create_second_variable_port",
+      "rdfs:label": "Program 2",
+      "rdfs:comment ": "The second command that creates the second variable",
+      "provone:hasOutPort": { "@id": "#port/2" },
       "sdtl:type": "Compute",
       "sdtl:command": "compute",
       "sdtl:sourceInformation": {
+        "@id": "sourceinformation/1",
+        "rdfs:label": "sourceInformation 1",
+        "rdfs:comment": "Source code information",
         "sdtl:lineNumberStart": 2,
         "sdtl:lineNumberEnd": 2,
         "sdtl:sourceStartIndex": 26,
@@ -117,19 +150,28 @@
         "sdtl:originalSourceText": "compute average_age = 24."
       },
       "sdtl:variable": {
+        "@id": "variable/2",
+        "rdfs:label": "variable 2",
+        "rdfs:comment": "The second created variable",
         "sdtl:type": "VariableSymbolExpression",
         "sdtl:variableName": "average_age"
       },
       "sdtl:expression": {
+        "@id": "expression/2",
+        "rdfs:label": "expression 2",
+        "rdfs:comment": "The second expression about the value of the second variable",
         "sdtl:type": "NumericConstantExpression",
         "sdtl:value": "24",
         "sdtl:numericType": "int"
       }
     },
     {
-      "@id": "#create_second_variable_port",
+      "@id": "#port/2",
       "@type": "provone:Port",
       "sdtl:variable": {
+        "@id": "variable/2",
+        "rdfs:label": "variable 2",
+        "rdfs:comment": "The second created variable",
         "sdtl:type": "VariableSymbolExpression",
         "sdtl:variableName": "average_age"
       },
@@ -140,27 +182,33 @@
       }
     },
     {
-      "@id": "#create_second_variable_execution",
+      "@id": "#execution/4",
       "@type": "provone:Execution",
-      "prov:qualifiedAssociation": "#create_second_variable_association",
-      "prov:qualifiedGeneration": "#create_second_variable_generation",
-      "prov:wasPartOf": "#script_execution"
+      "rdfs:label": "Execution 4",
+      "rdfs:comment": "The execution that created the second variable",
+      "prov:qualifiedAssociation": { "@id": "#association/2" },
+      "prov:qualifiedGeneration": { "@id": "#generation2" },
+      "prov:wasPartOf": { "@id": "#execution/2" }
     },
     {
-      "@id": "#create_second_variable_association",
+      "@id": "#association/2",
       "@type": "provone:Association",
-      "prov:hadPlan": "#create_second_variable_command"
+      "rdfs:label": "Association 2",
+      "rdfs:comment": "Association connecting ",
+      "prov:hadPlan": { "@id": "#program/2" }
     },
     {
-      "@id": "#create_second_variable_entity",
+      "@id": "#entity/2",
       "@type": "prov:Entity",
-      "prov:wasGeneratedBy": "#create_second_variable_execution"
+      "rdfs:label": "Entity 2",
+      "rdfs:comment": "Variable that was created from the execution of the second line of code.",
+      "prov:wasGeneratedBy": { "@id": "#execution/4" }
     },
     {
-      "@id": "#create_second_variable_generation",
+      "@id": "#generation/2",
       "@type": "provone:qualifiedGeneration",
-      "prov:hadEntity": "#create_second_variable_entity",
-      "prov:hasOutPort": "#create_second_variable_port"
+      "prov:hadEntity": { "@id": "#entity/2" },
+      "prov:hasOutPort": { "@id": "#port/2" }
     }
   ]
 }

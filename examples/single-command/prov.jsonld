@@ -102,7 +102,7 @@
       "@id": "#association/2",
       "@type": "Association",
       "rdfs:label": "Association 2",
-      "provone:hadPlan": "#program/2",
+      "provone:hadPlan": { "@id": "#program/2" },
       "rdfs:comment": "The associated plan linking the provone:Execution and provone:Program"
     },
 
@@ -149,7 +149,7 @@
       "@id": "#association/1",
       "@type": "Association",
       "rdfs:label": "Association 1",
-      "provone:hadPlan": { "@id": "#Workflow/1" },
+      "provone:hadPlan": { "@id": "#workflow/1" },
       "rdfs:comment": "The associated plan linking a provone:Execution and provone:Workflow"
     }
   ]
