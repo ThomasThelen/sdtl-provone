@@ -1,0 +1,934 @@
+[
+  {
+    "@id": "#Port/6",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/4"
+      },
+      {
+        "@id": "#Channel/2"
+      }
+    ]
+  },
+  {
+    "@id": "#AppendFileDescription/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dropVariables": [
+      {
+        "@id": "#dropVariables/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#fileName": [
+      {
+        "@value": "bottom"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AppendFileDescription"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/5",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "C"
+      }
+    ]
+  },
+  {
+    "@id": "#appendFiles/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#appendFiles"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription": [
+      {
+        "@id": "#AppendFileDescription/5"
+      },
+      {
+        "@id": "#AppendFileDescription/6"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/2",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "top"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/1"
+      }
+    ]
+  },
+  {
+    "@id": "#AppendFileDescription/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#fileName": [
+      {
+        "@value": "top"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AppendFileDescription"
+      }
+    ]
+  },
+  {
+    "@id": "#dropVariables/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#dropVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "C"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 4
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 4
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "bottom = pd.read_csv(\"bottom.csv\")"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 51
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 84
+      }
+    ]
+  },
+  {
+    "@id": "#AppendFileDescription/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#fileName": [
+      {
+        "@value": "top"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AppendFileDescription"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/9",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/6"
+      },
+      {
+        "@id": "#Channel/4"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/1",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/13",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "concat_inner"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/5"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/3",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#sourceInformation/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 8
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 8
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "concat_inner = pd.concat([top, bottom], join=\"inner\")"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 157
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 209
+      }
+    ]
+  },
+  {
+    "@id": "#Port/7",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "appended"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/3"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/5",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#Port/12",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/6"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/5",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/11"
+      },
+      {
+        "@value": "#Port/12"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/13"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#appendFiles": [
+      {
+        "@id": "#appendFiles/3"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/5"
+      }
+    ]
+  },
+  {
+    "@id": "#appendFiles/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#appendFiles"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription": [
+      {
+        "@id": "#AppendFileDescription/1"
+      },
+      {
+        "@id": "#AppendFileDescription/2"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/2",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "B"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/2",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/3"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/4"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_3": [
+      {
+        "@id": "#variable/5"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/6",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/5",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/3"
+      },
+      {
+        "@id": "#Channel/1"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 7
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 7
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "concatenated = pd.concat([top, bottom])"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 117
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 155
+      }
+    ]
+  },
+  {
+    "@id": "#Port/8",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/5"
+      },
+      {
+        "@id": "#Channel/3"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/1",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@id": "#Port/1"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/1"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/13",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "B"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 3
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 3
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "top = pd.read_csv(\"top.csv\")"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 22
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 49
+      }
+    ]
+  },
+  {
+    "@id": "#variable/8",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "C"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/7",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "B"
+      }
+    ]
+  },
+  {
+    "@id": "#AppendFileDescription/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#fileName": [
+      {
+        "@value": "bottom"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AppendFileDescription"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/4",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/9"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/10"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_3": [
+      {
+        "@id": "#variable/11"
+      }
+    ]
+  },
+  {
+    "@id": "#appendFiles/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#appendFiles"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription": [
+      {
+        "@id": "#AppendFileDescription/4"
+      },
+      {
+        "@id": "#AppendFileDescription/3"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/6",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#Port/4",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "bottom"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/2"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/11",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/5"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/1",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#FileName": [
+      {
+        "@value": "top.csv"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/3",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#FileName": [
+      {
+        "@value": "bottom.csv"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/1",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/1"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/2"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/1",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#Port/10",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "concatenated"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/4"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/4",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#variableInventory/3",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/6"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/7"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_3": [
+      {
+        "@id": "#variable/8"
+      }
+    ]
+  },
+  {
+    "@id": "#AppendFileDescription/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#fileName": [
+      {
+        "@value": "top"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AppendFileDescription"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/4",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/9"
+      },
+      {
+        "@value": "#Port/8"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/10"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#appendFiles": [
+      {
+        "@id": "#appendFiles/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/4"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/9",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/11",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "C"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/2",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@id": "#Port/3"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/4"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/2"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 6
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 6
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "appended = top.append(bottom)"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 87
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 115
+      }
+    ]
+  },
+  {
+    "@id": "#variable/12",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/3",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "A"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/5",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/12"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/13"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/2",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#variable/10",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "B"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/4",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "B"
+      }
+    ]
+  },
+  {
+    "@id": "#AppendFileDescription/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#AppendFileDescription"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#fileName": [
+      {
+        "@value": "bottom"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AppendFileDescription"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/3",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/6"
+      },
+      {
+        "@value": "#Port/5"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/7"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#appendFiles": [
+      {
+        "@id": "#appendFiles/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/3"
+      }
+    ]
+  }
+]

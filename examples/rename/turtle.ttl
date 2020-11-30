@@ -1,0 +1,300 @@
+@prefix ns1: <https://rdf-vocabulary.ddialliance.org/sdtl#$> .
+@prefix provone: <http://purl.dataone.org/provone/2015/01/15/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://www.schema.org/#> .
+@prefix sdtl: <https://rdf-vocabulary.ddialliance.org/sdtl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Port/12> a provone:Port ;
+    provone:connectsTo <#Channel/5> .
+
+<#Port/3> a provone:Port ;
+    provone:connectsTo <#Channel/1> .
+
+<#Port/5> a provone:Port ;
+    provone:connectsTo <#Channel/2>,
+        <#Channel/3> .
+
+<#Port/7> a provone:Port ;
+    provone:connectsTo <#Channel/3> .
+
+<#Port/9> a provone:Port ;
+    provone:connectsTo <#Channel/4> .
+
+<#Program/1> a provone:Program ;
+    provone:hasInPort <#Port/1> ;
+    provone:hasOutPort <#Port/2> ;
+    sdtl:sourceInformation <#sourceInformation/1> .
+
+<#Program/2> a provone:Program ;
+    provone:hasInPort "#Port/3" ;
+    provone:hasOutPort <#Port/4> ;
+    sdtl:renames <#renames/1> ;
+    sdtl:sourceInformation <#sourceInformation/2> .
+
+<#Program/3> a provone:Program ;
+    provone:hasInPort "#Port/5" ;
+    provone:hasOutPort <#Port/6> ;
+    sdtl:renames <#renames/2> ;
+    sdtl:sourceInformation <#sourceInformation/3> .
+
+<#Program/4> a provone:Program ;
+    provone:hasInPort "#Port/7" ;
+    provone:hasOutPort <#Port/8> ;
+    sdtl:renames <#renames/3> ;
+    sdtl:sourceInformation <#sourceInformation/4> .
+
+<#Program/5> a provone:Program ;
+    provone:hasInPort "#Port/9" ;
+    provone:hasOutPort <#Port/10> ;
+    sdtl:renames <#renames/4> ;
+    sdtl:sourceInformation <#sourceInformation/5> .
+
+<#Program/6> a provone:Program ;
+    provone:hasInPort "#Port/12" ;
+    provone:hasOutPort <#Port/11> ;
+    sdtl:sourceInformation <#sourceInformation/6> .
+
+<#Port/1> a provone:Port ;
+    sdtl:FileName "rename.csv" .
+
+<#Port/10> a provone:Port ;
+    provone:connectsTo <#Channel/5> ;
+    sdtl:dataframeName "df" ;
+    sdtl:variableInventory <#variableInventory/5> .
+
+<#Port/11> a provone:Program ;
+    sdtl:FileName "rename.csv" .
+
+<#Port/2> a provone:Port ;
+    provone:connectsTo <#Channel/1> ;
+    sdtl:dataframeName "df" ;
+    sdtl:variableInventory <#variableInventory/1> .
+
+<#Port/4> a provone:Port ;
+    provone:connectsTo <#Channel/2> ;
+    sdtl:dataframeName "df" ;
+    sdtl:variableInventory <#variableInventory/2> .
+
+<#Port/6> a provone:Port ;
+    sdtl:dataframeName "df2" ;
+    sdtl:variableInventory <#variableInventory/3> .
+
+<#Port/8> a provone:Port ;
+    provone:connectsTo <#Channel/4> ;
+    sdtl:dataframeName "df" ;
+    sdtl:variableInventory <#variableInventory/4> .
+
+<#RenamePair/1> a sdtl:RenamePair ;
+    sdtl:newVariable <#newVariable/1> ;
+    sdtl:oldVariable <#oldVariable/1> ;
+    sdtl:type "RenamePair" .
+
+<#RenamePair/2> a sdtl:RenamePair ;
+    sdtl:newVariable <#newVariable/2> ;
+    sdtl:oldVariable <#oldVariable/2> ;
+    sdtl:type "RenamePair" .
+
+<#RenamePair/3> a sdtl:RenamePair ;
+    sdtl:newVariable <#newVariable/3> ;
+    sdtl:oldVariable <#oldVariable/3> ;
+    sdtl:type "RenamePair" .
+
+<#RenamePair/4> a sdtl:RenamePair ;
+    sdtl:newVariable <#newVariable/4> ;
+    sdtl:oldVariable <#oldVariable/4> ;
+    sdtl:type "RenamePair" .
+
+<#RenamePair/5> a sdtl:RenamePair ;
+    sdtl:newVariable <#newVariable/5> ;
+    sdtl:oldVariable <#oldVariable/5> ;
+    sdtl:type "RenamePair" .
+
+<#RenamePair/6> a sdtl:RenamePair ;
+    sdtl:newVariable <#newVariable/6> ;
+    sdtl:oldVariable <#oldVariable/6> ;
+    sdtl:type "RenamePair" .
+
+<#RenamePair/7> a sdtl:RenamePair ;
+    sdtl:newVariable <#newVariable/7> ;
+    sdtl:oldVariable <#oldVariable/7> ;
+    sdtl:type "RenamePair" .
+
+<#newVariable/1> a sdtl:newVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "a" .
+
+<#newVariable/2> a sdtl:newVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "b" .
+
+<#newVariable/3> a sdtl:newVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "x" .
+
+<#newVariable/4> a sdtl:newVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "y" .
+
+<#newVariable/5> a sdtl:newVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "x" .
+
+<#newVariable/6> a sdtl:newVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "one" .
+
+<#newVariable/7> a sdtl:newVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "two" .
+
+<#oldVariable/1> a sdtl:oldVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "A" .
+
+<#oldVariable/2> a sdtl:oldVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "B" .
+
+<#oldVariable/3> a sdtl:oldVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "a" .
+
+<#oldVariable/4> a sdtl:oldVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "b" .
+
+<#oldVariable/5> a sdtl:oldVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "a" .
+
+<#oldVariable/6> a sdtl:oldVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "x" .
+
+<#oldVariable/7> a sdtl:oldVariable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "b" .
+
+<#renames/1> a sdtl:renames ;
+    sdtl:RenamePair <#RenamePair/1>,
+        <#RenamePair/2> .
+
+<#renames/2> a sdtl:renames ;
+    sdtl:RenamePair <#RenamePair/3>,
+        <#RenamePair/4> .
+
+<#renames/3> a sdtl:renames ;
+    sdtl:RenamePair <#RenamePair/5> .
+
+<#renames/4> a sdtl:renames ;
+    sdtl:RenamePair <#RenamePair/6>,
+        <#RenamePair/7> .
+
+<#sourceInformation/1> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 12 ;
+    sdtl:lineNumberStart 12 ;
+    sdtl:originalSourceText "df = pd.read_csv(\"rename.csv\")" ;
+    sdtl:sourceStartIndex 123 ;
+    sdtl:sourceStopIndex 152 .
+
+<#sourceInformation/2> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 14 ;
+    sdtl:lineNumberStart 14 ;
+    sdtl:originalSourceText "df.rename(columns={ \"A\": \"a\", \"B\": \"b\" }, inplace=True)" ;
+    sdtl:sourceStartIndex 155 ;
+    sdtl:sourceStopIndex 209 .
+
+<#sourceInformation/3> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 15 ;
+    sdtl:lineNumberStart 15 ;
+    sdtl:originalSourceText "df2 = df.rename(columns={ \"a\": \"x\", \"b\": \"y\" })" ;
+    sdtl:sourceStartIndex 211 ;
+    sdtl:sourceStopIndex 257 .
+
+<#sourceInformation/4> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 19 ;
+    sdtl:lineNumberStart 19 ;
+    sdtl:originalSourceText "df.columns[\"a\"] = \"x\"" ;
+    sdtl:sourceStartIndex 335 ;
+    sdtl:sourceStopIndex 355 .
+
+<#sourceInformation/5> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 23 ;
+    sdtl:lineNumberStart 23 ;
+    sdtl:originalSourceText "df.columns = [\"one\", \"two\"]" ;
+    sdtl:sourceStartIndex 506 ;
+    sdtl:sourceStopIndex 532 .
+
+<#sourceInformation/6> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 25 ;
+    sdtl:lineNumberStart 25 ;
+    sdtl:originalSourceText "df.to_csv(\"rename.csv\")" ;
+    sdtl:sourceStartIndex 535 ;
+    sdtl:sourceStopIndex 557 .
+
+<#variable/1> a schema:Thing ;
+    schema:name "A" .
+
+<#variable/10> a schema:Thing ;
+    schema:name "two" .
+
+<#variable/2> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/3> a schema:Thing ;
+    schema:name "a" .
+
+<#variable/4> a schema:Thing ;
+    schema:name "b" .
+
+<#variable/5> a schema:Thing ;
+    schema:name "x" .
+
+<#variable/6> a schema:Thing ;
+    schema:name "y" .
+
+<#variable/7> a schema:Thing ;
+    schema:name "x" .
+
+<#variable/8> a schema:Thing ;
+    schema:name "b" .
+
+<#variable/9> a schema:Thing ;
+    schema:name "one" .
+
+<#variableInventory/1> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/1> ;
+    rdf:rdf:_2 <#variable/2> .
+
+<#variableInventory/2> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/3> ;
+    rdf:rdf:_2 <#variable/4> .
+
+<#variableInventory/3> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/5> ;
+    rdf:rdf:_2 <#variable/6> .
+
+<#variableInventory/4> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/7> ;
+    rdf:rdf:_2 <#variable/8> .
+
+<#variableInventory/5> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/9> ;
+    rdf:rdf:_2 <#variable/10> .
+
+<#Channel/1> a provone:Channel .
+
+<#Channel/2> a provone:Channel .
+
+<#Channel/3> a provone:Channel .
+
+<#Channel/4> a provone:Channel .
+
+<#Channel/5> a provone:Channel .

@@ -1,0 +1,242 @@
+{
+	"commands": [
+		{
+			"$type": "NoTransformOp",
+			"command": "NoTransformOp",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 1,
+					"lineNumberEnd": 1,
+					"sourceStartIndex": 1,
+					"sourceStopIndex": 19,
+					"originalSourceText": "import pandas as pd"
+				}
+			]
+		},
+		{
+			"$type": "Load",
+			"command": "Load",
+			"fileName": "top.csv",
+			"software": "csv",
+			"producesDataframe": [
+				{
+					"dataframeName": "top",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 3,
+					"lineNumberEnd": 3,
+					"sourceStartIndex": 22,
+					"sourceStopIndex": 49,
+					"originalSourceText": "top = pd.read_csv(\"top.csv\")"
+				}
+			]
+		},
+		{
+			"$type": "Load",
+			"command": "Load",
+			"fileName": "bottom.csv",
+			"software": "csv",
+			"producesDataframe": [
+				{
+					"dataframeName": "bottom",
+					"variableInventory": [
+						"A",
+						"B",
+						"C"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 4,
+					"lineNumberEnd": 4,
+					"sourceStartIndex": 51,
+					"sourceStopIndex": 84,
+					"originalSourceText": "bottom = pd.read_csv(\"bottom.csv\")"
+				}
+			]
+		},
+		{
+			"$type": "AppendDatasets",
+			"command": "AppendDatasets",
+			"consumesDataframe": [
+				{
+					"dataframeName": "top",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				},
+				{
+					"dataframeName": "bottom",
+					"variableInventory": [
+						"A",
+						"B",
+						"C"
+					]
+				}
+			],
+			"producesDataframe": [
+				{
+					"dataframeName": "appended",
+					"variableInventory": [
+						"A",
+						"B",
+						"C"
+					]
+				}
+			],
+			"appendFiles": [
+				{
+					"$type": "AppendFileDescription",
+					"fileName": "top"
+				},
+				{
+					"$type": "AppendFileDescription",
+					"fileName": "bottom"
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 6,
+					"lineNumberEnd": 6,
+					"sourceStartIndex": 87,
+					"sourceStopIndex": 115,
+					"originalSourceText": "appended = top.append(bottom)"
+				}
+			]
+		},
+		{
+			"$type": "AppendDatasets",
+			"command": "AppendDatasets",
+			"consumesDataframe": [
+				{
+					"dataframeName": "top",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				},
+				{
+					"dataframeName": "bottom",
+					"variableInventory": [
+						"A",
+						"B",
+						"C"
+					]
+				}
+			],
+			"producesDataframe": [
+				{
+					"dataframeName": "concatenated",
+					"variableInventory": [
+						"A",
+						"B",
+						"C"
+					]
+				}
+			],
+			"appendFiles": [
+				{
+					"$type": "AppendFileDescription",
+					"fileName": "top"
+				},
+				{
+					"$type": "AppendFileDescription",
+					"fileName": "bottom"
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 7,
+					"lineNumberEnd": 7,
+					"sourceStartIndex": 117,
+					"sourceStopIndex": 155,
+					"originalSourceText": "concatenated = pd.concat([top, bottom])"
+				}
+			]
+		},
+		{
+			"$type": "AppendDatasets",
+			"command": "AppendDatasets",
+			"consumesDataframe": [
+				{
+					"dataframeName": "top",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				},
+				{
+					"dataframeName": "bottom",
+					"variableInventory": [
+						"A",
+						"B",
+						"C"
+					]
+				}
+			],
+			"producesDataframe": [
+				{
+					"dataframeName": "concat_inner",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"appendFiles": [
+				{
+					"$type": "AppendFileDescription",
+					"fileName": "top"
+				},
+				{
+					"$type": "AppendFileDescription",
+					"fileName": "bottom",
+					"dropVariables": [
+						{
+							"$type": "VariableSymbolExpression",
+							"variableName": "C"
+						}
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 8,
+					"lineNumberEnd": 8,
+					"sourceStartIndex": 157,
+					"sourceStopIndex": 209,
+					"originalSourceText": "concat_inner = pd.concat([top, bottom], join=\"inner\")"
+				}
+			]
+		},
+		{
+			"$type": "Comment",
+			"command": "Comment",
+			"commentText": "horizontal = pd.concat([top, bottom[[\"C\"]]], axis=1)",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 10,
+					"lineNumberEnd": 10,
+					"sourceStartIndex": 212,
+					"sourceStopIndex": 264,
+					"originalSourceText": "#horizontal = pd.concat([top, bottom[[\"C\"]]], axis=1)"
+				}
+			]
+		}
+	]
+}

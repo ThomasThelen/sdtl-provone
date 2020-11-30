@@ -1,0 +1,242 @@
+@prefix ns1: <https://rdf-vocabulary.ddialliance.org/sdtl#$> .
+@prefix provone: <http://purl.dataone.org/provone/2015/01/15/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://www.schema.org/#> .
+@prefix sdtl: <https://rdf-vocabulary.ddialliance.org/sdtl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Port/11> a provone:Port ;
+    provone:connectsTo <#Channel/5> .
+
+<#Port/12> a provone:Port ;
+    provone:connectsTo <#Channel/6> .
+
+<#Port/5> a provone:Port ;
+    provone:connectsTo <#Channel/1>,
+        <#Channel/3> .
+
+<#Port/6> a provone:Port ;
+    provone:connectsTo <#Channel/2>,
+        <#Channel/4> .
+
+<#Port/8> a provone:Port ;
+    provone:connectsTo <#Channel/3>,
+        <#Channel/5> .
+
+<#Port/9> a provone:Port ;
+    provone:connectsTo <#Channel/4>,
+        <#Channel/6> .
+
+<#Program/1> a provone:Program ;
+    provone:hasInPort <#Port/1> ;
+    provone:hasOutPort <#Port/2> ;
+    sdtl:sourceInformation <#sourceInformation/1> .
+
+<#Program/2> a provone:Program ;
+    provone:hasInPort <#Port/3> ;
+    provone:hasOutPort <#Port/4> ;
+    sdtl:sourceInformation <#sourceInformation/2> .
+
+<#Program/3> a provone:Program ;
+    provone:hasInPort "#Port/5",
+        "#Port/6" ;
+    provone:hasOutPort <#Port/7> ;
+    sdtl:appendFiles <#appendFiles/1> ;
+    sdtl:sourceInformation <#sourceInformation/3> .
+
+<#Program/4> a provone:Program ;
+    provone:hasInPort "#Port/8",
+        "#Port/9" ;
+    provone:hasOutPort <#Port/10> ;
+    sdtl:appendFiles <#appendFiles/2> ;
+    sdtl:sourceInformation <#sourceInformation/4> .
+
+<#Program/5> a provone:Program ;
+    provone:hasInPort "#Port/11",
+        "#Port/12" ;
+    provone:hasOutPort <#Port/13> ;
+    sdtl:appendFiles <#appendFiles/3> ;
+    sdtl:sourceInformation <#sourceInformation/5> .
+
+<#AppendFileDescription/1> a sdtl:AppendFileDescription ;
+    sdtl:fileName "top" ;
+    sdtl:type "AppendFileDescription" .
+
+<#AppendFileDescription/2> a sdtl:AppendFileDescription ;
+    sdtl:fileName "bottom" ;
+    sdtl:type "AppendFileDescription" .
+
+<#AppendFileDescription/3> a sdtl:AppendFileDescription ;
+    sdtl:fileName "top" ;
+    sdtl:type "AppendFileDescription" .
+
+<#AppendFileDescription/4> a sdtl:AppendFileDescription ;
+    sdtl:fileName "bottom" ;
+    sdtl:type "AppendFileDescription" .
+
+<#AppendFileDescription/5> a sdtl:AppendFileDescription ;
+    sdtl:fileName "top" ;
+    sdtl:type "AppendFileDescription" .
+
+<#AppendFileDescription/6> a sdtl:AppendFileDescription ;
+    sdtl:dropVariables <#dropVariables/1> ;
+    sdtl:fileName "bottom" ;
+    sdtl:type "AppendFileDescription" .
+
+<#Port/1> a provone:Port ;
+    sdtl:FileName "top.csv" .
+
+<#Port/10> a provone:Port ;
+    sdtl:dataframeName "concatenated" ;
+    sdtl:variableInventory <#variableInventory/4> .
+
+<#Port/13> a provone:Port ;
+    sdtl:dataframeName "concat_inner" ;
+    sdtl:variableInventory <#variableInventory/5> .
+
+<#Port/2> a provone:Port ;
+    provone:connectsTo <#Channel/1> ;
+    sdtl:dataframeName "top" ;
+    sdtl:variableInventory <#variableInventory/1> .
+
+<#Port/3> a provone:Port ;
+    sdtl:FileName "bottom.csv" .
+
+<#Port/4> a provone:Port ;
+    provone:connectsTo <#Channel/2> ;
+    sdtl:dataframeName "bottom" ;
+    sdtl:variableInventory <#variableInventory/2> .
+
+<#Port/7> a provone:Port ;
+    sdtl:dataframeName "appended" ;
+    sdtl:variableInventory <#variableInventory/3> .
+
+<#appendFiles/1> a sdtl:appendFiles ;
+    sdtl:AppendFileDescription <#AppendFileDescription/1>,
+        <#AppendFileDescription/2> .
+
+<#appendFiles/2> a sdtl:appendFiles ;
+    sdtl:AppendFileDescription <#AppendFileDescription/3>,
+        <#AppendFileDescription/4> .
+
+<#appendFiles/3> a sdtl:appendFiles ;
+    sdtl:AppendFileDescription <#AppendFileDescription/5>,
+        <#AppendFileDescription/6> .
+
+<#dropVariables/1> a sdtl:dropVariables ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "C" .
+
+<#sourceInformation/1> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 3 ;
+    sdtl:lineNumberStart 3 ;
+    sdtl:originalSourceText "top = pd.read_csv(\"top.csv\")" ;
+    sdtl:sourceStartIndex 22 ;
+    sdtl:sourceStopIndex 49 .
+
+<#sourceInformation/2> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 4 ;
+    sdtl:lineNumberStart 4 ;
+    sdtl:originalSourceText "bottom = pd.read_csv(\"bottom.csv\")" ;
+    sdtl:sourceStartIndex 51 ;
+    sdtl:sourceStopIndex 84 .
+
+<#sourceInformation/3> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 6 ;
+    sdtl:lineNumberStart 6 ;
+    sdtl:originalSourceText "appended = top.append(bottom)" ;
+    sdtl:sourceStartIndex 87 ;
+    sdtl:sourceStopIndex 115 .
+
+<#sourceInformation/4> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 7 ;
+    sdtl:lineNumberStart 7 ;
+    sdtl:originalSourceText "concatenated = pd.concat([top, bottom])" ;
+    sdtl:sourceStartIndex 117 ;
+    sdtl:sourceStopIndex 155 .
+
+<#sourceInformation/5> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 8 ;
+    sdtl:lineNumberStart 8 ;
+    sdtl:originalSourceText "concat_inner = pd.concat([top, bottom], join=\"inner\")" ;
+    sdtl:sourceStartIndex 157 ;
+    sdtl:sourceStopIndex 209 .
+
+<#variable/1> a schema:Thing ;
+    schema:name "A" .
+
+<#variable/10> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/11> a schema:Thing ;
+    schema:name "C" .
+
+<#variable/12> a schema:Thing ;
+    schema:name "A" .
+
+<#variable/13> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/2> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/3> a schema:Thing ;
+    schema:name "A" .
+
+<#variable/4> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/5> a schema:Thing ;
+    schema:name "C" .
+
+<#variable/6> a schema:Thing ;
+    schema:name "A" .
+
+<#variable/7> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/8> a schema:Thing ;
+    schema:name "C" .
+
+<#variable/9> a schema:Thing ;
+    schema:name "A" .
+
+<#variableInventory/1> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/1> ;
+    rdf:rdf:_2 <#variable/2> .
+
+<#variableInventory/2> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/3> ;
+    rdf:rdf:_2 <#variable/4> ;
+    rdf:rdf:_3 <#variable/5> .
+
+<#variableInventory/3> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/6> ;
+    rdf:rdf:_2 <#variable/7> ;
+    rdf:rdf:_3 <#variable/8> .
+
+<#variableInventory/4> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/9> ;
+    rdf:rdf:_2 <#variable/10> ;
+    rdf:rdf:_3 <#variable/11> .
+
+<#variableInventory/5> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/12> ;
+    rdf:rdf:_2 <#variable/13> .
+
+<#Channel/1> a provone:Channel .
+
+<#Channel/2> a provone:Channel .
+
+<#Channel/3> a provone:Channel .
+
+<#Channel/4> a provone:Channel .
+
+<#Channel/5> a provone:Channel .
+
+<#Channel/6> a provone:Channel .

@@ -1,0 +1,373 @@
+{
+  "commands": [
+    {
+      "$type": "Comment",
+      "command": "Comment",
+      "commentText": "Test the various methods of renaming columns.",
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 1,
+          "lineNumberEnd": 1,
+          "sourceStartIndex": 1,
+          "sourceStopIndex": 51,
+          "originalSourceText": "\"\"\"Test the various methods of renaming columns.\"\"\""
+        }
+      ]
+    },
+    {
+      "$type": "NoTransformOp",
+      "command": "NoTransformOp",
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 3,
+          "lineNumberEnd": 3,
+          "sourceStartIndex": 54,
+          "sourceStopIndex": 72,
+          "originalSourceText": "import pandas as pd"
+        }
+      ]
+    },
+    {
+      "$type": "Comment",
+      "command": "Comment",
+      "commentText": "\n    A B\n--+----\n0 | 1 4\n1 | 2 5\n2 | 3 6\n",
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 5,
+          "lineNumberEnd": 11,
+          "sourceStartIndex": 75,
+          "sourceStopIndex": 121,
+          "originalSourceText": "\"\"\"\n    A B\n--+----\n0 | 1 4\n1 | 2 5\n2 | 3 6\n\"\"\""
+        }
+      ]
+    },
+    {
+      "$type": "Load",
+      "command": "Load",
+      "fileName": "rename.csv",
+      "producesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "A",
+            "B"
+          ]
+        }
+      ],
+      "software": "csv",
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 12,
+          "lineNumberEnd": 12,
+          "sourceStartIndex": 123,
+          "sourceStopIndex": 152,
+          "originalSourceText": "df = pd.read_csv(\"rename.csv\")"
+        }
+      ]
+    },
+    {
+      "$type": "Rename",
+      "command": "Rename",
+      "consumesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "A",
+            "B"
+          ]
+        }
+      ],
+      "producesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "renames": [
+        {
+          "$type": "RenamePair",
+          "oldVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "A"
+          },
+          "newVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "a"
+          }
+        },
+        {
+          "$type": "RenamePair",
+          "oldVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "B"
+          },
+          "newVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "b"
+          }
+        }
+      ],
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 14,
+          "lineNumberEnd": 14,
+          "sourceStartIndex": 155,
+          "sourceStopIndex": 209,
+          "originalSourceText": "df.rename(columns={ \"A\": \"a\", \"B\": \"b\" }, inplace=True)"
+        }
+      ]
+    },
+    {
+      "$type": "Rename",
+      "command": "Rename",
+      "consumesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "producesDataframe": [
+        {
+          "dataframeName": "df2",
+          "variableInventory": [
+            "x",
+            "y"
+          ]
+        }
+      ],
+      "renames": [
+        {
+          "$type": "RenamePair",
+          "oldVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "a"
+          },
+          "newVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "x"
+          }
+        },
+        {
+          "$type": "RenamePair",
+          "oldVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "b"
+          },
+          "newVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "y"
+          }
+        }
+      ],
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 15,
+          "lineNumberEnd": 15,
+          "sourceStartIndex": 211,
+          "sourceStopIndex": 257,
+          "originalSourceText": "df2 = df.rename(columns={ \"a\": \"x\", \"b\": \"y\" })"
+        }
+      ]
+    },
+    {
+      "$type": "Unsupported",
+      "command": "Unsupported",
+      "messageText": [
+        "Renaming rows is not currently supported by the parsing application."
+      ],
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 16,
+          "lineNumberEnd": 16,
+          "sourceStartIndex": 259,
+          "sourceStopIndex": 307,
+          "originalSourceText": "df3 = df.rename(index={ 0: \"x\", 1: \"y\", 2: \"z\" })"
+        }
+      ]
+    },
+    {
+      "$type": "Comment",
+      "command": "Comment",
+      "commentText": " this is unsupported",
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 16,
+          "lineNumberEnd": 16,
+          "sourceStartIndex": 311,
+          "sourceStopIndex": 331,
+          "originalSourceText": "# this is unsupported"
+        }
+      ]
+    },
+    {
+      "$type": "Rename",
+      "command": "Rename",
+      "consumesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "producesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "x",
+            "b"
+          ]
+        }
+      ],
+      "renames": [
+        {
+          "$type": "RenamePair",
+          "oldVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "a"
+          },
+          "newVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "x"
+          }
+        }
+      ],
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 19,
+          "lineNumberEnd": 19,
+          "sourceStartIndex": 335,
+          "sourceStopIndex": 355,
+          "originalSourceText": "df.columns[\"a\"] = \"x\""
+        }
+      ]
+    },
+    {
+      "$type": "Comment",
+      "command": "Comment",
+      "commentText": " this highlights the necessity of keeping track of variable changes",
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 21,
+          "lineNumberEnd": 21,
+          "sourceStartIndex": 358,
+          "sourceStopIndex": 425,
+          "originalSourceText": "# this highlights the necessity of keeping track of variable changes"
+        }
+      ]
+    },
+    {
+      "$type": "Comment",
+      "command": "Comment",
+      "commentText": " (so that we know what the old column names are when parsing such statements)",
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 22,
+          "lineNumberEnd": 22,
+          "sourceStartIndex": 427,
+          "sourceStopIndex": 504,
+          "originalSourceText": "# (so that we know what the old column names are when parsing such statements)"
+        }
+      ]
+    },
+    {
+      "$type": "Rename",
+      "command": "Rename",
+      "consumesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "x",
+            "b"
+          ]
+        }
+      ],
+      "producesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "one",
+            "two"
+          ]
+        }
+      ],
+      "renames": [
+        {
+          "$type": "RenamePair",
+          "oldVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "x"
+          },
+          "newVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "one"
+          }
+        },
+        {
+          "$type": "RenamePair",
+          "oldVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "b"
+          },
+          "newVariable": {
+            "$type": "VariableSymbolExpression",
+            "variableName": "two"
+          }
+        }
+      ],
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 23,
+          "lineNumberEnd": 23,
+          "sourceStartIndex": 506,
+          "sourceStopIndex": 532,
+          "originalSourceText": "df.columns = [\"one\", \"two\"]"
+        }
+      ]
+    },
+    {
+      "$type": "Save",
+      "command": "Save",
+      "consumesDataframe": [
+        {
+          "dataframeName": "df",
+          "variableInventory": [
+            "one",
+            "two"
+          ]
+        }
+      ],
+      "fileName": "rename.csv",
+      "software": "csv",
+      "sourceInformation": [
+        {
+          "$type": "SourceInformation",
+          "lineNumberStart": 25,
+          "lineNumberEnd": 25,
+          "sourceStartIndex": 535,
+          "sourceStopIndex": 557,
+          "originalSourceText": "df.to_csv(\"rename.csv\")"
+        }
+      ]
+    }
+  ]
+}

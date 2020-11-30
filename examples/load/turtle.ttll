@@ -1,0 +1,126 @@
+@prefix ns1: <https://rdf-vocabulary.ddialliance.org/sdtl#$> .
+@prefix provone: <http://purl.dataone.org/provone/2015/01/15/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://www.schema.org/#> .
+@prefix sdtl: <https://rdf-vocabulary.ddialliance.org/sdtl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Program/1> a provone:Program ;
+    provone:hasInPort <#Port/1> ;
+    provone:hasOutPort <#Port/2> ;
+    sdtl:sourceInformation <#sourceInformation/1> .
+
+<#Program/2> a provone:Program ;
+    provone:hasInPort <#Port/3> ;
+    provone:hasOutPort <#Port/4> ;
+    sdtl:sourceInformation <#sourceInformation/2> .
+
+<#Program/3> a provone:Program ;
+    provone:hasInPort <#Port/5> ;
+    provone:hasOutPort <#Port/6> ;
+    sdtl:sourceInformation <#sourceInformation/3> .
+
+<#Program/4> a provone:Program ;
+    provone:hasInPort <#Port/7> ;
+    provone:hasOutPort <#Port/8> ;
+    sdtl:sourceInformation <#sourceInformation/4> .
+
+<#Port/1> a provone:Port ;
+    sdtl:FileName "data.csv" .
+
+<#Port/2> a provone:Port ;
+    sdtl:dataframeName "csv_df" ;
+    sdtl:variableInventory <#variableInventory/1> .
+
+<#Port/3> a provone:Port ;
+    sdtl:FileName "data.xlsx" .
+
+<#Port/4> a provone:Port ;
+    sdtl:dataframeName "xls_df" ;
+    sdtl:variableInventory <#variableInventory/2> .
+
+<#Port/5> a provone:Port ;
+    sdtl:FileName "data.sas7bdat" .
+
+<#Port/6> a provone:Port ;
+    sdtl:dataframeName "sas_df" ;
+    sdtl:variableInventory <#variableInventory/3> .
+
+<#Port/7> a provone:Port ;
+    sdtl:FileName "data.dta" .
+
+<#Port/8> a provone:Port ;
+    sdtl:dataframeName "stata_df" ;
+    sdtl:variableInventory <#variableInventory/4> .
+
+<#sourceInformation/1> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 9 ;
+    sdtl:lineNumberStart 9 ;
+    sdtl:originalSourceText "csv_df = pd.read_csv(\"data.csv\")" ;
+    sdtl:sourceStartIndex 187 ;
+    sdtl:sourceStopIndex 218 .
+
+<#sourceInformation/2> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 10 ;
+    sdtl:lineNumberStart 10 ;
+    sdtl:originalSourceText "xls_df = pd.read_excel('data.xlsx')" ;
+    sdtl:sourceStartIndex 220 ;
+    sdtl:sourceStopIndex 254 .
+
+<#sourceInformation/3> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 11 ;
+    sdtl:lineNumberStart 11 ;
+    sdtl:originalSourceText "sas_df = pd.read_sas(\"\"\"data.sas7bdat\"\"\")" ;
+    sdtl:sourceStartIndex 256 ;
+    sdtl:sourceStopIndex 296 .
+
+<#sourceInformation/4> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 12 ;
+    sdtl:lineNumberStart 12 ;
+    sdtl:originalSourceText "stata_df = pd.read_stata('''data.dta''')" ;
+    sdtl:sourceStartIndex 341 ;
+    sdtl:sourceStopIndex 380 .
+
+<#variable/1> a schema:Thing ;
+    schema:name "a" .
+
+<#variable/2> a schema:Thing ;
+    schema:name "b" .
+
+<#variable/3> a schema:Thing ;
+    schema:name "a" .
+
+<#variable/4> a schema:Thing ;
+    schema:name "b" .
+
+<#variable/5> a schema:Thing ;
+    schema:name "a" .
+
+<#variable/6> a schema:Thing ;
+    schema:name "b" .
+
+<#variable/7> a schema:Thing ;
+    schema:name "a" .
+
+<#variable/8> a schema:Thing ;
+    schema:name "b" .
+
+<#variableInventory/1> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/1> ;
+    rdf:rdf:_2 <#variable/2> .
+
+<#variableInventory/2> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/3> ;
+    rdf:rdf:_2 <#variable/4> .
+
+<#variableInventory/3> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/5> ;
+    rdf:rdf:_2 <#variable/6> .
+
+<#variableInventory/4> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/7> ;
+    rdf:rdf:_2 <#variable/8> .

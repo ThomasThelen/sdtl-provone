@@ -1,0 +1,659 @@
+@prefix ns1: <https://rdf-vocabulary.ddialliance.org/sdtl#$> .
+@prefix provone: <http://purl.dataone.org/provone/2015/01/15/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://www.schema.org/#> .
+@prefix sdtl: <https://rdf-vocabulary.ddialliance.org/sdtl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Port/11> a provone:Port ;
+    provone:connectsTo <#Channel/4>,
+        <#Channel/5> .
+
+<#Port/13> a provone:Port ;
+    provone:connectsTo <#Channel/5>,
+        <#Channel/6> .
+
+<#Port/15> a provone:Port ;
+    provone:connectsTo <#Channel/6>,
+        <#Channel/8> .
+
+<#Port/17> a provone:Port ;
+    provone:connectsTo <#Channel/7> .
+
+<#Port/20> a provone:Port ;
+    provone:connectsTo <#Channel/8> .
+
+<#Port/3> a provone:Port ;
+    provone:connectsTo <#Channel/1> .
+
+<#Port/5> a provone:Port ;
+    provone:connectsTo <#Channel/2> .
+
+<#Port/7> a provone:Port ;
+    provone:connectsTo <#Channel/3> .
+
+<#Program/1> a provone:Program ;
+    provone:hasInPort <#Port/1> ;
+    provone:hasOutPort <#Port/2> ;
+    sdtl:sourceInformation <#sourceInformation/1> .
+
+<#Program/10> a provone:Program ;
+    provone:hasInPort "#Port/20" ;
+    provone:hasOutPort <#Port/19> ;
+    sdtl:sourceInformation <#sourceInformation/10> .
+
+<#Program/2> a provone:Program ;
+    provone:hasInPort "#Port/3" ;
+    provone:hasOutPort <#Port/4> ;
+    sdtl:expression <#expression/1> ;
+    sdtl:sourceInformation <#sourceInformation/2> ;
+    sdtl:variable <#variable/5> .
+
+<#Program/3> a provone:Program ;
+    provone:hasInPort "#Port/5" ;
+    provone:hasOutPort <#Port/6> ;
+    sdtl:expression <#expression/2> ;
+    sdtl:sourceInformation <#sourceInformation/3> ;
+    sdtl:variable <#variable/8> .
+
+<#Program/4> a provone:Program ;
+    provone:hasInPort "#Port/7" ;
+    provone:hasOutPort <#Port/8> ;
+    sdtl:expression <#expression/3> ;
+    sdtl:sourceInformation <#sourceInformation/4> ;
+    sdtl:variable <#variable/12> .
+
+<#Program/5> a provone:Program ;
+    provone:hasInPort <#Port/9> ;
+    provone:hasOutPort <#Port/10> ;
+    sdtl:sourceInformation <#sourceInformation/5> .
+
+<#Program/6> a provone:Program ;
+    provone:hasInPort "#Port/11" ;
+    provone:hasOutPort <#Port/12> ;
+    sdtl:expression <#expression/4> ;
+    sdtl:sourceInformation <#sourceInformation/6> ;
+    sdtl:variable <#variable/16> .
+
+<#Program/7> a provone:Program ;
+    provone:hasInPort "#Port/13" ;
+    provone:hasOutPort <#Port/14> ;
+    sdtl:expression <#expression/5> ;
+    sdtl:sourceInformation <#sourceInformation/7> ;
+    sdtl:variable <#variable/19> .
+
+<#Program/8> a provone:Program ;
+    provone:hasInPort "#Port/15" ;
+    provone:hasOutPort <#Port/16> ;
+    sdtl:expression <#expression/6> ;
+    sdtl:sourceInformation <#sourceInformation/8> ;
+    sdtl:variable <#variable/22> .
+
+<#Program/9> a provone:Program ;
+    provone:hasInPort "#Port/17" ;
+    provone:hasOutPort <#Port/18> ;
+    sdtl:expression <#expression/7> ;
+    sdtl:sourceInformation <#sourceInformation/9> ;
+    sdtl:variable <#variable/26> .
+
+<#Port/1> a provone:Port ;
+    sdtl:FileName "df.csv" .
+
+<#Port/10> a provone:Port ;
+    provone:connectsTo <#Channel/4> ;
+    sdtl:dataframeName "temps" ;
+    sdtl:variableInventory <#variableInventory/5> .
+
+<#Port/12> a provone:Port ;
+    sdtl:dataframeName "temps_c" ;
+    sdtl:variableInventory <#variableInventory/6> .
+
+<#Port/14> a provone:Port ;
+    sdtl:dataframeName "temps_c" ;
+    sdtl:variableInventory <#variableInventory/7> .
+
+<#Port/16> a provone:Port ;
+    provone:connectsTo <#Channel/7> ;
+    sdtl:dataframeName "_activeDataframe_0" ;
+    sdtl:variableInventory <#variableInventory/8> .
+
+<#Port/18> a provone:Port ;
+    sdtl:dataframeName "temps_k" ;
+    sdtl:variableInventory <#variableInventory/9> .
+
+<#Port/19> a provone:Program ;
+    sdtl:FileName "temps.csv" .
+
+<#Port/2> a provone:Port ;
+    provone:connectsTo <#Channel/1> ;
+    sdtl:dataframeName "df" ;
+    sdtl:variableInventory <#variableInventory/1> .
+
+<#Port/4> a provone:Port ;
+    provone:connectsTo <#Channel/2> ;
+    sdtl:dataframeName "df" ;
+    sdtl:variableInventory <#variableInventory/2> .
+
+<#Port/6> a provone:Port ;
+    provone:connectsTo <#Channel/3> ;
+    sdtl:dataframeName "df" ;
+    sdtl:variableInventory <#variableInventory/3> .
+
+<#Port/8> a provone:Port ;
+    sdtl:dataframeName "df" ;
+    sdtl:variableInventory <#variableInventory/4> .
+
+<#Port/9> a provone:Port ;
+    sdtl:FileName "temps.csv" .
+
+<#argumentValue/1> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "B" .
+
+<#argumentValue/10> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "9" .
+
+<#argumentValue/11> a sdtl:argumentValue ;
+    sdtl:arguments <#arguments/12>,
+        <#arguments/15> ;
+    sdtl:function "multiplication" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#argumentValue/12> a sdtl:argumentValue ;
+    sdtl:arguments <#arguments/13>,
+        <#arguments/14> ;
+    sdtl:function "subtraction" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#argumentValue/13> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "fahrenheit" .
+
+<#argumentValue/14> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "32" .
+
+<#argumentValue/15> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "5" .
+
+<#argumentValue/16> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "9" .
+
+<#argumentValue/17> a sdtl:argumentValue ;
+    sdtl:arguments <#arguments/18>,
+        <#arguments/21> ;
+    sdtl:function "multiplication" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#argumentValue/18> a sdtl:argumentValue ;
+    sdtl:arguments <#arguments/19>,
+        <#arguments/20> ;
+    sdtl:function "subtraction" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#argumentValue/19> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "fahrenheit" .
+
+<#argumentValue/2> a sdtl:argumentValue ;
+    sdtl:numericType "Real" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "6.5" .
+
+<#argumentValue/20> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "32" .
+
+<#argumentValue/21> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "5" .
+
+<#argumentValue/22> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "9" .
+
+<#argumentValue/23> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "celsius" .
+
+<#argumentValue/24> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "273" .
+
+<#argumentValue/3> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "A" .
+
+<#argumentValue/4> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "B" .
+
+<#argumentValue/5> a sdtl:argumentValue ;
+    sdtl:arguments <#arguments/6>,
+        <#arguments/9> ;
+    sdtl:function "multiplication" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#argumentValue/6> a sdtl:argumentValue ;
+    sdtl:arguments <#arguments/7>,
+        <#arguments/8> ;
+    sdtl:function "subtraction" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#argumentValue/7> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "fahrenheit" .
+
+<#argumentValue/8> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "32" .
+
+<#argumentValue/9> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "5" .
+
+<#arguments/1> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/1> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/10> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/10> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/11> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/11> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/12> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/12> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/13> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/13> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/14> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/14> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/15> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/15> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/16> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/16> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/17> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/17> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/18> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/18> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/19> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/19> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/2> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/2> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/20> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/20> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/21> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/21> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/22> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/22> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/23> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/23> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/24> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/24> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/3> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/3> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/4> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/4> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/5> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/5> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/6> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/6> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/7> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/7> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/8> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/8> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/9> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/9> ;
+    sdtl:type "FunctionArgument" .
+
+<#expression/1> a sdtl:expression ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "3" .
+
+<#expression/2> a sdtl:expression ;
+    sdtl:arguments <#arguments/1>,
+        <#arguments/2> ;
+    sdtl:function "addition" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/3> a sdtl:expression ;
+    sdtl:arguments <#arguments/3>,
+        <#arguments/4> ;
+    sdtl:function "subtraction" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/4> a sdtl:expression ;
+    sdtl:arguments <#arguments/10>,
+        <#arguments/5> ;
+    sdtl:function "division" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/5> a sdtl:expression ;
+    sdtl:arguments <#arguments/11>,
+        <#arguments/16> ;
+    sdtl:function "division" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/6> a sdtl:expression ;
+    sdtl:arguments <#arguments/17>,
+        <#arguments/22> ;
+    sdtl:function "division" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/7> a sdtl:expression ;
+    sdtl:arguments <#arguments/23>,
+        <#arguments/24> ;
+    sdtl:function "addition" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#sourceInformation/1> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 10 ;
+    sdtl:lineNumberStart 10 ;
+    sdtl:originalSourceText "df = pd.read_csv(\"df.csv\")" ;
+    sdtl:sourceStartIndex 70 ;
+    sdtl:sourceStopIndex 95 .
+
+<#sourceInformation/10> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 32 ;
+    sdtl:lineNumberStart 32 ;
+    sdtl:originalSourceText "temps.to_csv(\"temps.csv\")" ;
+    sdtl:sourceStartIndex 549 ;
+    sdtl:sourceStopIndex 573 .
+
+<#sourceInformation/2> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 12 ;
+    sdtl:lineNumberStart 12 ;
+    sdtl:originalSourceText "df[\"A\"] = 3" ;
+    sdtl:sourceStartIndex 98 ;
+    sdtl:sourceStopIndex 108 .
+
+<#sourceInformation/3> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 13 ;
+    sdtl:lineNumberStart 13 ;
+    sdtl:originalSourceText "df[\"B\"] = df[\"B\"] + 6.5" ;
+    sdtl:sourceStartIndex 110 ;
+    sdtl:sourceStopIndex 132 .
+
+<#sourceInformation/4> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 14 ;
+    sdtl:lineNumberStart 14 ;
+    sdtl:originalSourceText "df[\"C\"] = df[\"A\"] - df[\"B\"]" ;
+    sdtl:sourceStartIndex 134 ;
+    sdtl:sourceStopIndex 160 .
+
+<#sourceInformation/5> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 24 ;
+    sdtl:lineNumberStart 24 ;
+    sdtl:originalSourceText "temps = pd.read_csv(\"temps.csv\")" ;
+    sdtl:sourceStartIndex 235 ;
+    sdtl:sourceStopIndex 266 .
+
+<#sourceInformation/6> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 26 ;
+    sdtl:lineNumberStart 26 ;
+    sdtl:originalSourceText "temps_c = temps.assign(celsius=((temps[\"fahrenheit\"] - 32) * 5 / 9))" ;
+    sdtl:sourceStartIndex 269 ;
+    sdtl:sourceStopIndex 336 .
+
+<#sourceInformation/7> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 27 ;
+    sdtl:lineNumberStart 27 ;
+    sdtl:originalSourceText "temps_c = temps.assign(celsius=lambda x: (x.fahrenheit - 32) * 5 / 9)" ;
+    sdtl:sourceStartIndex 338 ;
+    sdtl:sourceStopIndex 406 .
+
+<#sourceInformation/8> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 30 ;
+    sdtl:lineNumberStart 29 ;
+    sdtl:originalSourceText """temps_k = temps.assign(celsius=lambda x: ((x["fahrenheit"] - 32) * 5 / 9), 
+                       kelvin=lambda x : (x["celsius"] + 273))""" ;
+    sdtl:sourceStartIndex 409 ;
+    sdtl:sourceStopIndex 546 .
+
+<#sourceInformation/9> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 30 ;
+    sdtl:lineNumberStart 29 ;
+    sdtl:originalSourceText """temps_k = temps.assign(celsius=lambda x: ((x["fahrenheit"] - 32) * 5 / 9), 
+                       kelvin=lambda x : (x["celsius"] + 273))""" ;
+    sdtl:sourceStartIndex 409 ;
+    sdtl:sourceStopIndex 546 .
+
+<#variable/1> a schema:Thing ;
+    schema:name "A" .
+
+<#variable/10> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/11> a schema:Thing ;
+    schema:name "C" .
+
+<#variable/12> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "C" .
+
+<#variable/13> a schema:Thing ;
+    schema:name "fahrenheit" .
+
+<#variable/14> a schema:Thing ;
+    schema:name "fahrenheit" .
+
+<#variable/15> a schema:Thing ;
+    schema:name "celsius" .
+
+<#variable/16> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "celsius" .
+
+<#variable/17> a schema:Thing ;
+    schema:name "fahrenheit" .
+
+<#variable/18> a schema:Thing ;
+    schema:name "celsius" .
+
+<#variable/19> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "celsius" .
+
+<#variable/2> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/20> a schema:Thing ;
+    schema:name "fahrenheit" .
+
+<#variable/21> a schema:Thing ;
+    schema:name "celsius" .
+
+<#variable/22> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "celsius" .
+
+<#variable/23> a schema:Thing ;
+    schema:name "fahrenheit" .
+
+<#variable/24> a schema:Thing ;
+    schema:name "celsius" .
+
+<#variable/25> a schema:Thing ;
+    schema:name "kelvin" .
+
+<#variable/26> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "kelvin" .
+
+<#variable/3> a schema:Thing ;
+    schema:name "A" .
+
+<#variable/4> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/5> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "A" .
+
+<#variable/6> a schema:Thing ;
+    schema:name "A" .
+
+<#variable/7> a schema:Thing ;
+    schema:name "B" .
+
+<#variable/8> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "B" .
+
+<#variable/9> a schema:Thing ;
+    schema:name "A" .
+
+<#variableInventory/1> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/1> ;
+    rdf:rdf:_2 <#variable/2> .
+
+<#variableInventory/2> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/3> ;
+    rdf:rdf:_2 <#variable/4> .
+
+<#variableInventory/3> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/6> ;
+    rdf:rdf:_2 <#variable/7> .
+
+<#variableInventory/4> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/9> ;
+    rdf:rdf:_2 <#variable/10> ;
+    rdf:rdf:_3 <#variable/11> .
+
+<#variableInventory/5> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/13> .
+
+<#variableInventory/6> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/14> ;
+    rdf:rdf:_2 <#variable/15> .
+
+<#variableInventory/7> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/17> ;
+    rdf:rdf:_2 <#variable/18> .
+
+<#variableInventory/8> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/20> ;
+    rdf:rdf:_2 <#variable/21> .
+
+<#variableInventory/9> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/23> ;
+    rdf:rdf:_2 <#variable/24> ;
+    rdf:rdf:_3 <#variable/25> .
+
+<#Channel/1> a provone:Channel .
+
+<#Channel/2> a provone:Channel .
+
+<#Channel/3> a provone:Channel .
+
+<#Channel/4> a provone:Channel .
+
+<#Channel/5> a provone:Channel .
+
+<#Channel/6> a provone:Channel .
+
+<#Channel/7> a provone:Channel .
+
+<#Channel/8> a provone:Channel .

@@ -1,0 +1,746 @@
+@prefix ns1: <https://rdf-vocabulary.ddialliance.org/sdtl#$> .
+@prefix provone: <http://purl.dataone.org/provone/2015/01/15/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://www.schema.org/#> .
+@prefix sdtl: <https://rdf-vocabulary.ddialliance.org/sdtl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#Port/11> a provone:Port ;
+    provone:connectsTo <#Channel/5>,
+        <#Channel/6> .
+
+<#Port/13> a provone:Port ;
+    provone:connectsTo <#Channel/6> .
+
+<#Port/3> a provone:Port ;
+    provone:connectsTo <#Channel/1>,
+        <#Channel/2> .
+
+<#Port/5> a provone:Port ;
+    provone:connectsTo <#Channel/2>,
+        <#Channel/3> .
+
+<#Port/7> a provone:Port ;
+    provone:connectsTo <#Channel/3>,
+        <#Channel/4> .
+
+<#Port/9> a provone:Port ;
+    provone:connectsTo <#Channel/4>,
+        <#Channel/5> .
+
+<#Program/1> a provone:Program ;
+    provone:hasInPort <#Port/1> ;
+    provone:hasOutPort <#Port/2> ;
+    sdtl:sourceInformation <#sourceInformation/1> .
+
+<#Program/2> a provone:Program ;
+    sdtl:sourceInformation <#sourceInformation/2> .
+
+<#Program/3> a provone:Program ;
+    provone:hasInPort "#Port/3" ;
+    provone:hasOutPort <#Port/4> ;
+    sdtl:aggregateVariables <#aggregateVariables/1> ;
+    sdtl:groupByVariables <#groupByVariables/1> ;
+    sdtl:sourceInformation <#sourceInformation/3> .
+
+<#Program/4> a provone:Program ;
+    provone:hasInPort "#Port/5" ;
+    provone:hasOutPort <#Port/6> ;
+    sdtl:aggregateVariables <#aggregateVariables/2> ;
+    sdtl:groupByVariables <#groupByVariables/2> ;
+    sdtl:sourceInformation <#sourceInformation/4> .
+
+<#Program/5> a provone:Program ;
+    sdtl:sourceInformation <#sourceInformation/5> .
+
+<#Program/6> a provone:Program ;
+    provone:hasInPort "#Port/7" ;
+    provone:hasOutPort <#Port/8> ;
+    sdtl:aggregateVariables <#aggregateVariables/3> ;
+    sdtl:groupByVariables <#groupByVariables/3> ;
+    sdtl:sourceInformation <#sourceInformation/6> .
+
+<#Program/7> a provone:Program ;
+    provone:hasInPort "#Port/9" ;
+    provone:hasOutPort <#Port/10> ;
+    sdtl:aggregateVariables <#aggregateVariables/4> ;
+    sdtl:groupByVariables <#groupByVariables/4> ;
+    sdtl:sourceInformation <#sourceInformation/7> .
+
+<#Program/8> a provone:Program ;
+    provone:hasInPort "#Port/11" ;
+    provone:hasOutPort <#Port/12> ;
+    sdtl:aggregateVariables <#aggregateVariables/5> ;
+    sdtl:groupByVariables <#groupByVariables/5> ;
+    sdtl:sourceInformation <#sourceInformation/8> .
+
+<#Program/9> a provone:Program ;
+    provone:hasInPort "#Port/13" ;
+    provone:hasOutPort <#Port/14> ;
+    sdtl:aggregateVariables <#aggregateVariables/6> ;
+    sdtl:groupByVariables <#groupByVariables/6> ;
+    sdtl:sourceInformation <#sourceInformation/9> .
+
+<#Compute/1> a sdtl:Compute ;
+    sdtl:expression <#expression/1> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/6> .
+
+<#Compute/10> a sdtl:Compute ;
+    sdtl:expression <#expression/10> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/26> .
+
+<#Compute/11> a sdtl:Compute ;
+    sdtl:expression <#expression/11> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/27> .
+
+<#Compute/12> a sdtl:Compute ;
+    sdtl:expression <#expression/12> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/28> .
+
+<#Compute/13> a sdtl:Compute ;
+    sdtl:expression <#expression/13> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/29> .
+
+<#Compute/14> a sdtl:Compute ;
+    sdtl:expression <#expression/14> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/33> .
+
+<#Compute/15> a sdtl:Compute ;
+    sdtl:expression <#expression/15> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/34> .
+
+<#Compute/16> a sdtl:Compute ;
+    sdtl:expression <#expression/16> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/35> .
+
+<#Compute/2> a sdtl:Compute ;
+    sdtl:expression <#expression/2> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/7> .
+
+<#Compute/3> a sdtl:Compute ;
+    sdtl:expression <#expression/3> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/9> .
+
+<#Compute/4> a sdtl:Compute ;
+    sdtl:expression <#expression/4> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/12> .
+
+<#Compute/5> a sdtl:Compute ;
+    sdtl:expression <#expression/5> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/13> .
+
+<#Compute/6> a sdtl:Compute ;
+    sdtl:expression <#expression/6> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/16> .
+
+<#Compute/7> a sdtl:Compute ;
+    sdtl:expression <#expression/7> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/17> .
+
+<#Compute/8> a sdtl:Compute ;
+    sdtl:expression <#expression/8> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/24> .
+
+<#Compute/9> a sdtl:Compute ;
+    sdtl:expression <#expression/9> ;
+    sdtl:type "Compute" ;
+    sdtl:variable <#variable/25> .
+
+<#Port/1> a provone:Port ;
+    sdtl:FileName "scores.csv" .
+
+<#Port/10> a provone:Port ;
+    sdtl:dataframeName "single_agg" ;
+    sdtl:variableInventory <#variableInventory/5> .
+
+<#Port/12> a provone:Port ;
+    sdtl:dataframeName "multiple_agg" ;
+    sdtl:variableInventory <#variableInventory/6> .
+
+<#Port/14> a provone:Port ;
+    sdtl:dataframeName "named_agg" ;
+    sdtl:variableInventory <#variableInventory/7> .
+
+<#Port/2> a provone:Port ;
+    provone:connectsTo <#Channel/1> ;
+    sdtl:dataframeName "scores" ;
+    sdtl:variableInventory <#variableInventory/1> .
+
+<#Port/4> a provone:Port ;
+    sdtl:dataframeName "median_age" ;
+    sdtl:variableInventory <#variableInventory/2> .
+
+<#Port/6> a provone:Port ;
+    sdtl:dataframeName "group_sum" ;
+    sdtl:variableInventory <#variableInventory/3> .
+
+<#Port/8> a provone:Port ;
+    sdtl:dataframeName "non_index" ;
+    sdtl:variableInventory <#variableInventory/4> .
+
+<#aggregateVariables/1> a sdtl:aggregateVariables ;
+    sdtl:Compute <#Compute/1>,
+        <#Compute/2> .
+
+<#aggregateVariables/2> a sdtl:aggregateVariables ;
+    sdtl:Compute <#Compute/3> .
+
+<#aggregateVariables/3> a sdtl:aggregateVariables ;
+    sdtl:Compute <#Compute/4>,
+        <#Compute/5> .
+
+<#aggregateVariables/4> a sdtl:aggregateVariables ;
+    sdtl:Compute <#Compute/6>,
+        <#Compute/7> .
+
+<#aggregateVariables/5> a sdtl:aggregateVariables ;
+    sdtl:Compute <#Compute/10>,
+        <#Compute/11>,
+        <#Compute/12>,
+        <#Compute/13>,
+        <#Compute/8>,
+        <#Compute/9> .
+
+<#aggregateVariables/6> a sdtl:aggregateVariables ;
+    sdtl:Compute <#Compute/14>,
+        <#Compute/15>,
+        <#Compute/16> .
+
+<#argumentValue/1> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/10> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/11> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/12> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/13> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "50" .
+
+<#argumentValue/14> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/15> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/16> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age" .
+
+<#argumentValue/17> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age" .
+
+<#argumentValue/18> a sdtl:argumentValue ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Score" .
+
+<#argumentValue/2> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/3> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/4> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/5> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/6> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/7> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/8> a sdtl:argumentValue ;
+    sdtl:type "AllNumericVariablesExpression" .
+
+<#argumentValue/9> a sdtl:argumentValue ;
+    sdtl:numericType "Integer" ;
+    sdtl:type "NumericConstantExpression" ;
+    sdtl:value "50" .
+
+<#arguments/1> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/1> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/10> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/10> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/11> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/11> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/12> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/12> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/13> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/13> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/14> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/14> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/15> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/15> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/16> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/16> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/17> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/17> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/18> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/18> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/2> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/2> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/3> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/3> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/4> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/4> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/5> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/5> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/6> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/6> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/7> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/7> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/8> a sdtl:arguments ;
+    sdtl:argumentName "EXP1" ;
+    sdtl:argumentValue <#argumentValue/8> ;
+    sdtl:type "FunctionArgument" .
+
+<#arguments/9> a sdtl:arguments ;
+    sdtl:argumentName "EXP2" ;
+    sdtl:argumentValue <#argumentValue/9> ;
+    sdtl:type "FunctionArgument" .
+
+<#expression/1> a sdtl:expression ;
+    sdtl:arguments <#arguments/1> ;
+    sdtl:function "col_median" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/10> a sdtl:expression ;
+    sdtl:arguments <#arguments/11> ;
+    sdtl:function "col_skew" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/11> a sdtl:expression ;
+    sdtl:arguments <#arguments/12>,
+        <#arguments/13> ;
+    sdtl:function "col_pctile" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/12> a sdtl:expression ;
+    sdtl:arguments <#arguments/14> ;
+    sdtl:function "col_unique" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/13> a sdtl:expression ;
+    sdtl:arguments <#arguments/15> ;
+    sdtl:function "col_skew" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/14> a sdtl:expression ;
+    sdtl:arguments <#arguments/16> ;
+    sdtl:function "col_min" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/15> a sdtl:expression ;
+    sdtl:arguments <#arguments/17> ;
+    sdtl:function "col_max" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/16> a sdtl:expression ;
+    sdtl:arguments <#arguments/18> ;
+    sdtl:function "col_mean" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/2> a sdtl:expression ;
+    sdtl:arguments <#arguments/2> ;
+    sdtl:function "col_median" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/3> a sdtl:expression ;
+    sdtl:arguments <#arguments/3> ;
+    sdtl:function "col_sum" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/4> a sdtl:expression ;
+    sdtl:arguments <#arguments/4> ;
+    sdtl:function "col_mdev" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/5> a sdtl:expression ;
+    sdtl:arguments <#arguments/5> ;
+    sdtl:function "col_mdev" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/6> a sdtl:expression ;
+    sdtl:arguments <#arguments/6> ;
+    sdtl:function "col_var" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/7> a sdtl:expression ;
+    sdtl:arguments <#arguments/7> ;
+    sdtl:function "col_var" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/8> a sdtl:expression ;
+    sdtl:arguments <#arguments/8>,
+        <#arguments/9> ;
+    sdtl:function "col_pctile" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#expression/9> a sdtl:expression ;
+    sdtl:arguments <#arguments/10> ;
+    sdtl:function "col_unique" ;
+    sdtl:isSdtlName true ;
+    sdtl:type "FunctionCallExpression" .
+
+<#groupByVariables/1> a sdtl:groupByVariables ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age" .
+
+<#groupByVariables/2> a sdtl:groupByVariables ;
+    sdtl:type "VariableListExpression" ;
+    sdtl:variables <#variables/1>,
+        <#variables/2> .
+
+<#groupByVariables/3> a sdtl:groupByVariables ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Gender" .
+
+<#groupByVariables/4> a sdtl:groupByVariables ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Gender" .
+
+<#groupByVariables/5> a sdtl:groupByVariables ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Gender" .
+
+<#groupByVariables/6> a sdtl:groupByVariables ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Gender" .
+
+<#sourceInformation/1> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 3 ;
+    sdtl:lineNumberStart 3 ;
+    sdtl:originalSourceText "scores = pd.read_csv(\"scores.csv\")" ;
+    sdtl:sourceStartIndex 22 ;
+    sdtl:sourceStopIndex 55 .
+
+<#sourceInformation/2> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 6 ;
+    sdtl:lineNumberStart 6 ;
+    sdtl:originalSourceText "desc = scores.describe()" ;
+    sdtl:sourceStartIndex 79 ;
+    sdtl:sourceStopIndex 102 .
+
+<#sourceInformation/3> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 7 ;
+    sdtl:lineNumberStart 7 ;
+    sdtl:originalSourceText "median_age = scores.groupby(\"Age\").median()" ;
+    sdtl:sourceStartIndex 104 ;
+    sdtl:sourceStopIndex 146 .
+
+<#sourceInformation/4> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 8 ;
+    sdtl:lineNumberStart 8 ;
+    sdtl:originalSourceText "group_sum = scores.groupby([\"Gender\", \"Age\"]).sum()" ;
+    sdtl:sourceStartIndex 148 ;
+    sdtl:sourceStopIndex 198 .
+
+<#sourceInformation/5> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 9 ;
+    sdtl:lineNumberStart 9 ;
+    sdtl:originalSourceText "group_des = scores.groupby(\"Gender\").describe()" ;
+    sdtl:sourceStartIndex 200 ;
+    sdtl:sourceStopIndex 246 .
+
+<#sourceInformation/6> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 10 ;
+    sdtl:lineNumberStart 10 ;
+    sdtl:originalSourceText "non_index = scores.groupby(\"Gender\", as_index=False).mad()" ;
+    sdtl:sourceStartIndex 248 ;
+    sdtl:sourceStopIndex 305 .
+
+<#sourceInformation/7> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 11 ;
+    sdtl:lineNumberStart 11 ;
+    sdtl:originalSourceText "single_agg = scores.groupby(\"Gender\").agg(\"var\")" ;
+    sdtl:sourceStartIndex 307 ;
+    sdtl:sourceStopIndex 354 .
+
+<#sourceInformation/8> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 12 ;
+    sdtl:lineNumberStart 12 ;
+    sdtl:originalSourceText "multiple_agg = scores.groupby(\"Gender\").agg([\"quantile\", \"nunique\", \"skew\"])" ;
+    sdtl:sourceStartIndex 356 ;
+    sdtl:sourceStopIndex 431 .
+
+<#sourceInformation/9> a sdtl:SourceInformation ;
+    ns1:type "SourceInformation" ;
+    sdtl:lineNumberEnd 17 ;
+    sdtl:lineNumberStart 13 ;
+    sdtl:originalSourceText """named_agg = scores.groupby("Gender").agg(
+    youngest=pd.NamedAgg(column="Age", aggfunc="min"),
+    oldest=pd.NamedAgg(column="Age", aggfunc="max"),
+    mean_score=pd.NamedAgg(column="Score", aggfunc="mean")
+)""" ;
+    sdtl:sourceStartIndex 433 ;
+    sdtl:sourceStopIndex 642 .
+
+<#variable/1> a schema:Thing ;
+    schema:name "Age" .
+
+<#variable/10> a schema:Thing ;
+    schema:name "Age" .
+
+<#variable/11> a schema:Thing ;
+    schema:name "Score" .
+
+<#variable/12> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age" .
+
+<#variable/13> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Score" .
+
+<#variable/14> a schema:Thing ;
+    schema:name "Age" .
+
+<#variable/15> a schema:Thing ;
+    schema:name "Score" .
+
+<#variable/16> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age" .
+
+<#variable/17> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Score" .
+
+<#variable/18> a schema:Thing ;
+    schema:name "Age.quantile" .
+
+<#variable/19> a schema:Thing ;
+    schema:name "Age.nunique" .
+
+<#variable/2> a schema:Thing ;
+    schema:name "Gender" .
+
+<#variable/20> a schema:Thing ;
+    schema:name "Age.skew" .
+
+<#variable/21> a schema:Thing ;
+    schema:name "Score.quantile" .
+
+<#variable/22> a schema:Thing ;
+    schema:name "Score.nunique" .
+
+<#variable/23> a schema:Thing ;
+    schema:name "Score.skew" .
+
+<#variable/24> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age.quantile" .
+
+<#variable/25> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age.nunique" .
+
+<#variable/26> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age.skew" .
+
+<#variable/27> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Score.quantile" .
+
+<#variable/28> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Score.nunique" .
+
+<#variable/29> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Score.skew" .
+
+<#variable/3> a schema:Thing ;
+    schema:name "Score" .
+
+<#variable/30> a schema:Thing ;
+    schema:name "youngest" .
+
+<#variable/31> a schema:Thing ;
+    schema:name "oldest" .
+
+<#variable/32> a schema:Thing ;
+    schema:name "mean_score" .
+
+<#variable/33> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "youngest" .
+
+<#variable/34> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "oldest" .
+
+<#variable/35> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "mean_score" .
+
+<#variable/4> a schema:Thing ;
+    schema:name "Gender" .
+
+<#variable/5> a schema:Thing ;
+    schema:name "Score" .
+
+<#variable/6> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Gender" .
+
+<#variable/7> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Score" .
+
+<#variable/8> a schema:Thing ;
+    schema:name "Score" .
+
+<#variable/9> a sdtl:variable ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Score" .
+
+<#variableInventory/1> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/1> ;
+    rdf:rdf:_2 <#variable/2> ;
+    rdf:rdf:_3 <#variable/3> .
+
+<#variableInventory/2> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/4> ;
+    rdf:rdf:_2 <#variable/5> .
+
+<#variableInventory/3> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/8> .
+
+<#variableInventory/4> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/10> ;
+    rdf:rdf:_2 <#variable/11> .
+
+<#variableInventory/5> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/14> ;
+    rdf:rdf:_2 <#variable/15> .
+
+<#variableInventory/6> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/18> ;
+    rdf:rdf:_2 <#variable/19> ;
+    rdf:rdf:_3 <#variable/20> ;
+    rdf:rdf:_4 <#variable/21> ;
+    rdf:rdf:_5 <#variable/22> ;
+    rdf:rdf:_6 <#variable/23> .
+
+<#variableInventory/7> a rdf:Seq ;
+    rdf:rdf:_1 <#variable/30> ;
+    rdf:rdf:_2 <#variable/31> ;
+    rdf:rdf:_3 <#variable/32> .
+
+<#variables/1> a sdtl:variables ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Gender" .
+
+<#variables/2> a sdtl:variables ;
+    sdtl:type "VariableSymbolExpression" ;
+    sdtl:variableName "Age" .
+
+<#Channel/1> a provone:Channel .
+
+<#Channel/2> a provone:Channel .
+
+<#Channel/3> a provone:Channel .
+
+<#Channel/4> a provone:Channel .
+
+<#Channel/5> a provone:Channel .
+
+<#Channel/6> a provone:Channel .

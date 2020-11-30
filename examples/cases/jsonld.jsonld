@@ -1,0 +1,362 @@
+{
+	"commands": [
+		{
+			"$type": "NoTransformOp",
+			"command": "NoTransformOp",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 1,
+					"lineNumberEnd": 1,
+					"sourceStartIndex": 1,
+					"sourceStopIndex": 19,
+					"originalSourceText": "import pandas as pd"
+				}
+			]
+		},
+		{
+			"$type": "Load",
+			"command": "Load",
+			"fileName": "df.csv",
+			"producesDataframe": [
+				{
+					"dataframeName": "df",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"software": "csv",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 3,
+					"lineNumberEnd": 3,
+					"sourceStartIndex": 22,
+					"sourceStopIndex": 47,
+					"originalSourceText": "df = pd.read_csv(\"df.csv\")"
+				}
+			]
+		},
+		{
+			"$type": "KeepCases",
+			"command": "KeepCases",
+			"condition": {
+				"$type": "FunctionCallExpression",
+				"arguments": [
+					{
+						"$type": "FunctionArgument",
+						"argumentName": "EXP1",
+						"argumentValue": {
+							"$type": "VariableSymbolExpression",
+							"variableName": "A"
+						}
+					},
+					{
+						"$type": "FunctionArgument",
+						"argumentName": "EXP2",
+						"argumentValue": {
+							"$type": "NumericConstantExpression",
+							"numericType": "Integer",
+							"value": "2"
+						}
+					}
+				],
+				"function": "gt",
+				"isSdtlName": true
+			},
+			"consumesDataframe": [
+				{
+					"dataframeName": "df",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"producesDataframe": [
+				{
+					"dataframeName": "case",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 5,
+					"lineNumberEnd": 5,
+					"sourceStartIndex": 50,
+					"sourceStopIndex": 71,
+					"originalSourceText": "case = df[df[\"A\"] > 2]"
+				}
+			]
+		},
+		{
+			"$type": "KeepCases",
+			"command": "KeepCases",
+			"condition": {
+				"$type": "FunctionCallExpression",
+				"arguments": [
+					{
+						"$type": "FunctionArgument",
+						"argumentName": "EXP1",
+						"argumentValue": {
+							"$type": "FunctionCallExpression",
+							"arguments": [
+								{
+									"$type": "FunctionArgument",
+									"argumentName": "EXP1",
+									"argumentValue": {
+										"$type": "VariableSymbolExpression",
+										"variableName": "A"
+									}
+								},
+								{
+									"$type": "FunctionArgument",
+									"argumentName": "EXP2",
+									"argumentValue": {
+										"$type": "NumericConstantExpression",
+										"numericType": "Integer",
+										"value": "4"
+									}
+								}
+							],
+							"function": "lt",
+							"isSdtlName": true
+						}
+					},
+					{
+						"$type": "FunctionArgument",
+						"argumentName": "EXP2",
+						"argumentValue": {
+							"$type": "FunctionCallExpression",
+							"arguments": [
+								{
+									"$type": "FunctionArgument",
+									"argumentName": "EXP1",
+									"argumentValue": {
+										"$type": "FunctionCallExpression",
+										"arguments": [
+											{
+												"$type": "FunctionArgument",
+												"argumentName": "EXP1",
+												"argumentValue": {
+													"$type": "VariableSymbolExpression",
+													"variableName": "B"
+												}
+											},
+											{
+												"$type": "FunctionArgument",
+												"argumentName": "EXP2",
+												"argumentValue": {
+													"$type": "NumericConstantExpression",
+													"numericType": "Integer",
+													"value": "3"
+												}
+											}
+										],
+										"function": "eq",
+										"isSdtlName": true
+									}
+								}
+							],
+							"function": "not",
+							"isSdtlName": true
+						}
+					}
+				],
+				"function": "and",
+				"isSdtlName": true
+			},
+			"consumesDataframe": [
+				{
+					"dataframeName": "df",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"producesDataframe": [
+				{
+					"dataframeName": "case2",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 6,
+					"lineNumberEnd": 6,
+					"sourceStartIndex": 73,
+					"sourceStopIndex": 117,
+					"originalSourceText": "case2 = df[(df[\"A\"] < 4) & (~(df[\"B\"] == 3))]"
+				}
+			]
+		},
+		{
+			"$type": "KeepCases",
+			"command": "KeepCases",
+			"condition": {
+				"$type": "FunctionCallExpression",
+				"arguments": [
+					{
+						"$type": "FunctionArgument",
+						"argumentName": "EXP1",
+						"argumentValue": {
+							"$type": "AllVariablesExpression"
+						}
+					},
+					{
+						"$type": "FunctionArgument",
+						"argumentName": "EXP2",
+						"argumentValue": {
+							"$type": "ValueListExpression",
+							"values": [
+								{
+									"$type": "NumericConstantExpression",
+									"numericType": "Integer",
+									"value": "2"
+								},
+								{
+									"$type": "NumericConstantExpression",
+									"numericType": "Integer",
+									"value": "3"
+								}
+							]
+						}
+					}
+				],
+				"function": "lgcl_any",
+				"isSdtlName": true
+			},
+			"consumesDataframe": [
+				{
+					"dataframeName": "df",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"producesDataframe": [
+				{
+					"dataframeName": "case3",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 7,
+					"lineNumberEnd": 7,
+					"sourceStartIndex": 119,
+					"sourceStopIndex": 157,
+					"originalSourceText": "case3 = df[df.isin([2, 3]).all(axis=1)]"
+				}
+			]
+		},
+		{
+			"$type": "KeepCases",
+			"command": "KeepCases",
+			"condition": {
+				"$type": "FunctionCallExpression",
+				"arguments": [
+					{
+						"$type": "FunctionArgument",
+						"argumentName": "EXP1",
+						"argumentValue": {
+							"$type": "AllVariablesExpression"
+						}
+					}
+				],
+				"function": "missing_any",
+				"isSdtlName": true
+			},
+			"consumesDataframe": [
+				{
+					"dataframeName": "df",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"producesDataframe": [
+				{
+					"dataframeName": "case4",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 8,
+					"lineNumberEnd": 8,
+					"sourceStartIndex": 159,
+					"sourceStopIndex": 191,
+					"originalSourceText": "case4 = df[df.isna().any(axis=1)]"
+				}
+			]
+		},
+		{
+			"$type": "DropCases",
+			"command": "DropCases",
+			"condition": {
+				"$type": "FunctionCallExpression",
+				"arguments": [
+					{
+						"$type": "FunctionArgument",
+						"argumentName": "EXP1",
+						"argumentValue": {
+							"$type": "AllVariablesExpression"
+						}
+					}
+				],
+				"function": "missing",
+				"isSdtlName": true
+			},
+			"consumesDataframe": [
+				{
+					"dataframeName": "df",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"producesDataframe": [
+				{
+					"dataframeName": "case5",
+					"variableInventory": [
+						"A",
+						"B"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 9,
+					"lineNumberEnd": 9,
+					"sourceStartIndex": 193,
+					"sourceStopIndex": 220,
+					"originalSourceText": "case5 = df.dropna(how=\"all\")"
+				}
+			]
+		}
+	]
+}

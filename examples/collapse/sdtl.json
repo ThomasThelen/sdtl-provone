@@ -1,0 +1,737 @@
+{
+	"commands": [
+		{
+			"$type": "NoTransformOp",
+			"command": "NoTransformOp",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 1,
+					"lineNumberEnd": 1,
+					"sourceStartIndex": 1,
+					"sourceStopIndex": 19,
+					"originalSourceText": "import pandas as pd"
+				}
+			]
+		},
+		{
+			"$type": "Load",
+			"command": "Load",
+			"fileName": "scores.csv",
+			"producesDataframe": [
+				{
+					"dataframeName": "scores",
+					"variableInventory": [
+						"Age",
+						"Gender",
+						"Score"
+					]
+				}
+			],
+			"software": "csv",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 3,
+					"lineNumberEnd": 3,
+					"sourceStartIndex": 22,
+					"sourceStopIndex": 55,
+					"originalSourceText": "scores = pd.read_csv(\"scores.csv\")"
+				}
+			]
+		},
+		{
+			"$type": "Unsupported",
+			"command": "Unsupported",
+			"messageText": [
+				"Collapse functions which return a Series are not supported."
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 5,
+					"lineNumberEnd": 5,
+					"sourceStartIndex": 58,
+					"sourceStopIndex": 77,
+					"originalSourceText": "mean = scores.mean()"
+				}
+			]
+		},
+		{
+			"$type": "Analysis",
+			"command": "Analysis",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 6,
+					"lineNumberEnd": 6,
+					"sourceStartIndex": 79,
+					"sourceStopIndex": 102,
+					"originalSourceText": "desc = scores.describe()"
+				}
+			]
+		},
+		{
+			"$type": "Collapse",
+			"aggregateVariables": [
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_median",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Gender"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_median",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Score"
+					}
+				}
+			],
+			"command": "Collapse",
+			"consumesDataframe": [
+				{
+					"dataframeName": "scores",
+					"variableInventory": [
+						"Age",
+						"Gender",
+						"Score"
+					]
+				}
+			],
+			"groupByVariables": {
+				"$type": "VariableSymbolExpression",
+				"variableName": "Age"
+			},
+			"messageText": [
+				"Collapsed variables referring to non-numeric variables will not exist in the data file."
+			],
+			"outputDatasetName": "median_age",
+			"producesDataframe": [
+				{
+					"dataframeName": "median_age",
+					"variableInventory": [
+						"Gender",
+						"Score"
+					],
+					"rowDimensions": [
+						"Age"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 7,
+					"lineNumberEnd": 7,
+					"sourceStartIndex": 104,
+					"sourceStopIndex": 146,
+					"originalSourceText": "median_age = scores.groupby(\"Age\").median()"
+				}
+			]
+		},
+		{
+			"$type": "Collapse",
+			"aggregateVariables": [
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_sum",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Score"
+					}
+				}
+			],
+			"command": "Collapse",
+			"consumesDataframe": [
+				{
+					"dataframeName": "scores",
+					"variableInventory": [
+						"Age",
+						"Gender",
+						"Score"
+					]
+				}
+			],
+			"groupByVariables": {
+				"$type": "VariableListExpression",
+				"variables": [
+					{
+						"$type": "VariableSymbolExpression",
+						"variableName": "Gender"
+					},
+					{
+						"$type": "VariableSymbolExpression",
+						"variableName": "Age"
+					}
+				]
+			},
+			"messageText": [
+				"Collapsed variables referring to non-numeric variables will not exist in the data file."
+			],
+			"outputDatasetName": "group_sum",
+			"producesDataframe": [
+				{
+					"dataframeName": "group_sum",
+					"variableInventory": [
+						"Score"
+					],
+					"rowDimensions": [
+						"Gender",
+						"Age"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 8,
+					"lineNumberEnd": 8,
+					"sourceStartIndex": 148,
+					"sourceStopIndex": 198,
+					"originalSourceText": "group_sum = scores.groupby([\"Gender\", \"Age\"]).sum()"
+				}
+			]
+		},
+		{
+			"$type": "Analysis",
+			"command": "Analysis",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 9,
+					"lineNumberEnd": 9,
+					"sourceStartIndex": 200,
+					"sourceStopIndex": 246,
+					"originalSourceText": "group_des = scores.groupby(\"Gender\").describe()"
+				}
+			]
+		},
+		{
+			"$type": "Collapse",
+			"aggregateVariables": [
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_mdev",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Age"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_mdev",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Score"
+					}
+				}
+			],
+			"command": "Collapse",
+			"consumesDataframe": [
+				{
+					"dataframeName": "scores",
+					"variableInventory": [
+						"Age",
+						"Gender",
+						"Score"
+					]
+				}
+			],
+			"groupByVariables": {
+				"$type": "VariableSymbolExpression",
+				"variableName": "Gender"
+			},
+			"messageText": [
+				"Collapsed variables referring to non-numeric variables will not exist in the data file."
+			],
+			"outputDatasetName": "non_index",
+			"producesDataframe": [
+				{
+					"dataframeName": "non_index",
+					"variableInventory": [
+						"Age",
+						"Score"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 10,
+					"lineNumberEnd": 10,
+					"sourceStartIndex": 248,
+					"sourceStopIndex": 305,
+					"originalSourceText": "non_index = scores.groupby(\"Gender\", as_index=False).mad()"
+				}
+			]
+		},
+		{
+			"$type": "Collapse",
+			"aggregateVariables": [
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_var",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Age"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_var",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Score"
+					}
+				}
+			],
+			"command": "Collapse",
+			"consumesDataframe": [
+				{
+					"dataframeName": "scores",
+					"variableInventory": [
+						"Age",
+						"Gender",
+						"Score"
+					]
+				}
+			],
+			"groupByVariables": {
+				"$type": "VariableSymbolExpression",
+				"variableName": "Gender"
+			},
+			"messageText": [
+				"Collapsed variables referring to non-numeric variables will not exist in the data file."
+			],
+			"outputDatasetName": "single_agg",
+			"producesDataframe": [
+				{
+					"dataframeName": "single_agg",
+					"variableInventory": [
+						"Age",
+						"Score"
+					],
+					"rowDimensions": [
+						"Gender"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 11,
+					"lineNumberEnd": 11,
+					"sourceStartIndex": 307,
+					"sourceStopIndex": 354,
+					"originalSourceText": "single_agg = scores.groupby(\"Gender\").agg(\"var\")"
+				}
+			]
+		},
+		{
+			"$type": "Collapse",
+			"aggregateVariables": [
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							},
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP2",
+								"argumentValue": {
+									"$type": "NumericConstantExpression",
+									"numericType": "Integer",
+									"value": "50"
+								}
+							}
+						],
+						"function": "col_pctile",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Age.quantile"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_unique",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Age.nunique"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_skew",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Age.skew"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							},
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP2",
+								"argumentValue": {
+									"$type": "NumericConstantExpression",
+									"numericType": "Integer",
+									"value": "50"
+								}
+							}
+						],
+						"function": "col_pctile",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Score.quantile"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_unique",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Score.nunique"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "AllNumericVariablesExpression"
+								}
+							}
+						],
+						"function": "col_skew",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "Score.skew"
+					}
+				}
+			],
+			"command": "Collapse",
+			"consumesDataframe": [
+				{
+					"dataframeName": "scores",
+					"variableInventory": [
+						"Age",
+						"Gender",
+						"Score"
+					]
+				}
+			],
+			"groupByVariables": {
+				"$type": "VariableSymbolExpression",
+				"variableName": "Gender"
+			},
+			"messageText": [
+				"Collapsed variables referring to non-numeric variables will not exist in the data file."
+			],
+			"outputDatasetName": "multiple_agg",
+			"producesDataframe": [
+				{
+					"dataframeName": "multiple_agg",
+					"variableInventory": [
+						"Age.quantile",
+						"Age.nunique",
+						"Age.skew",
+						"Score.quantile",
+						"Score.nunique",
+						"Score.skew"
+					],
+					"rowDimensions": [
+						"Gender"
+					],
+					"columnDimensions": [
+						"Age",
+						"Score"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 12,
+					"lineNumberEnd": 12,
+					"sourceStartIndex": 356,
+					"sourceStopIndex": 431,
+					"originalSourceText": "multiple_agg = scores.groupby(\"Gender\").agg([\"quantile\", \"nunique\", \"skew\"])"
+				}
+			]
+		},
+		{
+			"$type": "Collapse",
+			"aggregateVariables": [
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "VariableSymbolExpression",
+									"variableName": "Age"
+								}
+							}
+						],
+						"function": "col_min",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "youngest"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "VariableSymbolExpression",
+									"variableName": "Age"
+								}
+							}
+						],
+						"function": "col_max",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "oldest"
+					}
+				},
+				{
+					"$type": "Compute",
+					"expression": {
+						"$type": "FunctionCallExpression",
+						"arguments": [
+							{
+								"$type": "FunctionArgument",
+								"argumentName": "EXP1",
+								"argumentValue": {
+									"$type": "VariableSymbolExpression",
+									"variableName": "Score"
+								}
+							}
+						],
+						"function": "col_mean",
+						"isSdtlName": true
+					},
+					"variable": {
+						"$type": "VariableSymbolExpression",
+						"variableName": "mean_score"
+					}
+				}
+			],
+			"command": "Collapse",
+			"consumesDataframe": [
+				{
+					"dataframeName": "scores",
+					"variableInventory": [
+						"Age",
+						"Gender",
+						"Score"
+					]
+				}
+			],
+			"groupByVariables": {
+				"$type": "VariableSymbolExpression",
+				"variableName": "Gender"
+			},
+			"messageText": [
+				"Collapsed variables referring to non-numeric variables will not exist in the data file."
+			],
+			"outputDatasetName": "named_agg",
+			"producesDataframe": [
+				{
+					"dataframeName": "named_agg",
+					"variableInventory": [
+						"youngest",
+						"oldest",
+						"mean_score"
+					],
+					"rowDimensions": [
+						"Gender"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 13,
+					"lineNumberEnd": 17,
+					"sourceStartIndex": 433,
+					"sourceStopIndex": 642,
+					"originalSourceText": "named_agg = scores.groupby(\"Gender\").agg(\n    youngest=pd.NamedAgg(column=\"Age\", aggfunc=\"min\"),\n    oldest=pd.NamedAgg(column=\"Age\", aggfunc=\"max\"),\n    mean_score=pd.NamedAgg(column=\"Score\", aggfunc=\"mean\")\n)"
+				}
+			]
+		}
+	]
+}

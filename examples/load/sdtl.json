@@ -1,0 +1,178 @@
+{
+	"commands": [
+		{
+			"$type": "Comment",
+			"command": "Comment",
+			"commentText": "Test the various methods of reading a file (and also integrating comments)",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 1,
+					"lineNumberEnd": 1,
+					"sourceStartIndex": 1,
+					"sourceStopIndex": 80,
+					"originalSourceText": "\"\"\"Test the various methods of reading a file (and also integrating comments)\"\"\""
+				}
+			]
+		},
+		{
+			"$type": "NoTransformOp",
+			"command": "NoTransformOp",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 3,
+					"lineNumberEnd": 3,
+					"sourceStartIndex": 83,
+					"sourceStopIndex": 101,
+					"originalSourceText": "import pandas as pd"
+				}
+			]
+		},
+		{
+			"$type": "Comment",
+			"command": "Comment",
+			"commentText": "\nread in the various files\n",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 5,
+					"lineNumberEnd": 7,
+					"sourceStartIndex": 104,
+					"sourceStopIndex": 136,
+					"originalSourceText": "'''\nread in the various files\n'''"
+				}
+			]
+		},
+		{
+			"$type": "Comment",
+			"command": "Comment",
+			"commentText": " and make sure to test all four types of quotes",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 7,
+					"lineNumberEnd": 7,
+					"sourceStartIndex": 137,
+					"sourceStopIndex": 184,
+					"originalSourceText": "# and make sure to test all four types of quotes"
+				}
+			]
+		},
+		{
+			"$type": "Load",
+			"command": "Load",
+			"fileName": "data.csv",
+			"software": "csv",
+			"producesDataframe": [
+				{
+					"dataframeName": "csv_df",
+					"variableInventory": [
+						"a",
+						"b"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 9,
+					"lineNumberEnd": 9,
+					"sourceStartIndex": 187,
+					"sourceStopIndex": 218,
+					"originalSourceText": "csv_df = pd.read_csv(\"data.csv\")"
+				}
+			]
+		},
+		{
+			"$type": "Load",
+			"command": "Load",
+			"fileName": "data.xlsx",
+			"software": "Excel",
+			"producesDataframe": [
+				{
+					"dataframeName": "xls_df",
+					"variableInventory": [
+						"a",
+						"b"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 10,
+					"lineNumberEnd": 10,
+					"sourceStartIndex": 220,
+					"sourceStopIndex": 254,
+					"originalSourceText": "xls_df = pd.read_excel('data.xlsx')"
+				}
+			]
+		},
+		{
+			"$type": "Load",
+			"command": "Load",
+			"fileName": "data.sas7bdat",
+			"software": "SAS",
+			"producesDataframe": [
+				{
+					"dataframeName": "sas_df",
+					"variableInventory": [
+						"a",
+						"b"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 11,
+					"lineNumberEnd": 11,
+					"sourceStartIndex": 256,
+					"sourceStopIndex": 296,
+					"originalSourceText": "sas_df = pd.read_sas(\"\"\"data.sas7bdat\"\"\")"
+				}
+			]
+		},
+		{
+			"$type": "Comment",
+			"command": "Comment",
+			"commentText": " in this context, it's a regular string",
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 11,
+					"lineNumberEnd": 11,
+					"sourceStartIndex": 300,
+					"sourceStopIndex": 339,
+					"originalSourceText": "# in this context, it's a regular string"
+				}
+			]
+		},
+		{
+			"$type": "Load",
+			"command": "Load",
+			"fileName": "data.dta",
+			"software": "Stata",
+			"producesDataframe": [
+				{
+					"dataframeName": "stata_df",
+					"variableInventory": [
+						"a",
+						"b"
+					]
+				}
+			],
+			"sourceInformation": [
+				{
+					"$type": "SourceInformation",
+					"lineNumberStart": 12,
+					"lineNumberEnd": 12,
+					"sourceStartIndex": 341,
+					"sourceStopIndex": 380,
+					"originalSourceText": "stata_df = pd.read_stata('''data.dta''')"
+				}
+			]
+		}
+	]
+}

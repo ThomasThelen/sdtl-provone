@@ -1,0 +1,2998 @@
+[
+  {
+    "@id": "#expression/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_median"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/7",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/9"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/10"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables": [
+      {
+        "@id": "#aggregateVariables/4"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables": [
+      {
+        "@id": "#groupByVariables/4"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/7"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/7",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/12",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "multiple_agg"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/6"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/17",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/15",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/10",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "single_agg"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/5"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/12",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/12"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/2",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/2"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/5"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/3",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#expression/9",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/10"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_unique"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 6
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 6
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "desc = scores.describe()"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 79
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 102
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/12",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#groupByVariables/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Gender"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/16",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/16"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/8",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "non_index"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/4"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/10",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/11"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_skew"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/13",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#numericType": [
+      {
+        "@value": "Integer"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "NumericConstantExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#value": [
+      {
+        "@value": "50"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/27",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Score.quantile"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/4",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/10"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/11"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/6"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/13",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/10",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/10"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/2",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "scores"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/1"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/6",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#variable/5",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/7",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/7"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/16",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 3
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 3
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "scores = pd.read_csv(\"scores.csv\")"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 22
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 55
+      }
+    ]
+  },
+  {
+    "@id": "#variable/14",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/18",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/8",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 12
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 12
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "multiple_agg = scores.groupby(\"Gender\").agg([\"quantile\", \"nunique\", \"skew\"])"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 356
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 431
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/13",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/13"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/29"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/35",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "mean_score"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/14",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/16"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_min"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/6",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/19"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_3": [
+      {
+        "@id": "#variable/20"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_4": [
+      {
+        "@id": "#variable/21"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_5": [
+      {
+        "@id": "#variable/22"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_6": [
+      {
+        "@id": "#variable/23"
+      }
+    ]
+  },
+  {
+    "@id": "#groupByVariables/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 9
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 9
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "group_des = scores.groupby(\"Gender\").describe()"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 200
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 246
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/15",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/15"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/34"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/5"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/13"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/4"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/9",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/9"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/16",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/26",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age.skew"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/7"
+      }
+    ]
+  },
+  {
+    "@id": "#aggregateVariables/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#Compute": [
+      {
+        "@id": "#Compute/16"
+      },
+      {
+        "@id": "#Compute/15"
+      },
+      {
+        "@id": "#Compute/14"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/7",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/11",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#aggregateVariables/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#Compute": [
+      {
+        "@id": "#Compute/12"
+      },
+      {
+        "@id": "#Compute/10"
+      },
+      {
+        "@id": "#Compute/11"
+      },
+      {
+        "@id": "#Compute/8"
+      },
+      {
+        "@id": "#Compute/13"
+      },
+      {
+        "@id": "#Compute/9"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/1",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#Channel/5",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#sourceInformation/7",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 11
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 11
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "single_agg = scores.groupby(\"Gender\").agg(\"var\")"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 307
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 354
+      }
+    ]
+  },
+  {
+    "@id": "#variable/22",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Score.nunique"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/10",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_median"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/14",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "named_agg"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/7"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/9",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 17
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 13
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "named_agg = scores.groupby(\"Gender\").agg(\n    youngest=pd.NamedAgg(column=\"Age\", aggfunc=\"min\"),\n    oldest=pd.NamedAgg(column=\"Age\", aggfunc=\"max\"),\n    mean_score=pd.NamedAgg(column=\"Score\", aggfunc=\"mean\")\n)"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 433
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 642
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/2",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#expression/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/3"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_sum"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/30",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "youngest"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/1",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#FileName": [
+      {
+        "@value": "scores.csv"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/6"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_var"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/6"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/8",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 10
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 10
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "non_index = scores.groupby(\"Gender\", as_index=False).mad()"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 248
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 305
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/17",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/17"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/9",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/9"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/25"
+      }
+    ]
+  },
+  {
+    "@id": "#aggregateVariables/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#Compute": [
+      {
+        "@id": "#Compute/6"
+      },
+      {
+        "@id": "#Compute/7"
+      }
+    ]
+  },
+  {
+    "@id": "#aggregateVariables/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#Compute": [
+      {
+        "@id": "#Compute/3"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/31",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "oldest"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/11",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/11"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/7",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/7"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/17"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Gender"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/2",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/4"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/5"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/4",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Gender"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/7",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/4"
+      },
+      {
+        "@id": "#Channel/3"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/9",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 8
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 8
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "group_sum = scores.groupby([\"Gender\", \"Age\"]).sum()"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 148
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 198
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/3"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/9"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/8",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/8"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#aggregateVariables/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#Compute": [
+      {
+        "@id": "#Compute/4"
+      },
+      {
+        "@id": "#Compute/5"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/4",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "median_age"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/2"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/6"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/16"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/5",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/2"
+      },
+      {
+        "@id": "#Channel/3"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/14",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/6",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#dataframeName": [
+      {
+        "@value": "group_sum"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableInventory": [
+      {
+        "@id": "#variableInventory/3"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/7",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/30"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/31"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_3": [
+      {
+        "@id": "#variable/32"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/13",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/15"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_skew"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/4",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/5"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/6"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables": [
+      {
+        "@id": "#aggregateVariables/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables": [
+      {
+        "@id": "#groupByVariables/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/4"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/13",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/6"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/4"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_mdev"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#variables/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/2",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Gender"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/9",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/13"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/14"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables": [
+      {
+        "@id": "#aggregateVariables/6"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables": [
+      {
+        "@id": "#groupByVariables/6"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/9"
+      }
+    ]
+  },
+  {
+    "@id": "#groupByVariables/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Gender"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/8",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/8",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/11"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/12"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables": [
+      {
+        "@id": "#aggregateVariables/5"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables": [
+      {
+        "@id": "#groupByVariables/5"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/8"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/28",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Score.nunique"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/17",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/16",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/16"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/35"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/9",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#numericType": [
+      {
+        "@value": "Integer"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "NumericConstantExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#value": [
+      {
+        "@value": "50"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/11",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/11"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/27"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/14",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/14"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/33"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/33",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "youngest"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/20",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Age.skew"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/23",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Score.skew"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/1",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/1"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/2"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_3": [
+      {
+        "@id": "#variable/3"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/4",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/4"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/12"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/3",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/3"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/4"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables": [
+      {
+        "@id": "#aggregateVariables/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables": [
+      {
+        "@id": "#groupByVariables/1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/3"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/18",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/18"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#groupByVariables/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Gender"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/10",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/12",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/12"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/28"
+      }
+    ]
+  },
+  {
+    "@id": "#variables/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Gender"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/6",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@value": "#Port/7"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/8"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables": [
+      {
+        "@id": "#aggregateVariables/3"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables": [
+      {
+        "@id": "#groupByVariables/3"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/6"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/3"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/3",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/18",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Age.quantile"
+      }
+    ]
+  },
+  {
+    "@id": "#aggregateVariables/1",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#aggregateVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#Compute": [
+      {
+        "@id": "#Compute/2"
+      },
+      {
+        "@id": "#Compute/1"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/19",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Age.nunique"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/29",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Score.skew"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/25",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age.nunique"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/34",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "oldest"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/11",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/13"
+      },
+      {
+        "@id": "#arguments/12"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_pctile"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/12",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/14"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_unique"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#sourceInformation/3",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#SourceInformation"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#$type": [
+      {
+        "@value": "SourceInformation"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberEnd": [
+      {
+        "@value": 7
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#lineNumberStart": [
+      {
+        "@value": 7
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#originalSourceText": [
+      {
+        "@value": "median_age = scores.groupby(\"Age\").median()"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStartIndex": [
+      {
+        "@value": 104
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceStopIndex": [
+      {
+        "@value": 146
+      }
+    ]
+  },
+  {
+    "@id": "#expression/7",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/7"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_var"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/5"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_mdev"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/14",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/14"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#argumentValue/5",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "AllNumericVariablesExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/8",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/9"
+      },
+      {
+        "@id": "#arguments/8"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_pctile"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/15",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP1"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/15"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/15",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/21",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Score.quantile"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/24",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age.quantile"
+      }
+    ]
+  },
+  {
+    "@id": "#arguments/13",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#arguments"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentName": [
+      {
+        "@value": "EXP2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#argumentValue": [
+      {
+        "@id": "#argumentValue/13"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionArgument"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/1",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Age"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/3",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/1"
+      },
+      {
+        "@id": "#Channel/2"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/15",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/17"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_max"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/5",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/5"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/11",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "Score"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/10",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/10"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/26"
+      }
+    ]
+  },
+  {
+    "@id": "#expression/16",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#expression"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#arguments": [
+      {
+        "@id": "#arguments/18"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#function": [
+      {
+        "@value": "col_mean"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#isSdtlName": [
+      {
+        "@value": true
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "FunctionCallExpression"
+      }
+    ]
+  },
+  {
+    "@id": "#groupByVariables/6",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Gender"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/11",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/5"
+      },
+      {
+        "@id": "#Channel/6"
+      }
+    ]
+  },
+  {
+    "@id": "#Channel/4",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Channel"
+    ]
+  },
+  {
+    "@id": "#groupByVariables/2",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#groupByVariables"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableListExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variables": [
+      {
+        "@id": "#variables/2"
+      },
+      {
+        "@id": "#variables/1"
+      }
+    ]
+  },
+  {
+    "@id": "#Port/9",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Port"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#connectsTo": [
+      {
+        "@id": "#Channel/4"
+      },
+      {
+        "@id": "#Channel/5"
+      }
+    ]
+  },
+  {
+    "@id": "#Program/1",
+    "@type": [
+      "http://purl.dataone.org/provone/2015/01/15/ontology#Program"
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasInPort": [
+      {
+        "@id": "#Port/1"
+      }
+    ],
+    "http://purl.dataone.org/provone/2015/01/15/ontology#hasOutPort": [
+      {
+        "@id": "#Port/2"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#sourceInformation": [
+      {
+        "@id": "#sourceInformation/1"
+      }
+    ]
+  },
+  {
+    "@id": "#Compute/8",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#Compute"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#expression": [
+      {
+        "@id": "#expression/8"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "Compute"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variable": [
+      {
+        "@id": "#variable/24"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/3",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/8"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/32",
+    "@type": [
+      "http://www.schema.org/#Thing"
+    ],
+    "http://www.schema.org/#name": [
+      {
+        "@value": "mean_score"
+      }
+    ]
+  },
+  {
+    "@id": "#variableInventory/5",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Seq"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_1": [
+      {
+        "@id": "#variable/14"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#rdf:_2": [
+      {
+        "@id": "#variable/15"
+      }
+    ]
+  },
+  {
+    "@id": "#variable/12",
+    "@type": [
+      "https://rdf-vocabulary.ddialliance.org/sdtl#variable"
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#type": [
+      {
+        "@value": "VariableSymbolExpression"
+      }
+    ],
+    "https://rdf-vocabulary.ddialliance.org/sdtl#variableName": [
+      {
+        "@value": "Age"
+      }
+    ]
+  }
+]

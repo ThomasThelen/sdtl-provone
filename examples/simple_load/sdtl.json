@@ -1,0 +1,29 @@
+{
+  "commands": [
+      {
+          "$type": "Load",
+          "command": "Load",
+          "fileName": "df.csv",
+          "software": "csv",
+          "producesDataframe": [
+              {
+                  "dataframeName": "df",
+                  "variableInventory": [
+                      "A",
+                      "B"
+                  ]
+              }
+          ],
+          "sourceInformation": [
+              {
+                  "$type": "SourceInformation",
+                  "lineNumberStart": 10,
+                  "lineNumberEnd": 10,
+                  "sourceStartIndex": 70,
+                  "sourceStopIndex": 95,
+                  "originalSourceText": "df = pd.read_csv(\"df.csv\")"
+              }
+          ]
+      }
+  ]
+}
