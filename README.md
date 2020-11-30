@@ -279,11 +279,10 @@ Currently Supported Structures:
 
 Unsupported
 
-1. renames
-3. outputDatasetName
-4. aggregateVariables
-5. condition
-6. messageText
+1. outputDatasetName
+2. aggregateVariables
+3. condition
+4. messageText
 
 #### sourceInformation
 The SDTL sourceInformation block gives high level metadata about the line of source code. For example,
