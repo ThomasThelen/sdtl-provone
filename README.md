@@ -266,41 +266,16 @@ These are all attached to the command-level provone:Program, shown below
 ![](images/new/with-sdtl.svg)
 
 
-Currently Supported Structures:
+## Open Considerations
 
-1. SourceInformation
-2. producesDataframe
-3. consumesDataframe
-4. variable
-5. expression
-6. aggregateVariables
-7. groupByVariables
-8. renames
+### Hybrid Types
+It seems that the provone:Program representing a command can _also_ be an SDTL CommandBase. This allows for more seamless hybrid queries, 
 
-Unsupported
+What is the provone:Program that is also an sdlt:Load?
 
-1. outputDatasetName
-2. aggregateVariables
-3. condition
-4. messageText
+What are the provone:Ports to all commands of type sdtl:Load?
 
-#### sourceInformation
-The SDTL sourceInformation block gives high level metadata about the line of source code. For example,
-```
-"sourceInformation": [
-  {
-    "$type": "SourceInformation",
-    "lineNumberStart": 12,
-    "lineNumberEnd": 12,
-    "sourceStartIndex": 98,
-    "sourceStopIndex": 108,
-    "originalSourceText": "df[\"A\"] = 3"
-  }
-]
-```
-
-This is represented as a new node in the graph, with identifier `sourceInformation/{count}`. A relation between the provone:Program and the node is made with `sdtl:sourceInformation`.
-
+What are the input provone:Ports to the sdt:Load command with X property?
 
 ## Summary
 
