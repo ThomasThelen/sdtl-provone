@@ -1,5 +1,8 @@
 # sdtl-provone
 
+## Notice
+
+This work has been obsoleted by the SDTH data model, which can be queried in terms of prov concepts.
 
 ## Overview
 
